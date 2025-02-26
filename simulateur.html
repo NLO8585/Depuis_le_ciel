@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Dronie Bienvenue chez Dronie, prestataire d’images aériennes et de montages vidéos">
+    <meta name="keywords" content="Dronie, Drone, Montages, Vidéos, Vues aériennes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simulateur</title>
+</head>
+<body class="body.simulation">
+    <header class="header_simulation">
+        <div class="logopetit2">
+            <a href="index.html">
+                <img src="image/Logo_Depuis.png" alt="Logo" />
+            </a>
+        </div>
+        <div class="title_simulation">
+            <h6>Estimez votre prestation en quelques clics!</h6>
+        </div>
+    </header>
+
+<section id="simulation">
+    <div class="questionnaire">
+        <!-- Choix 1 : Entreprise ou particulier ?-->
+        <div class="step active" data-step="1" aria-labelledby="titre_simulation_1">
+            <h2 class="titre_simulation1" id="titre_simulation_1">VOUS ÊTES :</h2>
+            <div class="simulation_choices">
+                <div class="choice" data-next="2" role="button" aria-label="Choisir Entreprise" tabindex="0">
+                    <div class="icon_circle">
+                        <img src="image/icon_entreprise.svg" alt="Une entreprise">
+                    </div>
+                    <p>Une entreprise</p>
+                </div>
+                <div class="choice" data-next="3" role="button" aria-label="Choisir Particulier" tabindex="0">
+                    <div class="icon_circle">
+                        <img src="image/icon_particulier.svg" alt="Un particulier">
+                    </div>
+                    <p>Un particulier</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Choix 2 : "Une entreprise" -->
+        <div class="step" data-step="2" data-previous-step="1" aria-labelledby="titre_simulation_2">
+            <h2 class="titre_simulation1" id="titre_simulation_2">UNE ENTREPRISE DANS :</h2>
+            <div class="secteur_choices">
+                <div class="sector_choice" data-next="4" role="button" aria-label="Choisir secteur Immobilier" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Immobilier"></div>
+                    <p>L’immobilier</p>
+                </div>
+                <div class="sector_choice" data-next="5" role="button" aria-label="Choisir secteur Publicité" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Publicité"></div>
+                    <p>L'audiovisuel</p>
+                </div>
+                <div class="sector_choice" data-next="6" role="button" aria-label="Choisir secteur Tourisme" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_tourism.svg" alt="Tourisme"></div>
+                    <p>Le tourisme</p>
+                </div>
+                <div class="sector_choice" data-next="7" role="button" aria-label="Choisir secteur Événementiel" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Événementiel"></div>
+                    <p>L’événementiel</p>
+                </div>
+                <div class="sector_choice" data-next="8" role="button" aria-label="Choisir secteur Autre" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_autre.svg" alt="Autre"></div>
+                    <p>Autre</p>
+                </div>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 3 : "Un particulier" -->
+        <div class="step" data-step="3" data-previous-step="1" aria-labelledby="titre_simulation_3">
+            <div class="titre_simulation1" id="titre_simulation_3">NOS PRESTATIONS POUR LES PARTICULIERS</div>
+            <div class="particulier_icons">
+                <div class="particulier_choice" data-next="9" role="button" aria-label="Choix prestation immo" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Immo"></div>
+                    <p>Valorisation immobilière</p>
+                </div>
+                <div class="particulier_choice" data-next="10" role="button" aria-label="Choix prestation event" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Evenements"></div>
+                    <p>Evénements</p>
+                </div>
+                <div class="particulier_choice" data-next="11" role="button" aria-label="Choix prestation audiovisuel" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Projet audiovisuel amateur"></div>
+                    <p>Projet audiovisuel amateur</p>
+                </div>
+                <div class="particulier_choice" data-next="12" role="button" aria-label="Choix formation au pilotage" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_formation.svg" alt="Formation au pilotage"></div>
+                    <p>Formation au pilotage de drones</p>
+                </div>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 4 : "Immobilier" -->
+        <div class="step" data-step="4" data-previous-step="2" aria-labelledby="titre_simulation_4">
+            <div class="titre_simulation" id="titre_simulation_4">NOS PRESTATIONS POUR L’IMMOBILIER</div>
+            <p class="sous-titre">(AGENCES IMMOBILIERES, PROMOTEURS ...)</p>
+            <div class="description">
+                <p>Vous souhaitez mettre en valeur vos biens ? Vous êtes au bon endroit !</p>
+            </div>
+            <div class="image-container">
+                <img src="image/tarifs_immo.jpg" alt="Tarifs pour les prestations immobilières" class="image-tarifs2" onclick="openFullscreen(this)">
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 5 : "Publicité" -->
+        <div class="step" data-step="5" data-previous-step="2" aria-labelledby="titre_simulation_5">
+            <div class="titre_simulation" id="titre_simulation_5">RÉALISATION DE PUBLICITÉS OU DE PRODUCTIONS AUDIOVISUELLES</div>
+            <p class="sous-titre">Publicité, clip vidéo, court métrage, films, documentaires...</p>
+            <div class="description">
+                <p>Comme chaque projet audiovisuel est unique, nous pratiquons des tarifs à l’heure, à la demi-journée ou à la journée selon vos besoins :</p>
+            </div>
+            <div class="table-container">
+                <table class="tarifs-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de prise de vues</th> <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Horaire</td> <td>70 € / heure</td>
+                        </tr>
+                        <tr>
+                            <td>Une demi-journée (4h)</td> <td>240 €</td>
+                        </tr>
+                        <tr>
+                            <td>Une journée (8h)</td> <td>450 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="description">
+                <p>(Optionnel) Nous pouvons réaliser le montage des rushs vidéo au besoin :</p>
+            </div>
+            <div class="montage-container">
+                <table class="montage-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de montage vidéo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>70 € / heure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 6 : "Tourisme" -->
+        <div class="step" data-step="6" data-previous-step="2" aria-labelledby="titre_simulation_6">
+            <div class="titre_simulation" id="titre_simulation_6">NOS PRESTATIONS DESTINÉES AUX ÉTABLISSEMENTS DE TOURISME</div>
+            <p class="sous-titre">(RESTAURANT, HÔTEL, CAMPING, LIEUX DE RÉCEPTION…)</p>
+            <div class="description">
+                <p>Vous souhaitez mettre en valeur votre établissement touristique ? Vous êtes au bon endroit ! Voici les prestations que nous proposons pour mettre en valeur votre établissement :</p>
+            </div>
+            <div class="image-container">
+                <img src="image/tarifs_tourisme.jpg" alt="Tarifs pour les prestations touristiques" class="image-tarifs2" onclick="openFullscreen(this)">
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 7 : "Evenements" -->
+        <div class="step" data-step="7" data-previous-step="2" aria-labelledby="titre_simulation_7">
+            <div class="titre_simulation" id="titre_simulation_7">PRISE DE VUES LORS D’ÉVÉNEMENTS</div>
+            <p class="sous-titre">(SPORTS, CONCERTS, RASSEMBLEMENTS...)</p>
+            <div class="description">
+                <p>Comme chaque événement est unique, nous pratiquons des tarifs à l’heure, à la demi-journée ou à la journée selon vos besoins :</p>
+            </div>
+            <div class="table-container">
+                <table class="tarifs-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de prise de vues</th> <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Horaire</td> <td>70 € / heure</td>
+                        </tr>
+                        <tr>
+                            <td>Une demi-journée (4h)</td> <td>240 €</td>
+                        </tr>
+                        <tr>
+                            <td>Une journée (8h)</td> <td>450 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="description">
+                <p>(Optionnel) Nous pouvons réaliser le montage des rushs vidéo au besoin :</p>
+            </div>
+            <div class="montage-container">
+                <table class="montage-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de montage vidéo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>70 € / heure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 8 : "Autres prestations" -->
+        <div class="step" data-step="8" data-previous-step="2" aria-labelledby="titre_simulation_8">
+            <div class="titre_simulation" id="titre_simulation_8">AUTRES PRESTATIONS</div>
+            <div class="autres-prestations">
+                <p>Aïe… il semblerait que vous n’ayez pas trouver la prestation souhaitée via notre simulateur.</p><br>
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un devis gratuit et personnalisé :</p>
+            </div>
+            <div class="contact-section">
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 9 : "Immo particulier" -->
+        <div class="step" data-step="9" data-previous-step="3" aria-labelledby="titre_simulation_9">
+            <div class="titre_simulation" id="titre_simulation_9">VALORISATION IMMOBILIERE</div>
+            <p class="sous-titre">Prise de vues aériennes de votre propriété</p>
+            <div class="image-container">
+                <img src="image/tarifs_particulier_immo.jpg" alt="Tarifs pour les prestations immo particulier" class="image-tarifs2" onclick="openFullscreen(this)">
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 10 : "Evenements particulier" -->
+        <div class="step" data-step="10" data-previous-step="3" aria-labelledby="titre_simulation_10">
+            <div class="titre_simulation" id="titre_simulation_10">PRISE DE VUES LORS D'UN ÉVÉNEMENTS</div>
+            <p class="sous-titre">Prise de vues aériennes lors de vos événements divers (familiaux, sportifs, festifs...)</p>
+            <div class="description">
+                <p>Comme chaque événement est unique, nous pratiquons des tarifs à l’heure, à la demi-journée ou à la journée selon vos besoins :</p>
+            </div>
+            <div class="table-container">
+                <table class="tarifs-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de prise de vues</th> <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Horaire</td> <td>70 € / heure</td>
+                        </tr>
+                        <tr>
+                            <td>Une demi-journée (4h)</td> <td>240 €</td>
+                        </tr>
+                        <tr>
+                            <td>Une journée (8h)</td> <td>450 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="description">
+                <p>(Optionnel) Nous pouvons réaliser le montage des rushs vidéo au besoin :</p>
+            </div>
+            <div class="montage-container">
+                <table class="montage-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de montage vidéo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>70 € / heure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+         <!-- Choix 11 : "Audiovisuel Amateur" -->
+         <div class="step" data-step="11" data-previous-step="3" aria-labelledby="titre_simulation_11">
+            <div class="titre_simulation" id="titre_simulation_11">PROJET AUDIOVISUEL AMATEUR</div>
+            <p class="sous-titre">Prise de vues aériennes pour votre projet audiovisuel amateur (publicité, clip vidéo, court métrage, films, documentaires...)</p>
+            <div class="description">
+                <p>Comme chaque projet audiovisuel est unique, nous pratiquons des tarifs à l’heure, à la demi-journée ou à la journée selon vos besoins :</p>
+            </div>
+            <div class="table-container">
+                <table class="tarifs-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de prise de vues</th> <th>Tarifs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Horaire</td> <td>60 € / heure</td>
+                        </tr>
+                        <tr>
+                            <td>Une demi-journée (4h)</td> <td>200 €</td>
+                        </tr>
+                        <tr>
+                            <td>Une journée (8h)</td> <td>380 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="description">
+                <p>(Optionnel) Nous pouvons réaliser le montage des rushs vidéo au besoin :</p>
+            </div>
+            <div class="montage-container">
+                <table class="montage-table">
+                    <thead>
+                        <tr>
+                            <th>Prestation de montage vidéo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>70 € / heure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+
+        <!-- Choix 12 : "Formation au pilotage de drones pour particulier" -->
+        <div class="step" data-step="12" data-previous-step="3" aria-labelledby="titre_simulation_12">
+            <div class="titre_simulation" id="titre_simulation_12">FORMATION AU PILOTAGE DE DRONES</div>
+            <div class="description">
+                <p>Nous proposons une formation au pilotage de drones dans un espace ouvert et en suivant les réglementations en vigueur en France.</p>
+                <p>Dès la première heure de formation, nous incluons des supports de formation, la présentation des differents plans réalisables au drone et le vol avec notre drone professionnel ou votre propre appareil.</p>
+            </div>
+            <div class="description">
+                <p>Voici nos tarifs de formation : </p>
+            </div>
+            <div class="montage-container">
+                <table class="montage-table">
+                    <thead>
+                        <tr>
+                            <th>Tarif horaire de formation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>70 € / heure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>        
+            <div class="contact-section">
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+            <a href="#" class="retour">← Retour à l’étape précédente</a>
+        </div>
+    </div>
+</section>
+<script src="script.js" defer></script>
+</body>
+</html>
