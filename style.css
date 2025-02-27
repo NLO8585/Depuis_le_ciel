@@ -30,14 +30,15 @@ body {
     overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 .sommaire {
-    list-style: none;
-    float: right;
-    display: flex;
-    margin-top: 40px;
-    margin-right: 10px;
-    font-size: 14px;
-    flex-wrap: wrap;
+list-style: none;
+float: right;
+display: flex;
+margin-top: 40px;
+margin-right: 10px;
+font-size: 14px;
+flex-wrap: wrap;
 }
+ 
 nav ul.sommaire {
     position: relative;
     z-index: 10;
@@ -74,7 +75,7 @@ nav ul.sommaire {
     position: absolute;
     top: 30px;
     right: 30px;
-    z-index: 20;
+    z-index: 100;
 }
 
 .hamburger span {
@@ -100,7 +101,18 @@ nav ul.sommaire {
         background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
         align-items: center;
-        display: none; /* Caché par défaut */
+        visibility: hidden; /* Masquer par défaut */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        pointer-events: none; /* Désactive l'interaction quand le menu est fermé */
+    }
+
+    .sommaire.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* Activer les interactions */
     }
 
     .sommaire li {
@@ -112,11 +124,6 @@ nav ul.sommaire {
     .sommaire li a {
         display: block;
         width: 100%;
-    }
-    
-    .sommaire.active {
-        opacity: 1;
-        display: flex;
     }
 
     /* Animation du hamburger en croix */
@@ -132,6 +139,8 @@ nav ul.sommaire {
         transform: translateY(-10px) rotate(-45deg);
     }
 }
+
+
 
 h1 {
     margin: 0;

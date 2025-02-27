@@ -127,27 +127,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
-/* Hamburger menu*/
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("Script chargé");
+
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector(".sommaire");
 
+  if (!hamburger || !menu) {
+      console.error("Élément introuvable !");
+      return;
+  }
+
   function toggleMenu(event) {
-      event.stopPropagation();
+      console.log("Touché détecté sur le hamburger");
+      event.stopPropagation();  // Empêche la propagation de l'événement pour éviter de déclencher la fermeture du menu
       menu.classList.toggle("active");
       hamburger.classList.toggle("active");
   }
 
   function closeMenu(event) {
-      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+      // Vérifie si un clic a eu lieu à l'extérieur du menu ou du hamburger
+      if (menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !hamburger.contains(event.target)) {
+          // Si oui, on ferme le menu
           menu.classList.remove("active");
           hamburger.classList.remove("active");
+          console.log("Menu fermé");
       }
   }
 
-  // Gérer les événements pour les écrans tactiles et desktop
-  hamburger.addEventListener("click", toggleMenu);
-  hamburger.addEventListener("touchstart", toggleMenu); // Support tactile
-  document.addEventListener("click", closeMenu);
-  document.addEventListener("touchstart", closeMenu); // Support tactile
+  // Écouteur d'événement pour toucher sur le hamburger
+  hamburger.addEventListener("touchstart", function (event) {
+    event.preventDefault(); // Empêche les autres comportements par défaut du touché
+    toggleMenu(event);
+  });
+
+  // Fermeture du menu si un touché (ou clic) est effectué à l'extérieur
+  document.addEventListener("touchstart", closeMenu);
 });
