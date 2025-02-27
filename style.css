@@ -19,19 +19,35 @@ body {
 /* L'ENTETE */
 .header_accueil {
     z-index: 2;
-    background-attachment: fixed;
+    position: relative;
     height: 100vh;
-    background:
+    background: 
         linear-gradient(to bottom, #000000c7, rgba(39, 38, 38, 0.456)),
-        center 10% / cover url("image/Fond_drone.webp") fixed;
+        url("image/Fond_drone.webp");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Fixe le problème de responsivité */
     font-family: "Poppins";
     font-weight: 600;
     overflow-x: hidden; /* Empêche le défilement horizontal */
+
+    
 }
+
+/* Ajustements pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .header_accueil {
+        height: 100vh; /* Toujours pleine hauteur */
+        background-size: auto 100vh; /* Force l'image à prendre toute la hauteur */
+        background-position: center; /* Centre l'image */
+    }
+}
+
 .sommaire {
 list-style: none;
-float: right;
+justify-content: flex-end;
+width:100%;
 display: flex;
 margin-top: 40px;
 margin-right: 10px;
@@ -40,7 +56,7 @@ flex-wrap: wrap;
 }
  
 nav ul.sommaire {
-    position: relative;
+    position: absolute;
     z-index: 10;
 }
 .sommaire li a {
@@ -69,7 +85,7 @@ nav ul.sommaire {
     display: none; /* Caché par défaut */
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
+    width: 25px;
     height: 25px;
     cursor: pointer;
     position: absolute;
@@ -158,10 +174,17 @@ h2 {
 }
 
 .header-container {
-    position: relative;
-    text-align: center;
-    padding-top: 40vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    height: 100vh; /* Hauteur = 100% de la fenêtre */
+    text-align: center; /* Centre le texte */
+    width: 100%;
+    z-index: 5;
 }
+
+
 .Bienvenue {
     color: #ffffff;
     font-size: clamp(18px, 4vw, 32px); /* Taille adaptable */
@@ -179,100 +202,107 @@ h2 {
     margin-bottom: 0px;
     letter-spacing: 0.5px;
 }
+.location {
+    display: flex;
+    align-items: flex-start; /* Permet d'aligner l'icône sur la première ligne du texte */
+    justify-content: center;
+    padding-top: 20px;  
+    gap: 6px; /* Évite le margin-right sur l'icône et garde un espacement constant */
+    flex-wrap: wrap; /* Permet au texte de passer à la ligne sur petits écrans */
+    max-width: 80%;
+    margin: 0 auto; /* Centre la section */
+}
+.intro {
+color: #ffffff;
+font-size: clamp(12px, 3vw, 14px);
+font-style: normal;
+font-weight: 300;
+letter-spacing: 0.8px;
+font-family: 'Ortica_300', sans-serif;
+text-align: center;
+vertical-align: middle;
+padding-left: 0;
+padding-bottom: 20px;
+max-width: 80%;
+} 
+.location-icon {
+    width: clamp(12px, 3vw, 14px); /* Ajuste la taille de l'icône de façon fluide */
+    height: auto;
+    flex-shrink: 0; /* Empêche l'icône de se redimensionner trop sur petits écrans */
+}
+.location span {
+    color: #ffffff;
+    font-size: clamp(12px, 4vw, 14px);
+    font-family: 'Ortica_300', sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+}
 @media screen and (max-width: 768px) {
-    .Bienvenue {
-        font-size: clamp(14px, 4vw, 24px); /* Ajustement progressif */
-        letter-spacing: 0.04em; /* Légère réduction de l'espacement */
-        text-align: center; /* Centre le texte */
-        max-width: 80%; /* 🔥 Limite la largeur des textes */
-        margin: 0 auto; /* 🔥 Centre horizontalement */
+    .location {
+        flex-wrap: nowrap; /* Évite que l'icône passe toute seule sur une ligne */
+        align-items: center; /* Recentre verticalement */
+        max-width: 90%;
     }
 
-    .intro {
-        font-size: clamp(16px, 5vw, 22px); /* Adapte la taille sur petits écrans */
-        letter-spacing: 0.05em; /* Réduit encore l'espacement */
-        text-align: center; /* Centre le texte à l'intérieur */
-        max-width: 80%; /* 🔥 Limite la largeur des textes */
-        margin: 0 auto; /* 🔥 Centre horizontalement */
-    }
-    .location{
-        font-size: clamp(14px, 4vw, 24px); /* Ajustement progressif */
-        letter-spacing: 0.04em; /* Légère réduction de l'espacement */
-        margin: auto;
-        max-width: 80%; /* 🔥 Limite la largeur des textes */
+    .location-icon {
+        width: clamp(10px, 2.5vw, 12px); /* Réduit un peu plus l'icône */
     }
 
-
-    /* ✅ Centrage et réorganisation du contenu */
-    .header-container {
-        text-align: center;
+    .location span {
+        font-size: clamp(10px, 3.5vw, 12px); /* Ajuste la taille du texte */
     }
-
-    /* ✅ Logo ajusté pour ne pas trop prendre de place */
-    .logopetit img {
-        max-height: 20px;
-        left: 10px;
-        top: 10px;
-    }
-
     /* ✅ Ajuste l'espacement du menu */
     .sommaire {
         top: 50px;
         padding: 10px 0;
     }
 }
+
 /* LOGO */
+.logopetit {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+}
+
+.logopetit a {
+    display: inline-block; /* Permet à <a> de s’ajuster à l’image */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 .logopetit img {
     max-height: 22px;
-        position: absolute;
-        top: 40px;
-        left: 30px;
+    display: block;
+    width: 100%; /* Permet à l'image de remplir l'ancre */
+    height: auto;
 }
+
+/* Ajustement pour mobile */
 @media screen and (max-width: 768px) {
+    .logopetit {
+        top: 30px;
+        left: 30px;
+    }
+
     .logopetit img {
         max-height: 18px;
     }
 }
-.logopetit a {
-        display: inline-block;
-        cursor: pointer;
-}
-.location {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 20px;   
-    }
-.intro {
-    color: #ffffff;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    letter-spacing: 1px;
-    font-family: 'Ortica_300', sans-serif;
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 0;
-} 
-.location-icon {
-        width: 14px;
-        height: auto;
-        margin-right: 4px;
-}
-.location span {
-        color: #ffffff;
-        font-size: 14px;
-        font-family: 'Ortica_300', sans-serif;
-        font-weight: 200;
-        letter-spacing: 1px;
-}
+
+
+
 .button-container1 {
     margin: 0;
     transform: rotate(-90deg);
     position: absolute;
-    top: 80vh;
+    top: 90vh;
     left: 0; 
+    padding: 0;
     transform-origin: top left; 
 }
 .button_simulateur:hover {
@@ -295,13 +325,12 @@ h2 {
     border-radius: 0px 0px 7px 7px;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0;
-    font-family: din-condensed-web;
-    letter-spacing: 1px;
+    font-family: 'Ortica_300', sans-serif;
+    letter-spacing: 0.6px;
     text-align: center; /* Centre le texte à l'intérieur */
+    font-size: clamp(8px, 1.2vw, 12px);
+    padding: clamp(2px, 0.4vw, 6px) clamp(4px, 1vw, 10px);
 
-    /* 📌 Ajustement plus radical pour réduire la taille sur mobile */
-    font-size: clamp(10px, 1.5vw, 14px);
-    padding: clamp(3px, 0.6vw, 8px) clamp(6px, 1.5vw, 14px);
 }
 
 /* 📌 Réduction encore plus forte pour écrans <= 768px */
@@ -310,6 +339,10 @@ h2 {
         font-size: 9px; /* Réduction fixe pour petits écrans */
         padding: 4px 10px; /* Padding fixe pour éviter un bouton trop grand */
     }
+    .button-container1 {
+        left: -5px; /* On s'assure que le conteneur reste collé à gauche */
+        right: auto; /* Évite un recentrage automatique */
+    }
 }
 
 /* 📌 Encore plus petit pour écrans <= 414px (iPhone XR, SE, etc.) */
@@ -317,6 +350,10 @@ h2 {
     .button_simulateur {
         font-size: 8px;
         padding: 3px 8px;
+    }
+    .button-container1 {
+        left: -5px; /* On s'assure que le conteneur reste collé à gauche */
+        right: auto; /* Évite un recentrage automatique */
     }
 }
 

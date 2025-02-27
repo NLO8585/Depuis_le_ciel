@@ -128,8 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script chargé");
 
