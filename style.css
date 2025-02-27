@@ -241,6 +241,25 @@ max-width: 80%;
     word-wrap: break-word;
 }
 @media screen and (max-width: 768px) {
+    /* ✅ Centrage et réorganisation du contenu */
+        .header-container {
+        text-align: center;
+    }
+    .Bienvenue {
+        font-size: clamp(12px, 4vw, 16px); /* Ajustement progressif */
+        letter-spacing: 0.04em; /* Légère réduction de l'espacement */
+        text-align: center; /* Centre le texte */
+        max-width: 90%; /* 🔥 Limite la largeur des textes */
+        margin: 0 auto; /* 🔥 Centre horizontalement */
+    }
+
+    .intro {
+        font-size: clamp(10px, 5vw, 12px); /* Adapte la taille sur petits écrans */
+        letter-spacing: 0.05em; /* Réduit encore l'espacement */
+        text-align: center; /* Centre le texte à l'intérieur */
+        max-width: 90%; /* 🔥 Limite la largeur des textes */
+        margin: 0 auto; /* 🔥 Centre horizontalement */
+    }
     .location {
         flex-wrap: nowrap; /* Évite que l'icône passe toute seule sur une ligne */
         align-items: center; /* Recentre verticalement */
@@ -260,7 +279,6 @@ max-width: 80%;
         padding: 10px 0;
     }
 }
-
 /* LOGO */
 .logopetit {
     position: absolute;
@@ -278,7 +296,6 @@ max-width: 80%;
 .logopetit img {
     max-height: 22px;
     display: block;
-    width: 100%; /* Permet à l'image de remplir l'ancre */
     height: auto;
 }
 
