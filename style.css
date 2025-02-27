@@ -184,6 +184,10 @@ h2 {
     z-index: 5;
 }
 
+.header-container2 {
+    display: flex;
+    z-index: 5;
+}
 
 .Bienvenue {
     color: #ffffff;
@@ -430,9 +434,9 @@ section#Contact {
 
 .container {
     flex: 1;
-    max-width: 600px;
+    max-width: 400px;
     padding: 30px 0px;
-    margin-left: 200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -444,7 +448,8 @@ section#Contact .right-section {
     font-size: 14px;
     max-width: 500px;
     padding: 40px 0px;
-    margin-right: 150px;
+    margin-right: 100px;
+    max-width: 500px; /**/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -616,19 +621,116 @@ section#Contact .container form .form-row.two-columns > div label {
     max-width: 50%; /* Empêche qu'un seul bloc prenne trop de place */
 }
 
-@media screen and (max-width: 900px) {
-    .container, .right-section {
-        max-width: 100%; /* Passe en colonne sur petits écrans */
-    }
-    section#Contact {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .right-section .title:nth-of-type(2) {
     margin-top: 40px; /* Ajuste selon l'espacement désiré */
 }
+
+/* Médias queries pour les tablettes */
+@media screen and (max-width: 1024px) {
+    /* Passe en disposition en colonne pour la section */
+    section#Contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px; /* Espacement adapté pour tablette */
+    }
+    section#Contact .right-section {
+        margin-right: 0px;
+        padding: 0px;
+    }
+
+    /* Formulaire et section droite sur toute la largeur */
+    .container, .right-section {
+        max-width: 100%;
+    }
+
+    /* Dans le formulaire, les champs doivent être en une seule colonne */
+    section#Contact .container form .form-row.two-columns {
+        display: block; /* Passe les éléments deux colonnes en une seule colonne */
+    }
+
+    /* Ajuster la taille des titres */
+    section#Contact .container .title h3,
+    section#Contact .right-section .title h3 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    /* Bouton prend toute la largeur sur les tablettes */
+    section#Contact .container form button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Les titres dans la section droite */
+    .right-section .title {
+        font-size: 16px;
+    }
+
+    /* Ajuster la taille des textes dans la section droite */
+    .right-section p {
+        font-size: 1em;
+        max-width: 80%;
+    }
+}
+
+/* Médias queries pour les téléphones */
+@media screen and (max-width: 600px) {
+    /* Passe en disposition en colonne pour la section */
+    section#Contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Espacement plus petit pour les téléphones */
+    }
+        section#Contact .right-section {
+        margin-right: 0px;
+        padding: 0px;
+    }
+
+    /* Formulaire et section droite sur toute la largeur */
+    .container, .right-section {
+        max-width: 100%;
+        padding: 20px; /* Réduit le padding pour les petits écrans */
+    }
+
+    /* Dans le formulaire, les champs doivent être en une seule colonne */
+    section#Contact .container form .form-row.two-columns {
+        display: block; /* Passe les éléments deux colonnes en une seule colonne */
+    }
+
+    /* Ajuster la taille des titres */
+    section#Contact .container .title h3,
+    section#Contact .right-section .title h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    /* Bouton prend toute la largeur sur les téléphones */
+    section#Contact .container form button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Les titres dans la section droite */
+    .right-section .title {
+        font-size: 14px;
+    }
+
+    /* Ajuster la taille des textes dans la section droite */
+    .right-section p {
+        font-size: 0.9em;
+        max-width: 80%;
+    }
+
+    /* Ajuster les espacements dans la section de contact */
+    .right-section .contact_gras {
+        font-size: 1em;
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+
 
 /* NOS SERVICES */
 .Nos_services {
@@ -1118,12 +1220,6 @@ body {
 }
 
 /* SIMULATEUR */
-.title_simulation h6 {
-    font-size: 20px;
-    margin: 0;
-    text-align: center;
-    color: #ffffff;
-}
 body.simulation {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -1133,9 +1229,98 @@ body.simulation {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Utiliser min-height au lieu de height */
     overflow: hidden;
-  }
+}
+
+.header_simulation {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #00475b, #001d2a);
+    color: #ffffff;
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.logopetit2 {
+    flex-shrink: 0;
+}
+.logopetit2 img {
+    height: 60px;
+    max-width: 120px;
+}
+
+.title_simulation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_simulation h6 {
+    font-size: 20px;
+    margin: 0;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* 📱 Responsive : Tablette et Mobile */
+@media screen and (max-width: 1024px) {
+    .header_simulation {
+        flex-direction: column; /* Passe en mode colonne */
+        height: auto; /* Hauteur auto pour éviter l'écrasement */
+        padding-top: 15px;
+        align-items: center;
+        justify-content: center;
+        text-align: center; /* Centre le texte */
+        gap: 10px; /* Ajoute un espace entre les éléments */
+    }
+
+    .logopetit2 {
+        width: 100%; /* Prend toute la largeur */
+        display: flex;
+        justify-content: center; /* Centre le logo */
+        margin-bottom: 5px; /* Ajustement de l'espace */
+    }
+
+    .title_simulation {
+        width: 100%; /* Prend toute la largeur */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title_simulation h6 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .logopetit2 img {
+        height: 50px;
+        max-width: 100px;
+    }
+}
+
+/* 📱 Responsive : Mobile */
+@media screen and (max-width: 768px) {
+    .header_simulation {
+        gap: 8px; /* Réduit l'espace entre logo et texte */
+    }
+
+    .title_simulation h6 {
+        font-size: 14px;
+    }
+
+    .logopetit2 img {
+        height: 40px;
+        max-width: 80px;
+    }
+}
+
+
 #questionnaire {
     width: 80%;
     max-width: 600px;
@@ -1362,17 +1547,6 @@ body.simulation {
     top: 40px;
     left: 30px;
     cursor: pointer;
-}
-.header_simulation {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #00475b, #001d2a);
-    color: #ffffff;
-    position: relative;
-    padding: 0;
 }
 
 /* MENTIONS LEGALES */
@@ -1729,7 +1903,7 @@ body.simulation {
     flex-direction: column;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    padding: 40px 20px;
+    height: 100vh;
 }
 
 /* Titre de la section */
@@ -1781,10 +1955,9 @@ body.simulation {
 .services {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
-    gap: 20px;
+    gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    padding-top: 20px;
 }
 
 /* Bloc des prestations */
@@ -1799,7 +1972,7 @@ body.simulation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 220px; /* Réduction pour laisser plus de marges */
+    max-width: 300px; /* Réduction pour laisser plus de marges */
 }
 
 .service-block-presta:hover {
@@ -1810,16 +1983,16 @@ body.simulation {
 /* Optimisation des images */
 .service-block-presta img {
     width: 100%;
-    height: 110px; /* Réduction de la hauteur pour plus d'espace */
+    height: 120px; /* Réduction de la hauteur pour plus d'espace */
     object-fit: cover;
 }
 
 /* Titres des prestations */
 .service-block-presta h3 {
     color: #222;
-    font-size: 14px; /* Taille plus petite */
+    font-size: 16px; /* Taille plus petite */
     font-weight: 600;
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 /* Bouton "En savoir plus" */
