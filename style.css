@@ -1851,8 +1851,8 @@ body.simulation {
 
     .service-block-presta {
         max-width: 200px;
-        min-height: 230px; /* Hauteur plus réduite */
-        padding: 10px 8px 15px;
+        min-height: 170px; /* Hauteur plus réduite */
+        padding: 0px 0px 15px;
     }
 
     .service-block-presta img {
@@ -1878,8 +1878,8 @@ body.simulation {
 
     .service-block-presta {
         max-width: 170px;
-        min-height: 200px; /* Encore plus compact */
-        padding: 8px 5px 12px;
+        min-height: 100px; /* Encore plus compact */
+        padding: 0px 0px 12px;
     }
 
     .service-block-presta img {
@@ -2059,6 +2059,7 @@ body.simulation {
     }
     .contact-info p {
         font-size: 0.9rem; /* Réduire la taille de la police des informations de contact */
+
     }
     .social-icon img {
         width: 35px; /* Réduire la taille des icônes */
@@ -2076,10 +2077,11 @@ body.simulation {
         font-size: 0.9rem; /* Réduire davantage la taille du texte */
     }
     .contact-info p {
+
         font-size: 0.85rem; /* Réduire la taille de la police des informations de contact */
     }
     .contact-info {
-        align-items: flex-start; /* Aligner à gauche pour plus d'espace */
+        text-align: center;
     }
     .social-icons {
         gap: 10px; /* Réduire l'espace entre les icônes */
@@ -2194,15 +2196,20 @@ body.simulation {
 
 @media (max-width: 480px) {
     .photo {
-        max-width: 100%;
+        max-width: 70%;
+        margin-bottom: 0px;
     }
-    
+    .qui-suis-je {
+        padding-bottom: 10px;
+        padding-top: 25px;
+    }
     .texte h2 {
         font-size: 22px;
     }
     
     .texte p {
         font-size: 14px;
+        text-align: center;
     }
 }
 /* ARROW FLECHE SCROLL ACCUEIL */
