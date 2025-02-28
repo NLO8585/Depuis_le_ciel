@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
-
+/* HAMB MIAM*/
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script chargé");
 
@@ -139,31 +139,43 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
   }
 
-  function toggleMenu(event) {
-      console.log("Touché détecté sur le hamburger");
-      event.stopPropagation();  // Empêche la propagation de l'événement pour éviter de déclencher la fermeture du menu
-      menu.classList.toggle("active");
-      hamburger.classList.toggle("active");
-  }
+  let isMenuOpen = false;
 
-  function closeMenu(event) {
-      // Vérifie si un clic a eu lieu à l'extérieur du menu ou du hamburger
-      if (menu.classList.contains("active") &&
-          !menu.contains(event.target) &&
-          !hamburger.contains(event.target)) {
-          // Si oui, on ferme le menu
+  function toggleMenu(event) {
+      event.preventDefault(); // Empêche les comportements natifs
+      event.stopPropagation(); // Évite d'affecter d'autres éléments
+
+      if (isMenuOpen) {
           menu.classList.remove("active");
           hamburger.classList.remove("active");
           console.log("Menu fermé");
+      } else {
+          menu.classList.add("active");
+          hamburger.classList.add("active");
+          console.log("Menu ouvert");
+      }
+
+      isMenuOpen = !isMenuOpen;
+  }
+
+  function closeMenu(event) {
+      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+          console.log("Fermeture du menu (clic/touch en dehors)");
+          menu.classList.remove("active");
+          hamburger.classList.remove("active");
+          isMenuOpen = false;
       }
   }
 
-  // Écouteur d'événement pour toucher sur le hamburger
-  hamburger.addEventListener("touchstart", function (event) {
-    event.preventDefault(); // Empêche les autres comportements par défaut du touché
-    toggleMenu(event);
-  });
+  // Blocage des événements parasites
+  hamburger.addEventListener("touchstart", toggleMenu, { passive: false });
+  hamburger.addEventListener("touchend", (e) => e.preventDefault(), { passive: false });
 
-  // Fermeture du menu si un touché (ou clic) est effectué à l'extérieur
   document.addEventListener("touchstart", closeMenu);
 });
+
+
+
+
+
+
