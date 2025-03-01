@@ -85,12 +85,12 @@ nav ul.sommaire {
     display: none; /* Caché par défaut */
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 25px;
+    right: 25px;
     z-index: 100;
 }
 
