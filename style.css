@@ -72,7 +72,7 @@ nav ul.sommaire {
     border-radius: 4px;
 }
 .sommaire li a:hover {
-    background: rgb(255, 94, 77);
+    background: rgb(200, 70, 50);
     color: black;
 }
 .sommaire li.active a {
@@ -419,16 +419,16 @@ max-width: 80%;
 }
 .button_simulateur:hover {
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 94, 77);
-    border-bottom: 1px solid rgb(255, 94, 77);
-    border-left: 1px solid rgb(255, 94, 77);
-    border-right: 1px solid rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
+    border-bottom: 1px solid rgb(200, 70, 50);
+    border-left: 1px solid rgb(200, 70, 50);
+    border-right: 1px solid rgb(200, 70, 50);
 }
 
 .button_simulateur {
     display: inline-block;
     font-weight: 100;
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     color: rgb(255, 255, 255);
     text-decoration: none;
     border-bottom: 1px solid rgb(255, 255, 255);
@@ -1280,7 +1280,7 @@ body {
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 700;
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     color: rgb(0, 0, 0);
     text-decoration: none;
     border: 2px solid rgb(0, 0, 0);
@@ -1290,7 +1290,7 @@ body {
     margin-top: 30px;
 }
 .button_service_accueil:hover {
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     color: rgb(255, 255, 255);
     font-weight: 100;
     transform: scale(1.02);
@@ -1302,7 +1302,7 @@ body {
     src: url('fonts/ORTICA/Ortica_300.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 @font-face {
     font-family: 'Poppins';
@@ -1811,7 +1811,7 @@ body.simulation {
     color: #ffffff;
     padding-bottom: 20px;
     font-family: 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* Conteneur du footer */
@@ -1838,26 +1838,30 @@ body.simulation {
 /* Première section du footer (centrée horizontalement mais texte justifié) */
 .footer-section:first-child {
     flex: 2;
-    max-width: 400px;
+    max-width: 300px;
     max-width: 80%;
     margin: 0 auto; /* Centre horizontalement */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centre tout sauf le texte */
+    font-size: 13px;
 }
 
 /* Justifier le texte mais garder la colonne centrée */
 .footer-section:first-child p {
-    text-align: justify;
-    max-width: 100%; /* S'assurer que le texte ne dépasse pas */
+    max-width: 80%; /* S'assurer que le texte ne dépasse pas */
+    font-size: 13px;
+    text-align: left justify;
+    text-align-last:auto;
+    padding-bottom: 10px;
 }
 
 /* Titres des sections */
 .footer-section h4 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-bottom: 15px;
-    color: rgb(255, 94, 77);
-    border-bottom: 2px solid rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
+    border-bottom: 2px solid rgb(200, 70, 50);
     display: inline-block;
     padding-bottom: 5px;
     text-align: center;
@@ -1881,7 +1885,7 @@ body.simulation {
 }
 
 .footer-section ul li a:hover {
-    color: rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
     transform: translateX(5px);
 }
 
@@ -1897,7 +1901,7 @@ body.simulation {
     max-width: 150px;
     height: auto;
     border-radius: 8px;
-    padding: 5px;
+    padding: 15px;
 }
 
 /* Liens de contact */
@@ -1909,7 +1913,7 @@ body.simulation {
 }
 
 .footer-section a:hover {
-    color: rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
 }
 
 /* Réseaux sociaux */
@@ -1949,7 +1953,7 @@ body.simulation {
 
 /* Liens du bas de page */
 .footer-bottom a {
-    color: rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
     text-decoration: none;
     margin: 0 10px;
     font-size: clamp(0.7rem, 1.1vw, 0.9rem);
@@ -1964,7 +1968,7 @@ body.simulation {
 @media (max-width: 1024px) {
     .footer-container {
         justify-content: center;
-        gap: 30px;
+        gap: 15px;
         
     }
 
@@ -1984,6 +1988,7 @@ body.simulation {
     .footer-container {
         flex-direction: column;
         align-items: center;
+        gap: 0px;
     }
 
     .footer-section {
@@ -2023,7 +2028,7 @@ body.simulation {
     display: block;
     width: 120px;
     height: 3px;
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     margin: 8px auto 0;
     border-radius: 3px;
 }
@@ -2046,7 +2051,7 @@ body.simulation {
     display: block;
     width: 120px;
     height: 3px;
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     margin: 8px auto 0;
     border-radius: 3px;
 }
@@ -2124,8 +2129,8 @@ body.simulation {
 }
 
 .btn-more:hover {
-    background-color: rgb(255, 94, 77);
-    border-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
+    border-color: rgb(200, 70, 50);
     color: white;
 }
 
@@ -2331,7 +2336,7 @@ body.simulation {
 } 
 
 .contact-info a { 
-    color: rgb(255, 94, 77);
+    color: rgb(200, 70, 50);
     text-decoration: none; 
     font-weight: bold; 
 } 
@@ -2356,7 +2361,7 @@ body.simulation {
 /* Bouton Contact */
 .contact-button { 
     display: inline-block; 
-    background: rgb(255, 94, 77); 
+    background: rgb(200, 70, 50); 
     color: white; 
     padding: 8px 16px; 
     border-radius: 8px; 
@@ -2366,7 +2371,7 @@ body.simulation {
 } 
 
 .contact-button:hover { 
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     transform: scale(1.05); /* Effet de zoom sur le bouton */
 } 
 
@@ -2471,7 +2476,7 @@ body.simulation {
 .cta-button { 
     display: inline-block;
     font-size: 13px;
-    background: rgb(255, 94, 77); 
+    background: rgb(200, 70, 50); 
     color: white; 
     padding: 8px 16px; 
     border-radius: 8px; 
@@ -2480,7 +2485,7 @@ body.simulation {
     margin-top: 10px;
 } 
 .cta-button:hover {
-    background-color: rgb(255, 94, 77);
+    background-color: rgb(200, 70, 50);
     transform: scale(1.05); /* Effet de zoom sur le bouton */
 }
 
