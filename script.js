@@ -174,7 +174,39 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("touchstart", closeMenu);
 });
 
+/*Qui-suis je - Mes qualités*/ 
+document.addEventListener("DOMContentLoaded", function () {
+  const qualities = document.querySelectorAll(".quality");
 
+  function checkScroll() {
+      qualities.forEach(quality => {
+          const position = quality.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (position < windowHeight - 50) {
+              quality.classList.add("visible");
+          }
+      });
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll(); // Vérifier au chargement de la page
+});
+
+/*Apparition du sommaire*/
+document.addEventListener("DOMContentLoaded", function () {
+  const sommaire = document.querySelector(".sommaire");
+
+  if (sommaire) { // Vérifie que .sommaire existe
+      if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+          setTimeout(() => {
+              sommaire.classList.add("show");
+          }, 300); // Apparition avec effet
+      } else {
+          sommaire.classList.add("static"); // Affichage immédiat sans animation
+      }
+  }
+});
 
 
 
