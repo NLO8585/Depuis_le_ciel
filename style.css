@@ -20,7 +20,7 @@ body {
 .header_accueil {
     z-index: 2;
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     background: 
         linear-gradient(to bottom, #000000c7, rgba(39, 38, 38, 0.456)),
         url("image/Fond_drone.webp");
@@ -38,8 +38,8 @@ body {
 /* Ajustements pour les petits écrans */
 @media screen and (max-width: 768px) {
     .header_accueil {
-        height: 100vh; /* Toujours pleine hauteur */
-        background-size: auto 100vh; /* Force l'image à prendre toute la hauteur */
+        height: 100dvh; /* Toujours pleine hauteur */
+        background-size: auto 100dvh; /* Force l'image à prendre toute la hauteur */
         background-position: center; /* Centre l'image */
     }
 }
