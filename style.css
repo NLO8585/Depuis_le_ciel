@@ -276,8 +276,6 @@ nav ul.sommaire {
     }
 }
 
-
-
 h1 {
     margin: 0;
     padding: 0;
@@ -301,7 +299,7 @@ h2 {
     flex-direction: column;
     justify-content: center; /* Centre verticalement */
     align-items: center; /* Centre horizontalement */
-    height: 100vh; /* Hauteur = 100% de la fenêtre */
+    height: 100dvh; /* Hauteur = 100% de la fenêtre */
     text-align: center; /* Centre le texte */
     width: 100%;
     z-index: 5;
@@ -442,7 +440,7 @@ max-width: 80%;
     margin: 0;
     transform: rotate(-90deg);
     position: absolute;
-    top: 90vh;
+    top: 90dvh;
     left: 0; 
     padding: 0;
     transform-origin: top left; 
