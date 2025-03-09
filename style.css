@@ -303,6 +303,7 @@ h2 {
     text-align: center; /* Centre le texte */
     width: 100%;
     z-index: 5;
+    overflow: hidden;
 }
 
 .Bienvenue {
