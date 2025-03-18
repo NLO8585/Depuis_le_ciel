@@ -1,4 +1,3 @@
-/*HEADER PAGE D'ACCUEIL*/
 /* GENERAL */
 *{
     padding: 0;
@@ -7,16 +6,15 @@
     letter-spacing: 0.2px;
     font-family: "Montserrat", "Source Sans Pro", sans-serif;
     box-sizing: border-box;
-
 }
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
+    overflow-x: hidden;
 }
-/* L'ENTETE */
+/* ENTETE PAGE D'ACCUEIL */
 .header_accueil {
     z-index: 2;
     position: relative;
@@ -27,63 +25,84 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Fixe le problème de responsivité */
+    background-attachment: scroll;
     font-family: "Poppins";
     font-weight: 600;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-
-    
+    overflow-x: hidden;
+}
+.banniere-defilante {
+    width: 100%;
+    height: 18px;
+    background-color: rgba(200, 70, 50, 0.8); /* 0.8 est le niveau de transparence, ajustable de 0 (complètement transparent) à 1 (complètement opaque) */
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    white-space: nowrap;
+}
+.banniere-defilante p {
+    display: inline-block;
+    animation: defilement 50s linear infinite;
+}
+.banniere-defilante p span {
+    display: inline-block;
+}
+.banniere-defilante p .separateur {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 12px;
 }
 
-/* Ajustements pour les petits écrans */
-@media screen and (max-width: 768px) {
-    .header_accueil {
-        height: 100dvh; /* Toujours pleine hauteur */
-        background-size: auto 100dvh; /* Force l'image à prendre toute la hauteur */
-        background-position: center; /* Centre l'image */
+/* Modification de l'animation */
+@keyframes defilement {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);  /* Ajusté pour correspondre à 3 itérations */
     }
 }
-
 .sommaire {
     list-style: none;
     justify-content: flex-end;
     width: 100%;
     display: flex;
     margin-top: 40px;
-    font-size: 12px;
+    font-size: 13px;
     flex-wrap: wrap;
     position: relative;
     z-index: 1000;
-    padding-right: 20px; /* Ajout d'un padding pour éviter d'être collé au bord */
-    opacity: 0;  /* Caché au début */
-    transform: translateX(50px); /* Déplacé légèrement à droite */
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateX(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
 }
-/* Classe ajoutée par JS pour afficher le menu */
 .sommaire.show {
     opacity: 1;
     transform: translateX(0);
 }
-/* Pour les autres pages : affichage immédiat, sans animation */
 .sommaire.static {
     opacity: 1 !important;
     transform: translateX(0) !important;
     transition: none !important;
 }
-
 nav ul.sommaire {
     position: absolute;
     z-index: 10;
 }
-
 .sommaire li {
-    margin-right: 20px; /* Espacement standard entre les éléments */
+    margin-right: 20px;
 }
-
 .sommaire li:last-child {
-    margin-right: 20px; /* Augmente l'espacement du dernier élément */
+    margin-right: 20px;
 }
-
 .sommaire li a {
     text-decoration: none;
     color: #ffffff;
@@ -95,34 +114,28 @@ nav ul.sommaire {
     cursor: pointer;
     border-radius: 4px;
 }
-
-/* Effet au survol */
 .sommaire li a:hover {
     background: rgb(200, 70, 50);
     color: black;
 }
-
-/* Style pour l'élément actif */
 .sommaire li.active a {
     background: #fff;
     color: #000;
 }
 
-/*Hamburger menu*/
-/* Styles de base du hamburger */
+/* MENU HAMBURGER */
 .hamburger {
-    display: none; /* Caché par défaut */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 20px;
     height: 20px;
     cursor: pointer;
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 35px;
+    right: 35px;
     z-index: 100;
 }
-
 .hamburger span {
     display: block;
     width: 100%;
@@ -131,10 +144,28 @@ nav ul.sommaire {
     border-radius: 3px;
     transition: 0.3s ease-in-out;
 }
-/* ========================== */
-/* ==== Responsive MOBILE ==== */
-/* ========================== */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media screen and (max-width: 768px) {
+    .header_accueil {
+        height: 100dvh;
+        background-size: auto 100dvh;
+        background-position: center;
+    }
+    .banniere-defilante {
+        font-size: 8px;  /* Réduire la taille de la police pour les petits écrans */
+    }
+    .banniere-defilante p {
+        animation: defilement 35s linear infinite; /* Accélérer l'animation sur mobile */
+    }
+    .banniere-defilante p .separateur {
+        font-size: 8px;  /* Réduire la taille des séparateurs sur mobile */
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     .hamburger {
         display: flex;
         width: 24px;
@@ -148,8 +179,8 @@ nav ul.sommaire {
         top: 55px;
         right: 8px;
         width: 30%;
-        max-width: 220px; /* Réduit la largeur */
-        background: rgba(0, 0, 0, 0.6); /* Encore plus transparent */
+        max-width: 220px;
+        background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(6px);
         flex-direction: column;
         align-items: center;
@@ -163,7 +194,6 @@ nav ul.sommaire {
         pointer-events: none;
         margin: 15px 15px;
     }
-
     .sommaire.active {
         visibility: visible;
         opacity: 1;
@@ -171,46 +201,39 @@ nav ul.sommaire {
         pointer-events: auto;
         display: flex;
     }
-    
     .sommaire li {
         width: 100%;
         text-align: center;
     }
-
     .sommaire li a {
         display: block;
         width: 100%;
-        font-size: 10px; /* Taille réduite */
+        font-size: 10px;
         font-weight: 500;
         color: white;
         text-decoration: none;
-        padding: 6px 10px; /* Espacement réduit */
+        padding: 6px 10px;
         border-radius: 6px;
         transition: background 0.2s ease;
     }
-
     .sommaire li a:hover {
         background: rgba(255, 255, 255, 0.1);
     }
-
-    /* Animation du hamburger */
     .hamburger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
 }
-
-/* ========================== */
-/* ==== Responsive TABLETTE ==== */
-/* ========================== */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
     .hamburger {
         display: flex;
         width: 30px;
@@ -219,7 +242,6 @@ nav ul.sommaire {
     .hamburger span{
         height: 4px;
     }
-
     .sommaire {
         position: absolute;
         top: 60px;
@@ -240,7 +262,6 @@ nav ul.sommaire {
         pointer-events: none;
         margin: 15px 15px;
     }
-
     .sommaire.active {
         visibility: visible;
         opacity: 1;
@@ -248,13 +269,11 @@ nav ul.sommaire {
         pointer-events: auto;
         display: flex;
     }
-    
     .sommaire li {
         width: 100%;
         text-align: center;
         padding: 6px 0;
     }
-
     .sommaire li a {
         display: block;
         width: 100%;
@@ -266,25 +285,19 @@ nav ul.sommaire {
         border-radius: 6px;
         transition: background 0.2s ease;
     }
-
     .sommaire li a:hover {
         background: rgba(255, 255, 255, 0.1);
     }
-
-    /* Animation du hamburger */
     .hamburger.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
 }
-
 h1 {
     margin: 0;
     padding: 0;
@@ -295,7 +308,8 @@ h1 {
 }
 h2 {
     color: #225954;
-    padding-left: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 20px;
     font-weight: 600;
 }
@@ -306,28 +320,27 @@ h2 {
 .header-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
-    height: 100dvh; /* Hauteur = 100% de la fenêtre */
-    text-align: center; /* Centre le texte */
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    text-align: center;
     width: 100%;
     z-index: 5;
     overflow: hidden;
     max-height: 100dvh;
 }
-
 .Bienvenue {
     color: #ffffff;
-    font-size: clamp(18px, 4vw, 32px); /* Taille adaptable */
+    font-size: clamp(18px, 4vw, 32px);
     font-style: normal;
     font-weight: 300;
-    letter-spacing: 0.1em; /* Réduit l'espacement */
+    letter-spacing: 0.1em;
     font-family: 'Ortica_300', arial, sans-serif;
     margin: 0;
     text-align: center;
-    display: block; /* Utilisation de block pour éviter les soucis d'alignement */
-    white-space: normal; /* Permet le passage à la ligne */
-    word-wrap: break-word; /* Force le retour à la ligne */
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
 }
 .Bienvenue:first-of-type {
     margin-bottom: 0px;
@@ -335,13 +348,13 @@ h2 {
 }
 .location {
     display: flex;
-    align-items: flex-start; /* Permet d'aligner l'icône sur la première ligne du texte */
+    align-items: flex-start;
     justify-content: center;
     padding-top: 20px;  
-    gap: 6px; /* Évite le margin-right sur l'icône et garde un espacement constant */
-    flex-wrap: wrap; /* Permet au texte de passer à la ligne sur petits écrans */
+    gap: 6px;
+    flex-wrap: wrap;
     max-width: 80%;
-    margin: 0 auto; /* Centre la section */
+    margin: 0 auto;
 }
 .intro {
 color: #ffffff;
@@ -357,9 +370,9 @@ padding-bottom: 20px;
 max-width: 80%;
 } 
 .location-icon {
-    width: clamp(12px, 3vw, 14px); /* Ajuste la taille de l'icône de façon fluide */
+    width: clamp(12px, 3vw, 14px);
     height: auto;
-    flex-shrink: 0; /* Empêche l'icône de se redimensionner trop sur petits écrans */
+    flex-shrink: 0;
 }
 .location span {
     color: #ffffff;
@@ -371,40 +384,38 @@ max-width: 80%;
     max-width: 100%;
     word-wrap: break-word;
 }
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media screen and (max-width: 768px) {
-    /* ✅ Centrage et réorganisation du contenu */
-        .header-container {
+    .header-container {
         text-align: center;
     }
     .Bienvenue {
-        font-size: clamp(12px, 4vw, 16px); /* Ajustement progressif */
-        letter-spacing: 0.04em; /* Légère réduction de l'espacement */
-        text-align: center; /* Centre le texte */
-        max-width: 90%; /* 🔥 Limite la largeur des textes */
-        margin: 0 auto; /* 🔥 Centre horizontalement */
+        font-size: clamp(12px, 4vw, 16px);
+        letter-spacing: 0.04em;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
     }
-
     .intro {
-        font-size: clamp(10px, 5vw, 12px); /* Adapte la taille sur petits écrans */
-        letter-spacing: 0.05em; /* Réduit encore l'espacement */
-        text-align: center; /* Centre le texte à l'intérieur */
-        max-width: 90%; /* 🔥 Limite la largeur des textes */
-        margin: 0 auto; /* 🔥 Centre horizontalement */
+        font-size: clamp(10px, 5vw, 12px);
+        letter-spacing: 0.05em;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
     }
     .location {
-        flex-wrap: nowrap; /* Évite que l'icône passe toute seule sur une ligne */
-        align-items: center; /* Recentre verticalement */
+        flex-wrap: nowrap;
+        align-items: center;
         max-width: 90%;
     }
-
     .location-icon {
-        width: clamp(10px, 2.5vw, 12px); /* Réduit un peu plus l'icône */
+        width: clamp(10px, 2.5vw, 12px);
     }
-
     .location span {
-        font-size: clamp(10px, 3.5vw, 12px); /* Ajuste la taille du texte */
+        font-size: clamp(10px, 3.5vw, 12px);
     }
-    /* ✅ Ajuste l'espacement du menu */
     .sommaire {
         top: 50px;
         padding: 10px 0;
@@ -413,40 +424,48 @@ max-width: 80%;
 /* LOGO */
 .logopetit {
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 30px;
     width:fit-content;
-    z-index: 1100; /* Doit être plus grand que celui de .sommaire */
+    z-index: 1100;
 }
-
 .logopetit a {
-    display: block; /* Permet à <a> de s’ajuster à l’image */
-    pointer-events: auto; /* S'assure que l'élément peut être cliqué */
+    display: block;
+    pointer-events: auto;
     width: 100%;
     height: 100%;
     cursor: pointer;
 }
-
 .logopetit img {
     max-height: 22px;
     display: block;
     height: auto;
 }
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-/* Ajustement pour mobile */
+.logo2 img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+}
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media screen and (max-width: 768px) {
     .logopetit {
-        top: 30px;
-        left: 30px;
+        top: 35px;
+        left: 25px;
     }
-
     .logopetit img {
         max-height: 18px;
     }
 }
-
-
-
 .button-container1 {
     margin: 0;
     transform: rotate(-90deg);
@@ -463,7 +482,6 @@ max-width: 80%;
     border-left: 1px solid rgb(200, 70, 50);
     border-right: 1px solid rgb(200, 70, 50);
 }
-
 .button_simulateur {
     display: inline-block;
     font-weight: 100;
@@ -478,24 +496,24 @@ max-width: 80%;
     margin: 0;
     font-family: 'Nunito', sans-serif;
     word-spacing:4px;
-    text-align: center; /* Centre le texte à l'intérieur */
+    text-align: center;
     font-size: clamp(8px, 1.2vw, 12px);
     padding: clamp(2px, 0.4vw, 6px) clamp(4px, 1vw, 10px);
 
 }
-
-/* 📌 Réduction encore plus forte pour écrans <= 768px */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media screen and (max-width: 768px) {
     .button_simulateur {
-        font-size: 9px; /* Réduction fixe pour petits écrans */
-        padding: 4px 10px; /* Padding fixe pour éviter un bouton trop grand */
+        font-size: 9px;
+        padding: 4px 10px;
     }
     .button-container1 {
-        left: -5px; /* On s'assure que le conteneur reste collé à gauche */
-        right: auto; /* Évite un recentrage automatique */
+        left: -4px;
+        right: auto;
     }
 }
-
 /* 📌 Encore plus petit pour écrans <= 414px (iPhone XR, SE, etc.) */
 @media screen and (max-width: 414px) {
     .button_simulateur {
@@ -503,35 +521,20 @@ max-width: 80%;
         padding: 3px 8px;
     }
     .button-container1 {
-        left: -5px; /* On s'assure que le conteneur reste collé à gauche */
-        right: auto; /* Évite un recentrage automatique */
+        left: -6px;
+        right: auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*HEADER PAGE ANNEXES*/
+/* HEADER PAGE ANNEXES */
 .header {
     z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
-    background: linear-gradient(135deg, #0d0f1a, #1a1d2e);
+    height: 92px;
+    background: #0F111E;
 }
-
 article p {
     color: rgba(0, 0, 0, 0.774);
     padding-left: 15px;
@@ -555,13 +558,12 @@ article p {
 }
 /* CONTACT ET DEVIS */
 section#Contact {
-    background-color: rgb(248, 248, 248); /*gris clair)*/
+    background-color: rgb(248, 248, 248);
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permet aux éléments de passer en colonne si l’espace est insuffisant */
-    gap: 70px; /* Ajoute un espacement entre les blocs */
+    flex-wrap: wrap;
+    gap: 70px;
 }
-
 .container {
     flex: 1;
     max-width: 400px;
@@ -718,7 +720,6 @@ section#Contact .container form .form-row.two-columns > div label {
     text-align: justify;
     margin-bottom: 1rem;
 }
-
 .right-section .title {
     font-size: 18px;
     color: #225954;
@@ -726,7 +727,6 @@ section#Contact .container form .form-row.two-columns > div label {
     text-align: center; 
     width: 100%;
 }
-
 .right-section .contact_gras {
     text-align: center;
     font-size: 1.2em;
@@ -748,121 +748,93 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 .container, .right-section {
     flex: 1;
-    max-width: 50%; /* Empêche qu'un seul bloc prenne trop de place */
+    max-width: 50%;
 }
 
 .right-section .title:nth-of-type(2) {
-    margin-top: 40px; /* Ajuste selon l'espacement désiré */
+    margin-top: 40px;
 }
 
-/* Médias queries pour les tablettes */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media screen and (max-width: 1024px) {
-    /* Passe en disposition en colonne pour la section */
     section#Contact {
         flex-direction: column;
         align-items: center;
-        gap: 40px; /* Espacement adapté pour tablette */
+        gap: 40px;
     }
     section#Contact .right-section {
         margin-right: 0px;
         padding: 0px;
     }
-
-    /* Formulaire et section droite sur toute la largeur */
     .container, .right-section {
         max-width: 100%;
     }
-
-    /* Dans le formulaire, les champs doivent être en une seule colonne */
     section#Contact .container form .form-row.two-columns {
-        display: block; /* Passe les éléments deux colonnes en une seule colonne */
+        display: block; 
     }
-
-    /* Ajuster la taille des titres */
     section#Contact .container .title h3,
     section#Contact .right-section .title h3 {
         font-size: 1.4em;
         margin-bottom: 20px;
     }
-
-    /* Bouton prend toute la largeur sur les tablettes */
     section#Contact .container form button {
         width: 100%;
         margin-top: 20px;
     }
-
-    /* Les titres dans la section droite */
     .right-section .title {
         font-size: 16px;
     }
-
-    /* Ajuster la taille des textes dans la section droite */
     .right-section p {
         font-size: 1em;
         max-width: 80%;
     }
 }
 
-/* Médias queries pour les téléphones */
+/* ============================ */
+/* ==== RESPONSIVE MOBILE ==== */
+/* ============================ */
 @media screen and (max-width: 600px) {
-    /* Passe en disposition en colonne pour la section */
     section#Contact {
         flex-direction: column;
         align-items: center;
-        gap: 30px; /* Espacement plus petit pour les téléphones */
+        gap: 30px;
     }
         section#Contact .right-section {
         margin-right: 0px;
         padding: 0px;
     }
-
-    /* Formulaire et section droite sur toute la largeur */
     .container, .right-section {
         max-width: 100%;
-        padding: 20px; /* Réduit le padding pour les petits écrans */
+        padding: 20px;
     }
-
-    /* Dans le formulaire, les champs doivent être en une seule colonne */
     section#Contact .container form .form-row.two-columns {
-        display: block; /* Passe les éléments deux colonnes en une seule colonne */
+        display: block;
     }
-
-    /* Ajuster la taille des titres */
     section#Contact .container .title h3,
     section#Contact .right-section .title h3 {
         font-size: 1.2em;
         margin-bottom: 15px;
     }
-
-    /* Bouton prend toute la largeur sur les téléphones */
     section#Contact .container form button {
         width: 100%;
         margin-top: 15px;
     }
-
-    /* Les titres dans la section droite */
     .right-section .title {
         font-size: 14px;
     }
-
-    /* Ajuster la taille des textes dans la section droite */
     .right-section p {
         font-size: 0.9em;
         max-width: 80%;
     }
-
-    /* Ajuster les espacements dans la section de contact */
     .right-section .contact_gras {
         font-size: 1em;
         margin: 0.5rem 0;
     }
 }
 
-
-
-
-
-/* NOS SERVICES */
+/* PAGE NOS SERVICES */
 .Nos_services {
     display: flex;
     flex-wrap: wrap;
@@ -949,7 +921,7 @@ section#Contact .container form .form-row.two-columns > div label {
     background-image: url('image/6_film.webp');
 }
 #application4 {
-    background-image: url('image/7_tourisme.webp');
+    background-image: url('image/7_tourisme.jpg');
 }
 #application5 {
     background-image: url('image/8_construction.webp');
@@ -1007,8 +979,8 @@ section#Contact .container form .form-row.two-columns > div label {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-/* CORPS DU SITE */
 
+/* CORPS DU SITE */
 section {
     width: 100%;
     position: relative;
@@ -1026,7 +998,6 @@ section {
     background-color: #a887b4;
     height: 600px;
 }
-
 .etapes-prestation{
     background-image: url('image/fond_de_site.jpg');
     background-size: 100% auto;
@@ -1060,7 +1031,6 @@ section {
     transition: transform 0.3s ease;
     border: 1px solid #000;
 }
-
   .etape-image:hover {
     transform: translateY(-1px);
     box-shadow: rgb(181, 181, 181) 0px 10px 40px -5px;
@@ -1087,7 +1057,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fff;
 }
-
 .services {
     display: flex;
     flex-direction: column;
@@ -1148,15 +1117,13 @@ body {
 #block3.scrolled {
     transform: translateX(-40%);
 }
-
-/*PREUVE SOCIAL*/
+/* SECTION PREUVE SOCIAL */
 .preuve_social-wrapper {
     background-color: #f5f5f5;
     padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
 }
-
 .preuve_social {
     margin: 0 auto;
     max-width: 1100px;
@@ -1165,27 +1132,23 @@ body {
     position: relative;
     background-color: #f5f5f5;
 }
-
 .preuve_social .content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur grand écran */
-    gap: 15px; /* Espacement entre les éléments */
-    justify-items: center; /* Centre les éléments */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; 
+    justify-items: center;
 }
-
 .item {
     text-align: center;
     width: 100%;
-    max-width: 220px; /* Pour éviter que les items soient trop larges */
+    max-width: 220px;
 }
-
 .counter-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
-
 .counter {
     font-size:2.5em;
     font-weight: bold;
@@ -1194,7 +1157,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .plus {
     font-size: 2em;
     font-weight: bold;
@@ -1203,39 +1165,35 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .item p {
     margin-top: 8px;
     font-size: 1.1em;
     color: #333;
 }
-
-/* === RESPONSIVE === */
-
-/* Tablettes */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 1024px) {
     .preuve_social .content {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes, 2 lignes */
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-
     .counter {
         font-size: 2.2em;
     }
-
     .plus {
         font-size: 1.8em;
     }
-
     .item p {
         font-size: 1em;
     }
 }
-
-/* Mobiles */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 600px) {
     .preuve_social .content {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes, 2 lignes */
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
@@ -1252,8 +1210,7 @@ body {
     }
 }
 
-
- /* BOUTONS PAGE D'ACCUEIL */
+/* BOUTONS PAGE D'ACCUEIL */
 .button-container2{
     text-align: center;
     margin: 0px 0;
@@ -1280,6 +1237,7 @@ body {
     opacity: 0.8;
 }
 
+/* POLICE D'ECRITURE */
 @font-face {
     font-family: 'Ortica_300';
     src: url('fonts/ORTICA/Ortica_300.woff2') format('woff2');
@@ -1301,6 +1259,7 @@ body {
     font-style: normal;
     font-display: swap;
 }
+
 /* SIMULATEUR */
 body.simulation {
     font-family: 'Arial', sans-serif;
@@ -1311,12 +1270,11 @@ body.simulation {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Utiliser min-height au lieu de height */
+    min-height: 100vh;
     overflow: hidden;
 }
-
 .header_simulation {
-    height: 100px;
+    height: 92px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1327,7 +1285,6 @@ body.simulation {
     padding: 0 20px;
     width: 100%;
 }
-
 .logopetit2 {
     flex-shrink: 0;
 }
@@ -1335,7 +1292,6 @@ body.simulation {
     height: 60px;
     max-width: 120px;
 }
-
 .title_simulation {
     flex-grow: 1;
     display: flex;
@@ -1349,60 +1305,67 @@ body.simulation {
     white-space: nowrap;
 }
 
-/* 📱 Responsive : Tablette et Mobile */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media screen and (max-width: 1024px) {
     .header_simulation {
-        flex-direction: column; /* Passe en mode colonne */
-        height: auto; /* Hauteur auto pour éviter l'écrasement */
+        flex-direction: column;
+        height: auto;
         padding-top: 15px;
         align-items: center;
         justify-content: center;
-        text-align: center; /* Centre le texte */
-        gap: 10px; /* Ajoute un espace entre les éléments */
+        text-align: center;
+        gap: 10px;
     }
-
     .logopetit2 {
-        width: 100%; /* Prend toute la largeur */
+        width: 100%;
         display: flex;
-        justify-content: center; /* Centre le logo */
-        margin-bottom: 5px; /* Ajustement de l'espace */
+        justify-content: center;
+        margin-bottom: 5px;
     }
-
     .title_simulation {
-        width: 100%; /* Prend toute la largeur */
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .title_simulation h6 {
         font-size: 16px;
         margin: 0;
     }
-
     .logopetit2 img {
         height: 50px;
         max-width: 100px;
     }
 }
-
-/* 📱 Responsive : Mobile */
+/* ============================= */
+/* ==== RESPONSIVE MOBILE ==== */
+/* ============================= */
 @media screen and (max-width: 768px) {
     .header_simulation {
-        gap: 8px; /* Réduit l'espace entre logo et texte */
+        gap: 8px;
     }
-
     .title_simulation h6 {
         font-size: 14px;
     }
-
     .logopetit2 img {
         height: 40px;
         max-width: 80px;
     }
+    .simulation_choices, .secteur_choices {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .icon_circle {
+        width: 120px;
+        height: 120px;
+    }
+    .icon_circle img {
+        width: 70px;
+        height: 70px;
+    }
 }
-
-
 #questionnaire {
     width: 80%;
     max-width: 600px;
@@ -1419,21 +1382,7 @@ body.simulation {
     gap: 20px;
     padding-bottom: 40px;
   }
-  @media (max-width: 768px) {
-    .simulation_choices, .secteur_choices {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .icon_circle {
-        width: 120px;
-        height: 120px;
-    }
-    .icon_circle img {
-        width: 70px;
-        height: 70px;
-    }
-}
-  .icon_circle {
+.icon_circle {
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -1456,14 +1405,14 @@ body.simulation {
     height: 75px;
     object-fit: contain;
 }
-  .choice p, .sector_choice p {
+.choice p, .sector_choice p {
     font-size: 18px;
     font-weight: bold;
     color: #013142;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .particulier_icons {
+.particulier_icons {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -1522,7 +1471,7 @@ body.simulation {
 .retour:hover {
     text-decoration: underline;
 }
-  .contact-devis-btn {
+.contact-devis-btn {
     display: inline-block;
     padding: 8px 14px;
     font-size: 14px;
@@ -1631,7 +1580,7 @@ body.simulation {
     cursor: pointer;
 }
 
-/* MENTIONS LEGALES */
+/* PAGE MENTIONS LEGALES */
 .mention_article {
     background: rgb(245, 245, 245);
     font-size: 14px;
@@ -1703,7 +1652,7 @@ body.simulation {
     margin-top: 8px;
 }
 
-/* CONDITIONS GÉNÉRALES DE VENTE (CGV) */
+/* PAGE CGV */
 .cgv_article {
     background: rgb(245, 245, 245);
     font-size: 14px;
@@ -1796,8 +1745,6 @@ body.simulation {
     font-family: 'Arial', sans-serif;
     font-size: 13px;
 }
-
-/* Conteneur du footer */
 .footer-container {
     display: flex;
     justify-content: space-around;
@@ -1807,8 +1754,6 @@ body.simulation {
     margin: 0 auto;
     gap: 15px;
 }
-
-/* Sections du footer */
 .footer-section {
     flex: 1;
     min-width: 220px;
@@ -1817,29 +1762,23 @@ body.simulation {
     text-align: justify;
     text-align-last: center;
 }
-
-/* Première section du footer (centrée horizontalement mais texte justifié) */
 .footer-section:first-child {
     flex: 2;
     max-width: 300px;
     max-width: 80%;
-    margin: 0 auto; /* Centre horizontalement */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre tout sauf le texte */
+    align-items: center;
     font-size: 13px;
 }
-
-/* Justifier le texte mais garder la colonne centrée */
 .footer-section:first-child p {
-    max-width: 80%; /* S'assurer que le texte ne dépasse pas */
+    max-width: 80%;
     font-size: 13px;
     text-align: left justify;
     text-align-last:auto;
     padding-bottom: 10px;
 }
-
-/* Titres des sections */
 .footer-section h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
@@ -1849,77 +1788,32 @@ body.simulation {
     padding-bottom: 5px;
     text-align: center;
 }
-
-/* Listes des pages */
 .footer-section ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
-
 .footer-section ul li {
     margin: 8px 0;
 }
-
 .footer-section ul li a {
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .footer-section ul li a:hover {
     color: rgb(200, 70, 50);
     transform: translateX(5px);
 }
-
-/* Logo */
-.logo2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.logo2 img {
-    max-width: 150px;
-    height: auto;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-/* Liens de contact */
 .footer-section a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
-
 .footer-section a:hover {
     color: rgb(200, 70, 50);
 }
-
-/* Réseaux sociaux */
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-.social a img {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: grayscale(100%);
-}
-
-.social a:hover img {
-    transform: scale(1.1);
-    filter: grayscale(0%);
-}
-
-/* Bas du footer */
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
@@ -1927,60 +1821,70 @@ body.simulation {
     padding-top: 20px;
     font-size: clamp(0.7rem, 1.2vw, 0.9rem);
 }
-
-/* Ajustement pour les paragraphes */
 .footer-bottom p {
     text-align: center;
     font-size: clamp(0.65rem, 1vw, 0.85rem);
 }
-
-/* Liens du bas de page */
 .footer-bottom a {
     color: rgb(200, 70, 50);
     text-decoration: none;
     margin: 0 10px;
     font-size: clamp(0.7rem, 1.1vw, 0.9rem);
 }
-
 .footer-bottom a:hover {
     text-decoration: underline;
 }
 
-/* RESPONSIVE DESIGN */
-/* Tablettes : 2 colonnes */
+/* RESEAUX SOCIAUX */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+.social a img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+.social a:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 1024px) {
     .footer-container {
         justify-content: center;
         gap: 15px;
         
     }
-
     .footer-section {
         flex: 1 1 calc(50% - 30px);
         max-width: 400px;
         max-width: 80%;
     }
-
     .footer-section:first-child {
         flex: 1 1 100%;
     }
 }
-
-/* Smartphones : 1 colonne */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 600px) {
     .footer-container {
         flex-direction: column;
         align-items: center;
         gap: 0px;
     }
-
     .footer-section {
         flex: 1 1 100%;
         max-width: 100%;
         max-width: 80%;
     }
 }
-
 
 /* SECTION 1 : DÉCOUVREZ MES PRESTATIONS */
 .section1 {
@@ -1993,19 +1897,16 @@ body.simulation {
     height: 100vh;
     padding: 5vh 20px;
 }
-
-/* Titre de la section */
 .title-section-presta {
     color: white;
-    font-size: clamp(14px, 4vw, 22px); /* 🔥 Taille responsive */
+    font-size: clamp(14px, 4vw, 22px);
     font-weight: 600;
     text-transform: uppercase;
-    padding-top: 20px;
+    padding-top: 25px;
     margin-bottom: 0px;
     position: relative;
     display: inline-block;
 }
-
 .title-section-presta::after {
     content: "";
     display: block;
@@ -2015,20 +1916,16 @@ body.simulation {
     margin: 8px auto 0;
     border-radius: 3px;
 }
-
-
-/* Titre de la section */
 .title-section-presta-noir {
     color: rgb(0, 0, 0);
-    font-size: clamp(14px, 4vw, 22px); /* 🔥 Taille responsive */
+    font-size: clamp(14px, 4vw, 22px);
     font-weight: 600;
     text-transform: uppercase;
-    padding-top: 20px;
+    padding-top: 25px;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
 }
-
 .title-section-presta-noir::after {
     content: "";
     display: block;
@@ -2040,28 +1937,25 @@ body.simulation {
 }
 .presta-intro {
     max-width: 800px;
-    margin: 00px auto 0px; /* Centrage et espacement */
+    margin: 00px auto 0px;
     color: white;
-    font-size: clamp(11px, 2vw, 13px); /* Adaptation responsive */
-    line-height: 1.6; /* Amélioration de la lisibilité */
-    padding: 0 0px; /* Assure une marge latérale sur mobile */
+    font-size: clamp(11px, 2vw, 13px);
+    line-height: 1.6;
+    padding: 0 0px;
 }
 .presta-intro p {
-    margin-bottom: 15px; /* Ajoute un espace entre les deux phrases */
+    margin-bottom: 15px;
     text-align: justify;
-    max-width: inherit; /* Hérite la largeur du parent */
+    max-width: inherit;
 
 }
-/* Mise en page des services */
 .services {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Toujours 3 colonnes */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     max-width: 1000px;
     margin: 0 auto;
 }
-
-/* Bloc des prestations */
 .service-block-presta {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -2073,32 +1967,25 @@ body.simulation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px; /* Réduction pour laisser plus de marges */
+    max-width: 300px;
 }
-
 .service-block-presta:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.18);
 }
-
-/* Optimisation des images */
 .service-block-presta img {
     width: 100%;
-    height:100px; /* Réduction de la hauteur pour plus d'espace */
+    height:100px;
     object-fit: cover;
 }
-
-/* Titres des prestations */
 .service-block-presta h3 {
     color: #222;
-    font-size: 14px; /* Taille plus petite */
+    font-size: 14px;
     font-weight: 600;
     margin: 20px 0;
 }
-
-/* Bouton "En savoir plus" */
 .btn-more {
-    font-size: 12px; /* Ajuste la taille du texte */
+    font-size: 12px;
     display: inline-block;
     padding: 8px 14px;
     background-color: transparent;
@@ -2108,156 +1995,133 @@ body.simulation {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    margin-top: auto; /* Permet au bouton d'être toujours aligné en bas */
+    margin-top: auto;
 }
-
 .btn-more:hover {
     background-color: rgb(200, 70, 50);
     border-color: rgb(200, 70, 50);
     color: white;
 }
 
-/* ✅ Tablettes (max-width: 900px) */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 900px) {
     .section1 {
-        height: auto; /* ✅ Permet à la section de s'adapter au contenu */
-        padding: 40px 20px; /* ✅ Ajoute un espacement fixe pour éviter un aspect tassé */
+        height: auto;
+        padding: 40px 20px;
     }
-
     .services {
         max-width: 95%;
         gap: 15px;
     }
-
     .presta-intro {
         font-size: 13px;
         margin: 15px auto 30px;
         padding: 0 20px;
     }
-
     .presta-intro p {
         text-align: justify;
         margin-bottom: 15px;
     }
-
     .service-block-presta {
         max-width: 200px;
         min-height: 170px;
         padding: 0px 0px 15px;
     }
-
     .service-block-presta img {
         height: 90px;
     }
-
     .service-block-presta h3 {
         font-size: 11px;
         margin: 12px 0;
     }
-
     .btn-more {
         font-size: 9px;
         padding: 5px 10px;
     }
 }
 
-/* ✅ Mobiles (max-width: 600px) */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 600px) {
     .section1 {
-        height: auto; /* ✅ Plus de contrainte de hauteur */
-        padding: 30px 15px; /* ✅ Adaptation pour le mobile */
+        height: auto;
+        padding: 30px 15px;
     }
-
     .services {
-        grid-template-columns: repeat(2, 1fr); /* ✅ Passe en 2 colonnes */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         justify-content: center;
     }
-
     .presta-intro {
         font-size: 12px;
         margin: 10px auto 20px;
         padding: 0 15px;
     }
-
     .presta-intro p {
         text-align: justify;
         margin-bottom: 12px;
     }
-
     .service-block-presta {
         max-width: 170px;
         min-height: 100px;
         padding: 0px 0px 12px;
     }
-
     .service-block-presta img {
         height: 80px;
     }
-
     .service-block-presta h3 {
         font-size: 10px;
         margin: 10px 0;
     }
-
     .btn-more {
         font-size: 8px;
         padding: 4px 8px;
     }
 }
 
-
-
 /* ILS NOUS ONT FAIT CONFIANCE */
 .trusted-section {
-    background-color: rgb(248, 248, 248); /*gris clair)*/
+    background-color: rgb(248, 248, 248);
     padding-bottom: 40px;
     text-align: center;
     overflow: hidden;
 }
-
 .logo-container {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
 }
-
 .logo-track {
     display: flex;
     animation: scroll 50s linear infinite;
     animation-play-state: running;
 }
-
 .logo-track:hover {
     animation-play-state: paused;
 }
-
-/* Correction de l'alignement vertical des logos */
 .logo-track a {
     display: flex;
-    align-items: center; /* Aligne verticalement */
+    align-items: center;
     justify-content: center;
-    height: 100%; /* Assure une hauteur uniforme */
+    height: 100%;
 }
-
 .logo-track img {
     width: 120px;
-    height: 80px; /* Hauteur fixe pour uniformiser */
-    object-fit: contain; /* Conserve les proportions sans déformation */
-    vertical-align: middle; /* Améliore encore l'alignement */
+    height: 80px;
+    object-fit: contain;
+    vertical-align: middle;
     margin: 0 50px;
-    transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
-    cursor: pointer; /* Change le pointeur au survol */
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-
-/* Effet de zoom au survol */
 .logo-track img:hover {
     transform: scale(1.1);
 }
-
-/* Animation du défilement des logos */
-@keyframes scroll {
+@keyframes scroll { /* Animation du défilement des logos */
     from {
         transform: translateX(0);
     }
@@ -2266,82 +2130,69 @@ body.simulation {
     }
 }
 
-/* Responsive */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 768px) {
     .logo-track img {
         width: 80px;
-        height: 60px; /* Ajustement pour le responsive */
+        height: 60px;
         margin: 0 18px;
     }
 }
-
 @media (max-width: 480px) {
     .trusted-section h2 {
         font-size: 20px;
     }
     .logo-track img {
         width: 60px;
-        height: 50px; /* Ajustement pour le responsive */
+        height: 50px;
         margin: 0 14px;
     }
 }
-
-/* Section Contact */
 #contact { 
     background: #0F111E;
     color: white; 
     padding-bottom: 30px; 
     text-align: center; 
 } 
-
 .contact-container { 
     max-width: 600px; 
     margin: auto; 
 } 
-
 .contact-text { 
-    font-size: clamp(0.85rem, 1vw, 1rem); /* Plus petit partout, reste lisible */
+    font-size: clamp(0.85rem, 1vw, 1rem);
     margin-bottom: 35px; 
     margin-top: 15px;
 } 
-
-/* Infos de contact */
 .contact-info { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     margin-bottom: 35px; 
 } 
-
 .contact-info p { 
     margin: 5px 0; 
-    font-size: clamp(0.85rem, 1vw, 0.95rem); /* Légèrement réduit aussi */
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
 } 
-
 .contact-info a { 
     color: rgb(200, 70, 50);
     text-decoration: none; 
     font-weight: bold; 
 } 
-
-/* Icônes Réseaux Sociaux */
 .social-icons { 
     display: flex; 
     justify-content: center; 
     gap: 25px; 
     margin-bottom: 35px; 
 } 
-
 .social-icon img { 
     width: clamp(28px, 4vw, 35px);
     transition: transform 0.3s ease; 
 } 
-
 .social-icon img:hover { 
     transform: scale(1.05); 
 } 
-
-/* Bouton Contact */
 .contact-button { 
     display: inline-block; 
     background: rgb(200, 70, 50); 
@@ -2349,22 +2200,23 @@ body.simulation {
     padding: 8px 16px; 
     border-radius: 8px; 
     text-decoration: none;
-    font-size: clamp(11px, 1vw, 13px); /* Légèrement réduit */
+    font-size: clamp(11px, 1vw, 13px);
     transition: background 0.3s ease;
 } 
-
 .contact-button:hover { 
     background-color: rgb(200, 70, 50);
-    transform: scale(1.05); /* Effet de zoom sur le bouton */
+    transform: scale(1.05);
 } 
 
-/* === RESPONSIVE === */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 768px) {
     .contact-container { 
         max-width: 90%; 
     }
     .contact-text {
-        font-size: 0.8rem; /* Encore plus petit sur tablette */
+        font-size: 0.8rem;
     }
     .contact-info p {
         font-size: 0.85rem;
@@ -2381,13 +2233,15 @@ body.simulation {
     }
 }
 
-/* Mobiles */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* ==========================PROBLEME */
 @media (max-width: 480px) {
     .contact-container { 
         max-width: 95%; 
     }
     .contact-text {
-        font-size: 0.75rem; /* Encore réduit sur mobile */
+        font-size: 0.75rem;
     }
     .contact-info p {
         font-size: 0.8rem;
@@ -2404,18 +2258,15 @@ body.simulation {
     }
 }
 
-
-/* Qui-suis-je ? */
-/* Section "Qui suis-je" */
+/* SECTION "QUI SUIS-JE ?" */
 .qui-suis-je {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 40px;
     padding-top: 40px;
-    background-color: #f5f5f5; /* Fond doux pour la section */
+    background-color: #f5f5f5;
 }
-
 .qui-suis-je-container {
     display: flex;
     width: 100%;
@@ -2424,38 +2275,31 @@ body.simulation {
     justify-content: space-between;
     align-items: center;
 }
-
 .photo {
-    flex: 1; /* 1/3 de la largeur de la section */
+    flex: 1;
     max-width: 30%;
     overflow: hidden;
-    margin-right: 30px; /* Espacement entre l'image et le texte */
+    margin-right: 30px;
 }
-
 .photo img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
 }
-
 .texte {
-    flex: 2; /* 2/3 de la largeur de la section */
+    flex: 2;
     padding: 20px;
     opacity: 0;
     transform: translateX(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Transition pour l'animation */
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
 .texte p {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 15px;
-    color: #333; /* Couleur sombre pour le texte */
+    color: #333;
 }
-
-
-/* Bouton qui-suis-je */ 
 .cta-button { 
     display: inline-block;
     font-size: 13px;
@@ -2469,46 +2313,44 @@ body.simulation {
 } 
 .cta-button:hover {
     background-color: rgb(200, 70, 50);
-    transform: scale(1.05); /* Effet de zoom sur le bouton */
+    transform: scale(1.05);
 }
 
-/* 📌 Responsive : Tablettes */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 900px) {
     .qui-suis-je-container {
-        flex-direction: column; /* Empile les éléments en colonne */
+        flex-direction: column;
         text-align: center;
     }
-
     .photo {
-        max-width: 50%; /* Image plus grande pour un bon équilibre */
-        margin: 0 auto 20px; /* Centrage de l'image avec un espacement en bas */
+        max-width: 50%;
+        margin: 0 auto 20px;
     }
-
     .texte {
-        padding: 0 10px; /* Réduction du padding latéral */
+        padding: 0 10px;
     }
-
     .texte p {
         font-size: 13px;
         line-height: 1.4;
     }
-
     .cta-button {
         font-size: 13px;
         padding: 8px 15px;
     }
 }
 
-/* 📌 Responsive : Mobiles */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 600px) {
     .photo {
-        max-width: 70%; /* Image encore plus grande sur mobile */
+        max-width: 70%;
     }
-
     .texte p {
         font-size: 12px;
     }
-
     .cta-button {
         font-size: 12px;
         padding: 8px 15px;
@@ -2516,22 +2358,18 @@ body.simulation {
 }
 
 /* ARROW FLECHE SCROLL ACCUEIL */
-/* Centrer l'image de la flèche et ajouter le padding */
 .scroll-arrow {
     position: absolute;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 2s infinite; /* Animation subtile pour bouger la flèche */
+    animation: bounce 2s infinite;
   }
-  
   .scroll-arrow img {
-    width: 40px; /* Ajuste la taille de l'image si nécessaire */
+    width: 40px;
     height: auto;
-    transition: transform 0.3s ease-in-out; /* Transition pour l'effet de survol */
+    transition: transform 0.3s ease-in-out;
   }
-  
-  /* Animation de rebond subtile */
   @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
@@ -2540,20 +2378,17 @@ body.simulation {
       transform: translateY(-10px);
     }
   }
-  
-  /* Effet au survol */
   .scroll-arrow:hover img {
-    transform: translateY(15px); /* Mouvement vers le bas au survol */
+    transform: translateY(15px);
   }
-  
-  /*WAVE DIVIDER GRIS*/
-  .wave-divider {
-    background-color: rgb(248, 248, 248); /* Couleur du fond */
+
+/* WAVE DIVIDER GRIS */
+.wave-divider {
+    background-color: rgb(248, 248, 248);
     position: relative;
     width: 100%;
-    height: 80px; /* Ajuste la hauteur si besoin */
+    height: 80px;
 }
-
 .wave-divider svg {
     width: 100%;
     height: 100%;
@@ -2561,40 +2396,35 @@ body.simulation {
     margin: 0;
     padding: 0;
 }
-
 .wave-path {
     fill:#0F111E;
-    stroke: none; /* Supprime tout contour */
+    stroke: none;
 }
 
-
-/*WAVE DIVIDER BLANC*/
-
+/* WAVE DIVIDER BLANC */
 .wave-divider2 {
-    background-color: rgb(255, 255, 255); /* Couleur du fond */
+    background-color: rgb(255, 255, 255);
     position: relative;
     width: 100%;
-    height: 50px; /* Ajuste la hauteur si besoin */
+    height: 50px;
     overflow: hidden;
     line-height: 0;
 }
-
 .wave-divider2 svg {
     width: 100%;
     height: 100%;
     display: block;
 }
-
 .wave-path {
     fill:#0F111E;
 }
-
-
-
-/*NEW CODE*/
-
-/*SECTION 1 : PRESENTATION DE MOI*/
-
+/* Personnalisation du triangle */
+.qualities-section svg {
+    display: block;
+    width: 100%;
+    margin-top: 40px; /* Espacement entre le contenu de la section et le triangle */
+}
+/* SECTION 1 : PRESENTATION DE MOI */
 /* SECTION PRINCIPALE "A propos de moi" */
 .propos-section {
     position: relative;
@@ -2606,55 +2436,42 @@ body.simulation {
     color: #0F111E;
     height: 492.1px;
 }
-
-/* Contenu de la section : texte et image */
 .propos-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-
-/* Colonne de gauche (texte) */
 .propos-text {
     width: 60%;
     text-align: justify;
     font-size: 0.9em;
     line-height: 1.6;
-    padding-left: 40px; /* Ajoute de l'espace autour du texte */
+    padding-left: 40px;
     padding-top: 140px;
     padding-bottom: 40px;
 }
-
-/* Colonne de droite (image) */
 .propos-image {
     width: 35%;
     height: 100%;
-    transition: all 0.3s ease; /* Ajoute une transition pour un effet plus doux */
+    transition: all 0.3s ease;
 }
-/* Effet noir et blanc au survol */
 .propos-image:hover .profile-image {
-    filter: grayscale(100%); /* Applique un filtre noir et blanc */
+    filter: grayscale(100%);
 }
-/* Style de l'image de profil */
 .profile-image {
-    width: 100%; /* L'image prendra toute la largeur de la colonne */
-    height: 100%; /* L'image prendra toute la hauteur de la colonne */
-    object-fit: cover; /* Assure que l'image remplisse la zone sans déformation */
-    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-top: 92px;
 }
-
-/* Liste des points */
 .propos_ul {
     margin-left: 20px;
     list-style-type: disc;
 }
-
 .propos_ul li {
     margin-bottom: 10px;
 }
-
-/* Style des boutons */
 .button_services, .button_contact {
     display: inline-block;
     padding: 10px 20px;
@@ -2667,8 +2484,6 @@ body.simulation {
     transition: background-color 0.3s ease, color 0.3s ease;
     margin: 10px;
 }
-
-/* Effet au survol des boutons */
 .button_services:hover, .button_contact:hover {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
@@ -2676,117 +2491,127 @@ body.simulation {
     transform: scale(1.02);
     opacity: 0.8;
 }
-/* Conteneur des boutons */
 .button-container2 {
     text-align: center;
     margin: 10px 0;
 }
 .header-offset {
-    height: 100px;
+    height: 92px;
     width: 100%;
 }
 
 /* SECTION "Et vous, qu'avez-vous en tête ?" */
 .tête-section {
-    text-align: center; /* Centrer le texte */
-    padding: 50px;
-    background-color: #0F111E; /* Fond foncé */
+    text-align: center;
+    padding-top: 80px;
+    background-color: #0F111E;
     color: #ffffff;
+    padding-left: 0px;
+    padding-right: 0px;
 }
-
-/* Style du texte */
 .tête-text {
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
-
-/* Style du bouton */
-.tête-button.cta-button {
+.tête-section .cta-button {
     display: inline-block;
     padding: 12px 20px;
     background-color: rgb(200, 70, 50);
-    color: #0F111E;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
 }
-
-/* Effet au survol du bouton */
-.tête-button.cta-button:hover {
-    background-color: rgb(200, 70, 50); /* Même couleur */
-    transform: scale(1.05); /* Effet de zoom sur le bouton */
+.tête-section .cta-button:hover {
+    background-color: rgb(200, 70, 50);
+    transform: scale(1.05);
 }
-
-
-/*SECTION MES QUALITES*/
-/* Section principale */
+/* WAVE DIVIDER BLANC */
+.wave-divider3 {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+/* SECTION MES QUALITÉS */
 .qualities-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 50px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-bottom: 40px;
     background-color: #ffffff;
     color: #0F111E;
 }
 
-/* Style des colonnes */
-.quality {
-    width: 22%;
+/* TITRE CENTRÉ */
+.qualities-header {
+    width: 100%;
     text-align: center;
-    padding: 10px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px #ffffff;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Style des titres */
+/* CONTENEUR DES QUALITÉS EN LIGNE */
+.qualities-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacement entre les éléments */
+    flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si l'espace est insuffisant */
+}
+
+/* STYLE DES BLOCS QUALITÉ */
+.quality {
+    width: 22%; /* 4 éléments en ligne */
+    text-align: center;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;    
+}
+
+/* STYLE DES TITRES ET ICÔNES */
 .quality-title {
     font-size: 1.2em;
     color: rgb(200, 70, 50);
     margin-bottom: 15px;
     min-height: 3em;
-    text-align: center; /* Centre le texte */
+    text-align: center;
 }
 
-/* Style des icônes au-dessus du titre */
 .quality-icon {
-    display: block; /* Permet de placer l'icône au-dessus */
-    font-size: 1.8em; /* Taille des icônes */
-    color: rgb(200, 70, 50); /* Même couleur que le titre */
-    margin-bottom: 10px; /* Espacement entre l'icône et le titre */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation lors du survol */
+    display: block;
+    font-size: 1.8em;
+    color: rgb(200, 70, 50);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animation de survol : zoom et légère opacité */
 .quality-icon:hover {
-    transform: scale(1.2); /* Augmente la taille de l'icône */
-    opacity: 0.8; /* Légère réduction de l'opacité */
+    transform: scale(1.2);
 }
 
-/* Style du texte */
+/* TEXTE DES QUALITÉS */
 .quality-text {
     font-size: 0.9em;
     line-height: 2;
     color: #0F111E;
-    text-align: justify; /* Justification du texte */
-    flex-grow: 1; /* Permet d'occuper tout l'espace disponible */
+    text-align: justify;
+    flex-grow: 1;
 }
 
-/* Animation de fade-in */
+/* ANIMATION APPARITION */
 .quality.visible {
     opacity: 1;
     transform: translateY(0);
 }
-/* --- RESPONSIVE DESIGN --- */
 
-
-/* Responsive pour tablette (max 1024px) */
+/* ============================= */
+/* ==== RESPONSIVE TABLETTE ==== */
+/* ============================= */
 @media (max-width: 1024px) {
     .propos-content {
-        flex-direction: column; /* Passe en colonne */
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
@@ -2799,37 +2624,33 @@ body.simulation {
         padding-right: 25px;
         padding-bottom: 0px;
     }
-
     .propos-image {
         width: 70%;
-        margin: 30px 0; /* Espacement égal en haut et en bas */
+        margin: 30px 0;
         display: flex;
         justify-content: center;
     }
-
     .profile-image {
         padding-top: 0px;
         width: 100%;
         height: auto;
     }
-
-    /* Section des qualités en 2 colonnes */
     .qualities-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding: 30px;
     }
-
     .quality {
         width: 100%;
     }
 }
-
-/* Responsive pour mobile (max 768px) */
+/* =========================== */
+/* ==== RESPONSIVE MOBILE ==== */
+/* =========================== */
 @media (max-width: 768px) {
     .propos-section {
-    height: auto;
+        height: auto;
     }
     .propos-text {
         width: 100%;
@@ -2839,7 +2660,6 @@ body.simulation {
         padding-right: 25px;
         padding-bottom: 0px;
     }
-
     .propos-image {
         padding-top: 0px;
         width: 80%;
@@ -2847,19 +2667,15 @@ body.simulation {
         display: flex;
         justify-content: center;
     }
-
     .profile-image {
         padding-top: 0px;
         width: 100%;
         height: auto;
     }
-
-    /* Section des qualités en 1 colonne */
     .qualities-section {
         grid-template-columns: 1fr;
         padding: 20px;
     }
-
     .quality {
         width: 100%;
     }
