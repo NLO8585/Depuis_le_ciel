@@ -144,160 +144,7 @@ nav ul.sommaire {
     border-radius: 3px;
     transition: 0.3s ease-in-out;
 }
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media screen and (max-width: 768px) {
-    .header_accueil {
-        height: 100dvh;
-        background-size: auto 100dvh;
-        background-position: center;
-    }
-    .banniere-defilante {
-        font-size: 8px;  /* Réduire la taille de la police pour les petits écrans */
-    }
-    .banniere-defilante p {
-        animation: defilement 35s linear infinite; /* Accélérer l'animation sur mobile */
-    }
-    .banniere-defilante p .separateur {
-        font-size: 8px;  /* Réduire la taille des séparateurs sur mobile */
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .hamburger {
-        display: flex;
-        width: 24px;
-        height: 18px;
-    }
-    .hamburger span{
-        height: 3px;
-    }
-    .sommaire {
-        position: absolute;
-        top: 55px;
-        right: 8px;
-        width: 30%;
-        max-width: 220px;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(6px);
-        flex-direction: column;
-        align-items: center;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        padding: 8px 0;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-8px);
-        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
-        pointer-events: none;
-        margin: 15px 15px;
-    }
-    .sommaire.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        display: flex;
-    }
-    .sommaire li {
-        width: 100%;
-        text-align: center;
-    }
-    .sommaire li a {
-        display: block;
-        width: 100%;
-        font-size: 10px;
-        font-weight: 500;
-        color: white;
-        text-decoration: none;
-        padding: 6px 10px;
-        border-radius: 6px;
-        transition: background 0.2s ease;
-    }
-    .sommaire li a:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-}
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
 
-    .hamburger {
-        display: flex;
-        width: 30px;
-        height: 22px;
-    }
-    .hamburger span{
-        height: 4px;
-    }
-    .sommaire {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        width: 30%;
-        max-width: 260px;
-        background: rgba(0, 0, 0, 0.65);
-        backdrop-filter: blur(8px);
-        flex-direction: column;
-        align-items: center;
-        border-radius: 15px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-        padding: 10px 0;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-        pointer-events: none;
-        margin: 15px 15px;
-    }
-    .sommaire.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        display: flex;
-    }
-    .sommaire li {
-        width: 100%;
-        text-align: center;
-        padding: 6px 0;
-    }
-    .sommaire li a {
-        display: block;
-        width: 100%;
-        font-size: 15px;
-        font-weight: 500;
-        color: white;
-        text-decoration: none;
-        padding: 7px 12px;
-        border-radius: 6px;
-        transition: background 0.2s ease;
-    }
-    .sommaire li a:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-}
 h1 {
     margin: 0;
     padding: 0;
@@ -384,43 +231,7 @@ max-width: 80%;
     max-width: 100%;
     word-wrap: break-word;
 }
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media screen and (max-width: 768px) {
-    .header-container {
-        text-align: center;
-    }
-    .Bienvenue {
-        font-size: clamp(12px, 4vw, 16px);
-        letter-spacing: 0.04em;
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .intro {
-        font-size: clamp(10px, 5vw, 12px);
-        letter-spacing: 0.05em;
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .location {
-        flex-wrap: nowrap;
-        align-items: center;
-        max-width: 90%;
-    }
-    .location-icon {
-        width: clamp(10px, 2.5vw, 12px);
-    }
-    .location span {
-        font-size: clamp(10px, 3.5vw, 12px);
-    }
-    .sommaire {
-        top: 50px;
-        padding: 10px 0;
-    }
-}
+
 /* LOGO */
 .logopetit {
     position: absolute;
@@ -454,18 +265,7 @@ max-width: 80%;
     border-radius: 8px;
     padding: 15px;
 }
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media screen and (max-width: 768px) {
-    .logopetit {
-        top: 35px;
-        left: 25px;
-    }
-    .logopetit img {
-        max-height: 18px;
-    }
-}
+
 .button-container1 {
     margin: 0;
     transform: rotate(-90deg);
@@ -501,30 +301,7 @@ max-width: 80%;
     padding: clamp(2px, 0.4vw, 6px) clamp(4px, 1vw, 10px);
 
 }
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media screen and (max-width: 768px) {
-    .button_simulateur {
-        font-size: 9px;
-        padding: 4px 10px;
-    }
-    .button-container1 {
-        left: -4px;
-        right: auto;
-    }
-}
-/* 📌 Encore plus petit pour écrans <= 414px (iPhone XR, SE, etc.) */
-@media screen and (max-width: 414px) {
-    .button_simulateur {
-        font-size: 8px;
-        padding: 3px 8px;
-    }
-    .button-container1 {
-        left: -6px;
-        right: auto;
-    }
-}
+
 /* HEADER PAGE ANNEXES */
 .header {
     z-index: 1000;
@@ -755,84 +532,6 @@ section#Contact .container form .form-row.two-columns > div label {
     margin-top: 40px;
 }
 
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media screen and (max-width: 1024px) {
-    section#Contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    section#Contact .right-section {
-        margin-right: 0px;
-        padding: 0px;
-    }
-    .container, .right-section {
-        max-width: 100%;
-    }
-    section#Contact .container form .form-row.two-columns {
-        display: block; 
-    }
-    section#Contact .container .title h3,
-    section#Contact .right-section .title h3 {
-        font-size: 1.4em;
-        margin-bottom: 20px;
-    }
-    section#Contact .container form button {
-        width: 100%;
-        margin-top: 20px;
-    }
-    .right-section .title {
-        font-size: 16px;
-    }
-    .right-section p {
-        font-size: 1em;
-        max-width: 80%;
-    }
-}
-
-/* ============================ */
-/* ==== RESPONSIVE MOBILE ==== */
-/* ============================ */
-@media screen and (max-width: 600px) {
-    section#Contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-        section#Contact .right-section {
-        margin-right: 0px;
-        padding: 0px;
-    }
-    .container, .right-section {
-        max-width: 100%;
-        padding: 20px;
-    }
-    section#Contact .container form .form-row.two-columns {
-        display: block;
-    }
-    section#Contact .container .title h3,
-    section#Contact .right-section .title h3 {
-        font-size: 1.2em;
-        margin-bottom: 15px;
-    }
-    section#Contact .container form button {
-        width: 100%;
-        margin-top: 15px;
-    }
-    .right-section .title {
-        font-size: 14px;
-    }
-    .right-section p {
-        font-size: 0.9em;
-        max-width: 80%;
-    }
-    .right-section .contact_gras {
-        font-size: 1em;
-        margin: 0.5rem 0;
-    }
-}
 
 /* PAGE NOS SERVICES */
 .Nos_services {
@@ -1170,46 +869,6 @@ body {
     font-size: 1.1em;
     color: #333;
 }
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 1024px) {
-    .preuve_social .content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    .counter {
-        font-size: 2.2em;
-    }
-    .plus {
-        font-size: 1.8em;
-    }
-    .item p {
-        font-size: 1em;
-    }
-}
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 600px) {
-    .preuve_social .content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .counter {
-        font-size: 2em;
-    }
-
-    .plus {
-        font-size: 1.6em;
-    }
-
-    .item p {
-        font-size: 0.9em;
-    }
-}
-
 /* BOUTONS PAGE D'ACCUEIL */
 .button-container2{
     text-align: center;
@@ -1305,67 +964,7 @@ body.simulation {
     white-space: nowrap;
 }
 
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media screen and (max-width: 1024px) {
-    .header_simulation {
-        flex-direction: column;
-        height: auto;
-        padding-top: 15px;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 10px;
-    }
-    .logopetit2 {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 5px;
-    }
-    .title_simulation {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .title_simulation h6 {
-        font-size: 16px;
-        margin: 0;
-    }
-    .logopetit2 img {
-        height: 50px;
-        max-width: 100px;
-    }
-}
-/* ============================= */
-/* ==== RESPONSIVE MOBILE ==== */
-/* ============================= */
-@media screen and (max-width: 768px) {
-    .header_simulation {
-        gap: 8px;
-    }
-    .title_simulation h6 {
-        font-size: 14px;
-    }
-    .logopetit2 img {
-        height: 40px;
-        max-width: 80px;
-    }
-    .simulation_choices, .secteur_choices {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .icon_circle {
-        width: 120px;
-        height: 120px;
-    }
-    .icon_circle img {
-        width: 70px;
-        height: 70px;
-    }
-}
+
 #questionnaire {
     width: 80%;
     max-width: 600px;
@@ -1852,39 +1451,7 @@ body.simulation {
     transform: scale(1.1);
     filter: grayscale(0%);
 }
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 1024px) {
-    .footer-container {
-        justify-content: center;
-        gap: 15px;
-        
-    }
-    .footer-section {
-        flex: 1 1 calc(50% - 30px);
-        max-width: 400px;
-        max-width: 80%;
-    }
-    .footer-section:first-child {
-        flex: 1 1 100%;
-    }
-}
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 600px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0px;
-    }
-    .footer-section {
-        flex: 1 1 100%;
-        max-width: 100%;
-        max-width: 80%;
-    }
-}
+
 
 /* SECTION 1 : DÉCOUVREZ MES PRESTATIONS */
 .section1 {
@@ -2003,84 +1570,7 @@ body.simulation {
     color: white;
 }
 
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 900px) {
-    .section1 {
-        height: auto;
-        padding: 40px 20px;
-    }
-    .services {
-        max-width: 95%;
-        gap: 15px;
-    }
-    .presta-intro {
-        font-size: 13px;
-        margin: 15px auto 30px;
-        padding: 0 20px;
-    }
-    .presta-intro p {
-        text-align: justify;
-        margin-bottom: 15px;
-    }
-    .service-block-presta {
-        max-width: 200px;
-        min-height: 170px;
-        padding: 0px 0px 15px;
-    }
-    .service-block-presta img {
-        height: 90px;
-    }
-    .service-block-presta h3 {
-        font-size: 11px;
-        margin: 12px 0;
-    }
-    .btn-more {
-        font-size: 9px;
-        padding: 5px 10px;
-    }
-}
 
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 600px) {
-    .section1 {
-        height: auto;
-        padding: 30px 15px;
-    }
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        justify-content: center;
-    }
-    .presta-intro {
-        font-size: 12px;
-        margin: 10px auto 20px;
-        padding: 0 15px;
-    }
-    .presta-intro p {
-        text-align: justify;
-        margin-bottom: 12px;
-    }
-    .service-block-presta {
-        max-width: 170px;
-        min-height: 100px;
-        padding: 0px 0px 12px;
-    }
-    .service-block-presta img {
-        height: 80px;
-    }
-    .service-block-presta h3 {
-        font-size: 10px;
-        margin: 10px 0;
-    }
-    .btn-more {
-        font-size: 8px;
-        padding: 4px 8px;
-    }
-}
 
 /* ILS NOUS ONT FAIT CONFIANCE */
 .trusted-section {
@@ -2130,26 +1620,7 @@ body.simulation {
     }
 }
 
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 768px) {
-    .logo-track img {
-        width: 80px;
-        height: 60px;
-        margin: 0 18px;
-    }
-}
-@media (max-width: 480px) {
-    .trusted-section h2 {
-        font-size: 20px;
-    }
-    .logo-track img {
-        width: 60px;
-        height: 50px;
-        margin: 0 14px;
-    }
-}
+
 #contact { 
     background: #0F111E;
     color: white; 
@@ -2208,55 +1679,6 @@ body.simulation {
     transform: scale(1.05);
 } 
 
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 768px) {
-    .contact-container { 
-        max-width: 90%; 
-    }
-    .contact-text {
-        font-size: 0.8rem;
-    }
-    .contact-info p {
-        font-size: 0.85rem;
-    }
-    .social-icons {
-        gap: 20px;
-    }
-    .social-icon img {
-        width: 30px;
-    }
-    .contact-button {
-        font-size: 11px;
-        padding: 8px 15px;
-    }
-}
-
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* ==========================PROBLEME */
-@media (max-width: 480px) {
-    .contact-container { 
-        max-width: 95%; 
-    }
-    .contact-text {
-        font-size: 0.75rem;
-    }
-    .contact-info p {
-        font-size: 0.8rem;
-    }
-    .social-icons {
-        gap: 15px;
-    }
-    .social-icon img {
-        width: 28px; 
-    }
-    .contact-button {
-        font-size: 10px;
-        padding: 7px 12px;
-    }
-}
 
 /* SECTION "QUI SUIS-JE ?" */
 .qui-suis-je {
@@ -2316,46 +1738,6 @@ body.simulation {
     transform: scale(1.05);
 }
 
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 900px) {
-    .qui-suis-je-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .photo {
-        max-width: 50%;
-        margin: 0 auto 20px;
-    }
-    .texte {
-        padding: 0 10px;
-    }
-    .texte p {
-        font-size: 13px;
-        line-height: 1.4;
-    }
-    .cta-button {
-        font-size: 13px;
-        padding: 8px 15px;
-    }
-}
-
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 600px) {
-    .photo {
-        max-width: 70%;
-    }
-    .texte p {
-        font-size: 12px;
-    }
-    .cta-button {
-        font-size: 12px;
-        padding: 8px 15px;
-    }
-}
 
 /* ARROW FLECHE SCROLL ACCUEIL */
 .scroll-arrow {
@@ -2606,10 +1988,591 @@ body.simulation {
     transform: translateY(0);
 }
 
-/* ============================= */
-/* ==== RESPONSIVE TABLETTE ==== */
-/* ============================= */
-@media (max-width: 1024px) {
+
+
+/* ========== RESPONSIVE PAGE D'ACCUEIL ========== */ 
+
+/* MOBILE PORTRAIT & PAYSAGE */ 
+
+@media screen and (max-width: 768px) {
+    .header_accueil {
+        height: 100dvh;
+        background-size: auto 100dvh;
+        background-position: center;
+    }
+    .banniere-defilante {
+        font-size: 8px;
+    }
+    .banniere-defilante p {
+        animation: defilement 35s linear infinite;
+    }
+    .banniere-defilante p .separateur {
+        font-size: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .hamburger {
+        display: flex;
+        width: 24px;
+        height: 18px;
+    }
+    .hamburger span{
+        height: 3px;
+    }
+    .sommaire {
+        position: absolute;
+        top: 55px;
+        right: 8px;
+        width: 30%;
+        max-width: 220px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        flex-direction: column;
+        align-items: center;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        padding: 8px 0;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+        pointer-events: none;
+        margin: 15px 15px;
+    }
+    .sommaire.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        display: flex;
+    }
+    .sommaire li {
+        width: 100%;
+        text-align: center;
+    }
+    .sommaire li a {
+        display: block;
+        width: 100%;
+        font-size: 10px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+    }
+    .sommaire li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }  
+    .logopetit {
+        top: 35px;
+        left: 25px;
+    }
+    .logopetit img {
+        max-height: 18px;
+    }
+    .header-container {
+        text-align: center;
+    }
+    .Bienvenue {
+        font-size: clamp(12px, 4vw, 16px);
+        letter-spacing: 0.04em;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .intro {
+        font-size: clamp(10px, 5vw, 12px);
+        letter-spacing: 0.05em;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .location {
+        flex-wrap: nowrap;
+        align-items: center;
+        max-width: 90%;
+    }
+    .location-icon {
+        width: clamp(10px, 2.5vw, 12px);
+    }
+    .location span {
+        font-size: clamp(10px, 3.5vw, 12px);
+    }
+    .sommaire {
+        top: 50px;
+        padding: 10px 0;
+    }
+    .button_simulateur {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+    .button-container1 {
+        left: -4px;
+        right: auto;
+    }
+    .section1 {
+        height: auto;
+        padding: 30px 15px;
+    }
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+    }
+    .presta-intro {
+        font-size: 12px;
+        margin: 10px auto 20px;
+        padding: 0 15px;
+    }
+    .presta-intro p {
+        text-align: justify;
+        margin-bottom: 12px;
+    }
+    .service-block-presta {
+        max-width: 170px;
+        min-height: 100px;
+        padding: 0px 0px 12px;
+    }
+    .service-block-presta img {
+        height: 80px;
+    }
+    .service-block-presta h3 {
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .btn-more {
+        font-size: 8px;
+        padding: 4px 8px;
+    }
+    .photo {
+        max-width: 70%;
+    }
+    .texte p {
+        font-size: 12px;
+    }
+    .cta-button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+    .preuve_social .content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .counter {
+        font-size: 2em;
+    }
+
+    .plus {
+        font-size: 1.6em;
+    }
+
+    .item p {
+        font-size: 0.9em;
+    }
+
+    .contact-container { 
+        max-width: 90%; 
+    }
+    .contact-text {
+        font-size: 0.8rem;
+    }
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+    .social-icons {
+        gap: 20px;
+    }
+    .social-icon img {
+        width: 30px;
+    }
+    .contact-button {
+        font-size: 11px;
+        padding: 8px 15px;
+    }
+
+    .logo-track img {
+        width: 80px;
+        height: 60px;
+        margin: 0 18px;
+    }
+    .trusted-section h2 {
+        font-size: 20px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+    .footer-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        max-width: 80%;
+    }
+} 
+
+@media screen and (max-width: 768px) and (orientation: landscape) {} 
+
+/* TABLETTE PORTRAIT & PAYSAGE */ 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+        width: 30px;
+        height: 22px;
+    }
+    .hamburger span{
+        height: 4px;
+    }
+    .sommaire {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 30%;
+        max-width: 260px;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        padding: 10px 0;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        pointer-events: none;
+        margin: 15px 15px;
+    }
+    .sommaire.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        display: flex;
+    }
+    .sommaire li {
+        width: 100%;
+        text-align: center;
+        padding: 6px 0;
+    }
+    .sommaire li a {
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        padding: 7px 12px;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+    }
+    .sommaire li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }      
+    .section1 {
+        height: auto;
+        padding: 40px 20px;
+    }
+    .services {
+        max-width: 95%;
+        gap: 15px;
+    }
+    .presta-intro {
+        font-size: 13px;
+        margin: 15px auto 30px;
+        padding: 0 20px;
+    }
+    .presta-intro p {
+        text-align: justify;
+        margin-bottom: 15px;
+    }
+    .service-block-presta {
+        max-width: 200px;
+        min-height: 170px;
+        padding: 0px 0px 15px;
+    }
+    .service-block-presta img {
+        height: 90px;
+    }
+    .service-block-presta h3 {
+        font-size: 11px;
+        margin: 12px 0;
+    }
+    .qui-suis-je-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .photo {
+        max-width: 50%;
+        margin: 0 auto 20px;
+    }
+    .texte {
+        padding: 0 10px;
+    }
+    .texte p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    .cta-button {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+    .btn-more {
+        font-size: 9px;
+        padding: 5px 10px;
+    }
+    .preuve_social .content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .counter {
+        font-size: 2.2em;
+    }
+    .plus {
+        font-size: 1.8em;
+    }
+    .item p {
+        font-size: 1em;
+    }
+    .footer-container {
+        justify-content: center;
+        gap: 15px;
+        
+    }
+    .footer-section {
+        flex: 1 1 calc(50% - 30px);
+        max-width: 400px;
+        max-width: 80%;
+    }
+    .footer-section:first-child {
+        flex: 1 1 100%;
+    }
+} 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {} 
+
+/* ========== RESPONSIVE PAGE DE CONTACT ========== */ 
+
+/* MOBILE PORTRAIT & PAYSAGE */ 
+
+@media screen and (max-width: 768px) {
+    section#Contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+        section#Contact .right-section {
+        margin-right: 0px;
+        padding: 0px;
+    }
+    .container, .right-section {
+        max-width: 100%;
+        padding: 20px;
+    }
+    section#Contact .container form .form-row.two-columns {
+        display: block;
+    }
+    section#Contact .container .title h3,
+    section#Contact .right-section .title h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    section#Contact .container form button {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .right-section .title {
+        font-size: 14px;
+    }
+    .right-section p {
+        font-size: 0.9em;
+        max-width: 80%;
+    }
+    .right-section .contact_gras {
+        font-size: 1em;
+        margin: 0.5rem 0;
+    }
+} 
+
+@media screen and (max-width: 768px) and (orientation: landscape) {} 
+
+/* TABLETTE PORTRAIT & PAYSAGE */ 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section#Contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+        section#Contact .right-section {
+        margin-right: 0px;
+        padding: 0px;
+    }
+    .container, .right-section {
+        max-width: 100%;
+        padding: 20px;
+    }
+    section#Contact .container form .form-row.two-columns {
+        display: block;
+    }
+    section#Contact .container .title h3,
+    section#Contact .right-section .title h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    section#Contact .container form button {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .right-section .title {
+        font-size: 14px;
+    }
+    .right-section p {
+        font-size: 0.9em;
+        max-width: 80%;
+    }
+    .right-section .contact_gras {
+        font-size: 1em;
+        margin: 0.5rem 0;
+    }
+} 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {} 
+
+
+/* ========== RESPONSIVE PAGE SIMULATION ========== */ 
+
+/* MOBILE PORTRAIT & PAYSAGE */ 
+
+@media screen and (max-width: 768px) {
+    .header_simulation {
+        gap: 8px;
+    }
+    .title_simulation h6 {
+        font-size: 14px;
+    }
+    .logopetit2 img {
+        height: 40px;
+        max-width: 80px;
+    }
+    .simulation_choices, .secteur_choices {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .icon_circle {
+        width: 120px;
+        height: 120px;
+    }
+    .icon_circle img {
+        width: 70px;
+        height: 70px;
+    }
+} 
+
+@media screen and (max-width: 768px) and (orientation: landscape) {} 
+
+
+/* TABLETTE PORTRAIT & PAYSAGE */ 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header_simulation {
+        flex-direction: column;
+        height: auto;
+        padding-top: 15px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+    .logopetit2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+    .title_simulation {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title_simulation h6 {
+        font-size: 16px;
+        margin: 0;
+    }
+    .logopetit2 img {
+        height: 50px;
+        max-width: 100px;
+    }
+} 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {} 
+
+
+/* ========== RESPONSIVE PAGE QUI SUIS-JE ? ========== */ 
+
+/* MOBILE PORTRAIT & PAYSAGE */ 
+
+@media screen and (max-width: 768px) {
+    .propos-section {
+        height: auto;
+    }
+    .propos-text {
+        width: 100%;
+        font-size: 0.9em;
+        padding-top: 120px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 0px;
+    }
+    .propos-image {
+        padding-top: 0px;
+        width: 80%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .profile-image {
+        padding-top: 0px;
+        width: 100%;
+        height: auto;
+    }
+    .qualities-section {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .quality {
+        width: 100%;
+    }
+} 
+
+@media screen and (max-width: 768px) and (orientation: landscape) {} 
+
+/* TABLETTE PORTRAIT & PAYSAGE */ 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .propos-content {
         flex-direction: column;
         align-items: center;
@@ -2644,39 +2607,6 @@ body.simulation {
     .quality {
         width: 100%;
     }
-}
-/* =========================== */
-/* ==== RESPONSIVE MOBILE ==== */
-/* =========================== */
-@media (max-width: 768px) {
-    .propos-section {
-        height: auto;
-    }
-    .propos-text {
-        width: 100%;
-        font-size: 0.9em;
-        padding-top: 120px;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-bottom: 0px;
-    }
-    .propos-image {
-        padding-top: 0px;
-        width: 80%;
-        margin: 30px 0;
-        display: flex;
-        justify-content: center;
-    }
-    .profile-image {
-        padding-top: 0px;
-        width: 100%;
-        height: auto;
-    }
-    .qualities-section {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    .quality {
-        width: 100%;
-    }
-}
+} 
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {} 
