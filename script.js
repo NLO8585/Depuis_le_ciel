@@ -206,7 +206,29 @@ document.addEventListener("DOMContentLoaded", function () {
           sommaire.classList.add("static"); // Affichage immédiat sans animation
       }
   }
+
+
+  /* ANIMATION IMAGE MATERIELS */
+  // Sélectionner toutes les images avec la classe 'animate-image'
+const images = document.querySelectorAll('.animate-image');
+
+// Créer une instance de l'IntersectionObserver
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target); // Arrêter l'observation une fois l'animation appliquée
+        }
+    });
+}, { threshold: 0.5 }); // Observer l'élément lorsqu'il est visible à 50% dans la fenêtre
+
+// Observer chaque image
+images.forEach(image => {
+    observer.observe(image);
 });
+});
+
+
 
 
 
