@@ -931,6 +931,11 @@ body.simulation {
     flex-shrink: 0;
 }
 .logopetit2 img {
+    max-height: 22px;
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    cursor: pointer;
     height: 60px;
     max-width: 120px;
 }
@@ -1154,13 +1159,7 @@ body.simulation {
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
-.logopetit2 img {
-    max-height: 22px;
-    position: absolute;
-    top: 40px;
-    left: 30px;
-    cursor: pointer;
-}
+
 
 /* PAGE MENTIONS LEGALES */
 .mention_article {
@@ -2605,13 +2604,46 @@ body.simulation {
 @media screen and (max-width: 768px) {
     .header_simulation {
         gap: 8px;
+        flex-direction: column; /* Met le logo au-dessus du titre */
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center; /* Centre les éléments verticalement */
+        height: 150px; /* Ajuste la hauteur dynamiquement */
+        padding: 20px 0; /* Ajoute de l'espace autour */
     }
     .title_simulation h6 {
         font-size: 14px;
     }
+    .logopetit2 {
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center;
+        width: 100%; /* Prend toute la largeur */
+    }
     .logopetit2 img {
-        height: 40px;
-        max-width: 80px;
+        height: 22px;
+        max-width: auto;
+        position: static; /* Supprime le positionnement absolu */
+    }
+    .title_simulation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Prend toute la largeur */
+        text-align: center; /* Centre le texte */
+    }
+
+    .title_simulation h6 {
+        font-size: 14px;
+        text-align: center;
+    }
+    .body.simulation {
+            overflow: hidden;
+            touch-action: none; /* Désactive les gestes de scroll */
+    }
+
+    .header_simulation, .title_simulation, .logopetit2 {
+        max-width: 100%; /* Empêche les éléments de dépasser la largeur de l’écran */
+        overflow: hidden; /* Évite tout débordement interne */
     }
     .simulation_choices, .secteur_choices {
         flex-direction: column;
