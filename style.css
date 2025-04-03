@@ -2189,7 +2189,7 @@ body.simulation {
         font-weight: 500;
         color: white;
         text-decoration: none;
-        padding: 6px 10px;
+        padding: 10px 12px;
         border-radius: 6px;
         transition: background 0.2s ease, transform 0.2s ease;
     }
@@ -2251,6 +2251,12 @@ body.simulation {
     .button-container1 {
         left: -4px;
         right: auto;
+    }
+    .scroll-arrow {
+        bottom: 20px; /* Ajuste la position en bas pour mobile si nécessaire */
+    }
+    .scroll-arrow img {
+        width: 32px; /* Réduit la taille de la flèche sur mobile */
     }
     .section1 {
         height: auto;
