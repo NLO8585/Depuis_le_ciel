@@ -906,6 +906,8 @@ body {
 #simulation{
     margin: 0;
     padding: 0;
+    display: flex;
+    width: 100%;
 }
 .header_simulation {
     height: 92px;
@@ -947,6 +949,14 @@ body.simulation{
     margin: 0;
     color: #ffffff;
     white-space: nowrap;
+}
+.titre_simulation {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #013142;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 .choice {
     display: flex;            /* Active le mode flex */
