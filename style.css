@@ -903,6 +903,10 @@ body {
 }
 
 /* SIMULATEUR */
+#simulation{
+    margin: 0;
+    padding: 0;
+}
 .header_simulation {
     height: 92px;
     display: flex;
@@ -944,7 +948,12 @@ body.simulation{
     color: #ffffff;
     white-space: nowrap;
 }
-
+.choice {
+    display: flex;            /* Active le mode flex */
+    flex-direction: column;   /* Les enfants sont empilés verticalement */
+    align-items: center;      /* Centre les éléments horizontalement */
+    justify-content: center;  /* Centre les éléments verticalement si nécessaire */
+}
 .simulation_choices, .secteur_choices{
     display: flex;
     justify-content: space-evenly;
@@ -982,6 +991,7 @@ body.simulation{
     color: #013142;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
 .particulier_icons {
     display: flex;
@@ -1109,14 +1119,6 @@ body.simulation{
 .montage-table tr:hover {
     background-color: #f1f1f1;
 }
-.titre_simulation {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #013142;
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
 .sous-titre {
     font-size: 16px;
     text-align: center;
@@ -1143,8 +1145,15 @@ body.simulation{
     margin-top: 80px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
-
+html{
+    margin: 0;
+    padding: 0;
+}
 
 /* PAGE MENTIONS LEGALES */
 .mention_article {
@@ -2639,16 +2648,7 @@ body.simulation{
         gap: 20px;
         padding-bottom: 40px;
       }
-    .icon_circle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 80px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        background: linear-gradient(135deg, #00475b, #001d2a);
-        border: 1px solid #ffffff;
-    }
+
     .icon_circle:hover{
         transform: scale(1.1) rotate(3deg);
         border: 1px solid #000000;
@@ -2670,6 +2670,7 @@ body.simulation{
         color: #013142;
         margin-top: 20px;
         margin-bottom: 20px;
+        text-align: center;
       }
     .particulier_icons {
         display: flex;
