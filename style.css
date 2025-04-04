@@ -2701,19 +2701,57 @@ html{
         align-items: center;
         text-align: center;
       }
+
+    .titre_simulation {
+        font-size: 16px;
+    }
+    .sous-titre {
+        font-size: 12px;
+    }
+    .description, .autres-prestations{
+        font-size: 10px;
+    }
+    .image-tarifs2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: auto;
+        height: 200px;
+        cursor: pointer;
+    }
+    .tarifs-table {
+        width: 70%;
+    }
+    .montage-table {
+        width: 40%;
+    }
+    .tarifs-table th, 
+    .tarifs-table td,
+    .montage-table th, 
+    .montage-table td  {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+    .contact-section{
+        font-size: 10px;
+    }
+    .contact-devis-btn {
+        display: inline-block;
+        padding: 7px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
     .retour {
         display: inline-block;
-        font-size: 14px;
+        font-size: 12px;
         color: #8b8b8b;
         cursor: pointer;
         margin-bottom: 20px;
-        margin-top: 0;
+        margin-top: 20px;
     }
     .retour:hover {
         text-decoration: underline;
     }
-
-} 
+}
 
 @media screen and (max-width: 768px) and (orientation: landscape) {} 
 
