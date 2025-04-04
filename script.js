@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* === SIMULATEUR (NAVIGATION ENTRE ÉTAPES) === */
   const choices = document.querySelectorAll(".choice, .sector_choice, .particulier_choice");
-  const backLinks = document.querySelectorAll(".retour");
+  const backLinks = document.querySelectorAll(".retour, .retour-button");
 
   choices.forEach(choice => {
     choice.addEventListener("click", () => {
