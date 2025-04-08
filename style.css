@@ -20,15 +20,12 @@ html{
     margin: 0;
     padding: 0;
 }
-body.simulation{
+body.body_simulation{
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-* {
-    outline: 1px solid red;
-  }
 
 /* ENTETE PAGE D'ACCUEIL */
 .header_accueil {
@@ -2661,7 +2658,6 @@ section {
             margin: 0;
             padding:0;
             overflow: hidden;
-            touch-action: none; /* Désactive les gestes de scroll */
     }
     .header_simulation, .title_simulation, .logopetit2 {
         max-width: 100%; /* Empêche les éléments de dépasser la largeur de l’écran */
