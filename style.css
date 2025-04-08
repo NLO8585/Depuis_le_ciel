@@ -21,11 +21,14 @@ html{
     padding: 0;
 }
 body.simulation{
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+* {
+    outline: 1px solid red;
+  }
 
 /* ENTETE PAGE D'ACCUEIL */
 .header_accueil {
@@ -2616,6 +2619,12 @@ section {
 /* MOBILE PORTRAIT & PAYSAGE */ 
 
 @media screen and (max-width: 768px) {
+    #simulation{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+    }
     .header_simulation {
         gap: 8px;
         flex-direction: column; /* Met le logo au-dessus du titre */
@@ -2648,7 +2657,9 @@ section {
         font-size: 16px;
         text-align: center;
     }
-    .body.simulation {
+    body.body_simulation {
+            margin: 0;
+            padding:0;
             overflow: hidden;
             touch-action: none; /* Désactive les gestes de scroll */
     }
