@@ -2236,6 +2236,7 @@ section {
         text-align: center;
         max-width: 90%;
         margin: 0 auto;
+        font-weight: 700;
     }
     .intro {
         /*font-size: clamp(10px, 5vw, 12px);
@@ -2249,12 +2250,14 @@ section {
         flex-wrap: nowrap;
         align-items: center;
         max-width: 95%;
+
     }
     .location-icon {
         width: clamp(12px, 3vw, 14px);
     }
     .location span {
         font-size: clamp(13px, 3vw, 15px);
+        font-weight: 500;
     }
     .sommaire {
         top: 50px;
@@ -2263,6 +2266,13 @@ section {
     .button_simulateur {
         font-size: 9px;
         padding: 4px 10px;
+    }
+    .button_simulateur:hover {
+        background-color: rgb(200, 70, 50);
+        color: rgb(255, 255, 255);
+        border-bottom: 1px solid rgb(255, 255, 255);
+        border-left: 1px solid rgb(255, 255, 255);
+        border-right: 1px solid rgb(255, 255, 255);
     }
     .button-container1 {
         left: -4px;
@@ -2708,7 +2718,7 @@ section {
         width: 100%;
     }
     .icon_circle:hover{
-        transform: scale(1.1) rotate(3deg);
+        transform: scale(1.1);
         border: 1px solid #000000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
@@ -2777,6 +2787,12 @@ section {
         align-items: center;
         text-align: center;
     }
+    .contact-devis-btn:hover {
+        background: linear-gradient(135deg, #00475b, #001d2a);
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+    }
+
     .retour {
         display: inline-block;
         font-size: 11px;
