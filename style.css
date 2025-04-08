@@ -1758,27 +1758,39 @@ section {
     transform: translateY(15px);
   }
 
-/* WAVE DIVIDER GRIS */
-.wave-divider {
+/* WAVE DIVIDER INDEX */
+.wave-divider-index {
     background-color: rgb(248, 248, 248);
     position: relative;
     width: 100%;
     height: 80px;
 }
-.wave-divider svg {
+.wave-divider-index svg {
     width: 100%;
     height: 100%;
     display: block;
     margin: 0;
     padding: 0;
 }
-.wave-path {
-    fill:#0F111E;
-    stroke: none;
+/* WAVE DIVIDER SERVICES */
+.wave-divider-services {
+    background-image: url('image/fond_de_site.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    width: 100%;
+    height: 80px;
 }
-
-/* WAVE DIVIDER BLANC */
-.wave-divider2 {
+.wave-divider-services svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+/* WAVE DIVIDER PORTFOLIO */
+.wave-divider-portfolio {
     background-color: rgb(255, 255, 255);
     position: relative;
     width: 100%;
@@ -1786,16 +1798,31 @@ section {
     overflow: hidden;
     line-height: 0;
 }
-.wave-divider2 svg {
+.wave-divider-portfolio svg {
     width: 100%;
     height: 100%;
     display: block;
 }
 .wave-path {
     fill:#0F111E;
+    stroke: none;
 }
-/* WAVE DIVIDER BEIGE */
-.wave-divider4 {
+/* WAVE DIVIDER MENTION*/
+.wave-divider-mention {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+.wave-divider-mention svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+/* WAVE DIVIDER A PROPOS */
+.wave-divider-propos {
     background-color: #EAEAEA;
     position: relative;
     width: 100%;
@@ -1803,21 +1830,30 @@ section {
     overflow: hidden;
     line-height: 0;
 }
-.wave-divider4 svg {
+.wave-divider-propos svg {
     width: 100%;
     height: 100%;
     display: block;
 }
-.wave-path {
-    fill:#0F111E;
+/* WAVE DIVIDER CONTACT */
+.wave-divider-contact {
+    background-color: #F8F8F8;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    line-height: 0;
 }
-
+.wave-divider-contact svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 .qualities-section svg {
     display: block;
     width: 100%;
     margin-top: 60px;
 }
-
 .tête-section svg {
     display: block;
     width: 100%;
