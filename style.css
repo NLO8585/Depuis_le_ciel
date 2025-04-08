@@ -1066,18 +1066,14 @@ section {
     cursor: pointer;
     margin-top: 20px;
 }
-.retour:hover {
-    text-decoration: underline;
+.retour img{
+    position: absolute;
+    height: 25px;
+    left:35px;
+    top: 35px;
 }
-.retour-button {
-    display: inline-block;
-    font-size: 14px;
-    color: #8b8b8b;
-    cursor: pointer;
-    margin-top: 20px;
-}
-.retour-button:hover {
-    text-decoration: underline;
+.retour img:hover {
+    transform: translateX(-2px);
 }
 .contact-devis-btn {
     display: inline-block;
@@ -1168,7 +1164,7 @@ section {
     font-weight: bold;
     text-align: center;
     color: #013142;
-    margin-top: 80px;
+    margin-top: 30px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     margin-left: 0;
@@ -2669,7 +2665,7 @@ section {
     }
     .titre_simulation1 {
         font-size:22px;
-        margin-top: 40px;
+        margin-top: 20px;
     }
     .simulation_choices, .secteur_choices, .particulier_icons{
         display: flex;
@@ -2778,13 +2774,11 @@ section {
         margin-bottom: 50px;
         margin-top: 0px;
     }
-    .retour-button {
-        display: inline-block;
-        font-size: 11px;
-        color: #8b8b8b;
-        cursor: pointer;
-        margin-bottom: 20px;
-        margin-top: 20px;
+    .retour img{
+        position: absolute;
+        height: 20px;
+        left:25px;
+        top: 25px;
     }
     .simulation_choices, .secteur_choices, .particulier_icons {
         width: 100%;
