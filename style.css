@@ -934,10 +934,10 @@ section {
 .logopetit2 img {
     max-height: 22px;
     position: absolute;
-    top: 35px;
     left: 30px;
     cursor: pointer;
-    height: 60px;
+    top:50%;
+    transform: translateY(-50%);
     max-width: 120px;
 }
 .title_simulation {
@@ -1159,7 +1159,7 @@ section {
     margin-top: 15px;
     margin-bottom: 15px;
     width: auto;
-    height: 300px;
+    height: 400px;
     cursor: pointer;
 }
 .titre_simulation1 {
@@ -2672,7 +2672,6 @@ section {
 /* MOBILE PORTRAIT & PAYSAGE */ 
 
 @media screen and (max-width: 768px) {
-    
     #simulation{
         margin: 0;
         padding: 0;
@@ -2683,42 +2682,42 @@ section {
         margin: 0px;
         padding: 0px;
     }
+    /*HEADER*/
     .header_simulation {
         gap: 8px;
-        flex-direction: column; /* Met le logo au-dessus du titre */
-        align-items: center; /* Centre les éléments horizontalement */
-        justify-content: center; /* Centre les éléments verticalement */
-        height: 110px; /* Ajuste la hauteur dynamiquement */
-        padding: 0px 0; /* Ajoute de l'espace autour */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 110px;
+        padding: 0px 0;
         width: 100%;
     }
     .logopetit2 {
         display: flex;
-        justify-content: center; /* Centre horizontalement */
+        justify-content: center;
         align-items: center;
-        width: 100%; /* Prend toute la largeur */
-        padding-top: 20px;
+        width: 100%;
+        padding-top: 30px;
     }
     .logopetit2 img {
         height: 18px;
         max-width: 100%;
-        position: static; /* Supprime le positionnement absolu */
+        position: static;
     }
     .title_simulation {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%; /* Prend toute la largeur */
-        text-align: center; /* Centre le texte */
-        padding-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 15px;
     }
     .title_simulation h6 {
         font-size: 16px;
         text-align: center;
     }
-
     .header_simulation, .title_simulation, .logopetit2 {
-        max-width: 100%; /* Empêche les éléments de dépasser la largeur de l’écran */
+        max-width: 100%;
     }
     .titre_simulation1 {
         font-size:22px;
@@ -2733,7 +2732,7 @@ section {
         padding-bottom: 0px;
         flex-direction: column;
         max-width: 100%;
-      }
+    }
     .sector_choice:first-of-type, .choice:first-of-type, .particulier_choice:first-of-type {
         margin-top: 40px;
         display: flex;
@@ -2745,13 +2744,16 @@ section {
         max-width: 100%;
     }
     .sector_choice:not(:first-of-type), .choice:not(:first-of-type), .particulier_choice:not(:first-of-type) {
-        margin-top: 20px; 
+        margin-top: 5px; 
         display: flex;
         flex-direction: column; 
         align-items: center; 
         justify-content: center;
         text-align: center;
         width: 100%;
+    }
+    .sector_choice:last-of-type, .choice:last-of-type, .particulier_choice:last-of-type {
+        margin-bottom: 40px;
     }
     .icon_circle:hover{
         transform: scale(1.1);
@@ -2776,8 +2778,7 @@ section {
         justify-content: center;
         align-items: center;
         text-align: center;
-      }
-
+    }
     .titre_simulation {
         font-size: 16px;
         padding: 0% 0%;
@@ -2828,7 +2829,6 @@ section {
         color: rgb(255, 255, 255);
         border: 1px solid rgb(255, 255, 255);
     }
-
     .retour {
         display: inline-block;
         font-size: 11px;
@@ -2851,23 +2851,18 @@ section {
         overflow-x: hidden;
     }
     .step {
-        height: 100vh; /* Toujours 100% de la hauteur de l'écran */
-        transform: translateX(0); /* Pas de décalage horizontal par défaut */
+        height: 100vh;
+        transform: translateX(0);
     }
-
-    /* On ajuste aussi les transitions */
     .step.exit-left {
         transform: translateX(-100%);
     }
-
     .step.enter-right {
         transform: translateX(100%);
     }
-
     .step.enter-left {
         transform: translateX(-100%);
     }
-
     .step.exit-right {
         transform: translateX(100%);
     }
@@ -2879,20 +2874,35 @@ section {
 /* TABLETTE PORTRAIT & PAYSAGE */ 
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+    /*HEADER*/
     .header_simulation {
+        display: flex;
         flex-direction: column;
         height: auto;
-        padding-top: 15px;
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 10px;
+        height: 150px;
     }
     .logopetit2 {
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-bottom: 5px;
+        align-items: center;
+    }
+    .logopetit2 img {
+        max-height: 22px;
+        align-items: center;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+
+    }
+    .title_simulation h6 {
+        font-size: 20px;
+        text-align: center;
+        margin: 0;
     }
     .title_simulation {
         width: 100%;
@@ -2900,13 +2910,148 @@ section {
         justify-content: center;
         align-items: center;
     }
-    .title_simulation h6 {
-        font-size: 16px;
-        margin: 0;
+    .titre_simulation1 {
+        font-size:26px;
+        margin-top: 30px;
     }
-    .logopetit2 img {
-        height: 50px;
-        max-width: 100px;
+    .simulation_choices, .secteur_choices, .particulier_icons{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0px;
+        padding-bottom: 0px;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .sector_choice:first-of-type, .choice:first-of-type, .particulier_choice:first-of-type {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; 
+        max-width: 100%;
+    }
+    .sector_choice:not(:first-of-type), .choice:not(:first-of-type), .particulier_choice:not(:first-of-type) {
+        margin-top: 30px; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .icon_circle:hover{
+        transform: scale(1.1);
+        border: 1px solid #000000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .icon_circle {
+        width: 120px;
+        height: 120px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .icon_circle img {
+        width: 60px;
+        height: 60px;
+    }
+    .choice p, .sector_choice p, .particulier_choice p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #013142;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .titre_simulation {
+        font-size: 22px;
+        padding: 0px 0px;
+        margin-top: 20px;
+    }
+    .sous-titre {
+        font-size: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 10px;
+    }
+    .description p, .autres-prestations p, .contact-section p{
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .image-tarifs2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: auto;
+        height: 350px;
+        cursor: pointer;
+    }
+    .tarifs-table {
+        width: 45%;
+    }
+    .montage-table {
+        width: 30%;
+    }
+    .tarifs-table th, 
+    .tarifs-table td,
+    .montage-table th, 
+    .montage-table td  {
+        font-size: 15px;
+        padding: 7px 0px;
+    }
+    .contact-devis-btn {
+        display: inline-block;
+        padding: 9px 13px;
+        font-size: 14px;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-devis-btn:hover {
+        background: linear-gradient(135deg, #00475b, #001d2a);
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+    }
+    .retour {
+        display: inline-block;
+        font-size: 11px;
+        color: #8b8b8b;
+        cursor: pointer;
+        margin-bottom: 50px;
+        margin-top: 0px;
+    }
+    .retour img{
+        position: absolute;
+        height: 30px;
+        left:30px;
+        top: 30px;
+    }
+    .simulation_choices, .secteur_choices, .particulier_icons {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .container-steps {
+        overflow-x: hidden;
+    }
+    .step {
+        height: 100vh;
+        transform: translateX(0);
+    }
+    .step.exit-left {
+        transform: translateX(-100%);
+    }
+    .step.enter-right {
+        transform: translateX(100%);
+    }
+    .step.enter-left {
+        transform: translateX(-100%);
+    }
+    .step.exit-right {
+        transform: translateX(100%);
     }
 } 
 
