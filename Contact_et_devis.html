@@ -15,24 +15,24 @@
 
 <body>
     <header class="header">
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Ouvrir le menu principal">
             <span></span>
             <span></span>
             <span></span>
         </div>    
         <nav>
             <ul class="sommaire">
-                <li> <a href="index.html" title="Accueil">Accueil</a> </li>
-                <li> <a href="A_propos.html" title="Qui suis-je ?">Qui suis-je ?</a> </li>
-                <li> <a href="Nos_services.html" title=" Nos services">Nos Services</a> </li>
-                <li> <a href="Portfolio.html" title=" Portfolio">Portfolio</a> </li>
-                <li class="active"> <a href="Contact_et_devis.html" title="Contact et Devis">Contact & Devis</a></li>
+                <li> <a href="index.html" title="Accueil" aria-label="Aller à la page d'accueil">Accueil</a> </li>
+                <li> <a href="A_propos.html" title="Qui suis-je ?" aria-label="En savoir plus sur moi">Qui suis-je ?</a> </li>
+                <li> <a href="Nos_services.html" title=" Nos services" aria-label="Découvrir nos services">Nos Services</a> </li>
+                <li> <a href="Portfolio.html" title=" Portfolio" aria-label="Voir mon portfolio">Portfolio</a> </li>
+                <li class="active"> <a href="Contact_et_devis.html" title="Contact et Devis" aria-label="Accéder à la page de contact et devis">Contact & Devis</a></li>
             </ul>
         </nav>
         <div class="header-container2">
             <div class="logopetit">
-                <a href="index.html">
-                    <img src="image/Logo_Depuis.png" alt="Logo" />
+                <a href="index.html" aria-label="Retour à la page d'accueil">
+                    <img src="image/Logo_Depuis.png" alt="Logo Depuis Le Ciel" />
                 </a>
             </div>
         </div>
@@ -47,7 +47,7 @@
             <form action="send-email.php" method="post">
                 <div class="form-row">
                     <label for="type">Vous êtes ? *</label>
-                    <select name="type" id="type"required>
+                    <select name="type" id="type"required aria-label="Sélectionnez votre statut">
                         <option value="" disabled selected>Choisissez une option</option>
                         <option value="professionnel">Professionnel ou entreprise</option>
                         <option value="association">Association</option>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-row">
                     <label for="besoin">Votre besoin ? *</label>
-                    <select name="besoin" id="besoin" required>
+                    <select name="besoin" id="besoin" required aria-label="Sélectionnez le type de prestation désirée">
                         <option value="" disabled selected>Choisissez une option</option>
                         <option value="prises-de-vues">Prises de vues aériennes par drone</option>
                         <option value="production-audiovisuelle">Production Audiovisuelle</option>
@@ -66,26 +66,26 @@
                 <div class="form-row two-columns">
                     <div>
                         <label for="company">Entreprise</label>
-                        <input type="text" name="company" id="company">
+                        <input type="text" name="company" id="company" aria-label="Nom de l'entreprise">
                     </div>
                     <div>
                         <label for="fullname">Votre nom et prénom *</label>
-                        <input type="text" name="fullname" id="fullname" required>
+                        <input type="text" name="fullname" id="fullname" required required aria-label="Entrez votre nom et prénom">
                     </div>
                 </div>
                 <div class="form-row two-columns">
                     <div>
                         <label for="email">Votre e-mail *</label>
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email" required aria-label="Entrez votre e-mail">
                     </div>
                     <div>
                         <label for="tel">N° de téléphone *</label>
-                        <input type="tel" name="tel" id="tel" required>
+                        <input type="tel" name="tel" id="tel" required aria-label="Entrez votre numéro de téléphone">
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="objet">Objet de la demande *</label>
-                    <select name="objet" id="objet" required>
+                    <select name="objet" id="objet" required  aria-label="Sélectionnez l'objet de votre demande">
                         <option value="" disabled selected>Choisissez une option</option>
                         <option value="renseignement">Renseignement</option>
                         <option value="devis">Devis</option>
@@ -95,17 +95,17 @@
                 </div>
                 <div class="form-row">
                     <label for="message">Votre message *</label>
-                    <textarea name="message" id="message" required></textarea>
+                    <textarea name="message" id="message" required aria-label="Entrez votre message"></textarea>
                 </div>
                 <div class="form-row checkbox">
-                    <input type="checkbox" name="consent" id="consent" required>
+                    <input type="checkbox" name="consent" id="consent" required aria-label="Acceptez-vous l'utilisation de vos données pour la gestion de la relation contractuelle ?">
                     <label for="consent">
                         En soumettant ce formulaire, vous acceptez que les données saisies soient utilisées par DEPUIS LE CIEL afin qu'elle puisse répondre directement et gérer la relation contractuelle.
                     </label>
                 </div>
                 <!-- Étape 5 <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div>-->
                 <div class="form-row">
-                    <button type="submit">Envoyer</button>
+                    <button type="submit" aria-label="Envoyer le formulaire">Envoyer</button>
                 </div>
             </form>
         </div>
@@ -136,7 +136,7 @@
         <div class="footer-container">
             <div class="footer-section">
                 <div class="logo2">
-                    <img src="image/Logo_Depuis.png" alt="Logo Dronie" loading="lazy">
+                    <img src="image/Logo_Depuis.png" alt="Logo Depuis Le Ciel" loading="lazy">
                 </div>
                 <p>Depuis le Ciel est une entreprise basée à Bordeaux en Gironde – Nouvelle-Aquitaine et opérant partout en France. Pilote de drone professionnel, reconnu et agréé par la DGAC (N° d’enregistrement : EDxxxx).</p>
                 <p>Prestations de prise de vue par drone, montage vidéo pour projets professionnels ou personnels.</p>
@@ -144,11 +144,11 @@
             <div class="footer-section">
                 <h4>Pages</h4>
                 <ul>
-                    <li><a href="index.html">ACCUEIL</a></li>
-                    <li><a href="A_propos.html">QUI SUIS-JE ?</a></li>
-                    <li><a href="Nos_services.html">SERVICES</a></li>
-                    <li><a href="Portfolio.html">PORTFOLIO</a></li>
-                    <li><a href="Contact_et_devis.html">CONTACT | DEVIS</a></li>
+                    <li><a href="index.html" aria-label="Aller à la page d'accueil">ACCUEIL</a></li>
+                    <li><a href="A_propos.html" aria-label="En savoir plus sur moi">QUI SUIS-JE ?</a></li>
+                    <li><a href="Nos_services.html" aria-label="Découvrir nos services">SERVICES</a></li>
+                    <li><a href="Portfolio.html" aria-label="Voir mon portfolio">PORTFOLIO</a></li>
+                    <li><a href="Contact_et_devis.html" aria-label="Accéder à la page de contact et devis">CONTACT | DEVIS</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -163,16 +163,16 @@
                   Venez découvrir mes réseaux sociaux pour voir en détail les différentes prestations que je réalise. Je partage régulièrement mon quotidien de pilote de drone !
                 </p>
                 <div class="social">
-                    <a href="http://www.youtube.com/@nathanloheac85" target="_blank" title="YouTube" loading="lazy">
+                    <a href="http://www.youtube.com/@nathanloheac85" target="_blank" title="YouTube" loading="lazy" aria-label="Visitez ma chaîne YouTube">
                         <img src="image/Youtube.png" alt="YouTube">
                     </a>
-                    <a href="https://www.instagram.com/nathan_loheac/" target="_blank" title="Instagram" loading="lazy">
+                    <a href="https://www.instagram.com/nathan_loheac/" target="_blank" title="Instagram" loading="lazy" aria-label="Visitez mon compte Instagram">
                         <img src="image/Instagram.png" alt="Instagram">
                     </a>
-                    <a href="https://www.linkedin.com/in/nathan-loheac/" target="_blank" title="LinkedIn" loading="lazy">
+                    <a href="https://www.linkedin.com/in/nathan-loheac/" target="_blank" title="LinkedIn" loading="lazy" aria-label="Visitez mon compte LinkedIn">
                         <img src="image/Linkedin.png" alt="LinkedIn">
                     </a>
-                    <a href="https://www.facebook.com/nath.loheac" target="_blank" title="Facebook" loading="lazy">
+                    <a href="https://www.facebook.com/nath.loheac" target="_blank" title="Facebook" loading="lazy" aria-label="Visitez mon compte Facebook">
                         <img src="image/Facebook.png" alt="Facebook">
                     </a>
                 </div>

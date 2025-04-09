@@ -14,8 +14,8 @@
 <body class="body_simulation">
     <header class="header_simulation">
         <div class="logopetit2">
-            <a href="index.html">
-                <img src="image/Logo_Depuis.png" alt="Logo" />
+            <a href="index.html" aria-label="Retour à la page d'accueil">
+                <img src="image/Logo_Depuis.png" alt="Logo Depuis Le Ciel" />
             </a>
         </div>
         <div class="title_simulation">
@@ -28,19 +28,19 @@
         <!-- Choix 1 : Entreprise ou particulier ?-->
         <div class="step active" data-step="1" aria-labelledby="titre_simulation_1">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" onclick="location.href='index.html'" alt="retour" />
+                <img src="image/retour_simulateur.jpg" onclick="location.href='index.html'" alt="retour à la section précédente" />
             </div>
             <h2 class="titre_simulation1" id="titre_simulation_1">VOUS ÊTES :</h2>
             <div class="simulation_choices">
                 <div class="choice" data-next="2" role="button" aria-label="Choisir Entreprise" tabindex="0">
                     <div class="icon_circle">
-                        <img src="image/icon_entreprise.svg" alt="Une entreprise">
+                        <img src="image/icon_entreprise.svg" alt="Choix 1 Une entreprise">
                     </div>
                     <p>Une entreprise</p>
                 </div>
                 <div class="choice" data-next="3" role="button" aria-label="Choisir Particulier" tabindex="0">
                     <div class="icon_circle">
-                        <img src="image/icon_particulier.svg" alt="Un particulier">
+                        <img src="image/icon_particulier.svg" alt="Choix 2 Un particulier">
                     </div>
                     <p>Un particulier</p>
                 </div>
@@ -50,28 +50,28 @@
         <!-- Choix 2 : "Une entreprise" -->
         <div class="step" data-step="2" data-previous-step="1" aria-labelledby="titre_simulation_2">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <h2 class="titre_simulation1" id="titre_simulation_2">UNE ENTREPRISE DANS :</h2>
             <div class="secteur_choices">
                 <div class="sector_choice" data-next="4" role="button" aria-label="Choisir secteur Immobilier" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Immobilier"></div>
+                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Choix 1 L’immobilier"></div>
                     <p>L’immobilier</p>
                 </div>
                 <div class="sector_choice" data-next="5" role="button" aria-label="Choisir secteur Publicité" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Publicité"></div>
+                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Choix 2 L'audiovisuel"></div>
                     <p>L'audiovisuel</p>
                 </div>
                 <div class="sector_choice" data-next="6" role="button" aria-label="Choisir secteur Tourisme" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_tourism.svg" alt="Tourisme"></div>
+                    <div class="icon_circle"><img src="image/icon_tourism.svg" alt="Choix 3 Le tourisme"></div>
                     <p>Le tourisme</p>
                 </div>
                 <div class="sector_choice" data-next="7" role="button" aria-label="Choisir secteur Événementiel" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Événementiel"></div>
+                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Choix 4 L’événementiel"></div>
                     <p>L’événementiel</p>
                 </div>
                 <div class="sector_choice" data-next="8" role="button" aria-label="Choisir secteur Autre" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_autre.svg" alt="Autre"></div>
+                    <div class="icon_circle"><img src="image/icon_autre.svg" alt="Choix 5 Autre"></div>
                     <p>Autre</p>
                 </div>
             </div>
@@ -80,24 +80,24 @@
         <!-- Choix 3 : "Un particulier" -->
         <div class="step" data-step="3" data-previous-step="1" aria-labelledby="titre_simulation_3">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation1" id="titre_simulation_3">NOS PRESTATIONS POUR LES PARTICULIERS :</div>
             <div class="particulier_icons">
                 <div class="particulier_choice" data-next="9" role="button" aria-label="Choix prestation immo" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Immo"></div>
+                    <div class="icon_circle"><img src="image/icon_immo.svg" alt="Choix 1 Valorisation immobilière"></div>
                     <p>Valorisation immobilière</p>
                 </div>
                 <div class="particulier_choice" data-next="10" role="button" aria-label="Choix prestation event" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Evenements"></div>
+                    <div class="icon_circle"><img src="image/icon_event.svg" alt="Choix 2 Evénements"></div>
                     <p>Evénements</p>
                 </div>
                 <div class="particulier_choice" data-next="11" role="button" aria-label="Choix prestation audiovisuel" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Projet audiovisuel amateur"></div>
+                    <div class="icon_circle"><img src="image/icon_cine.svg" alt="Choix 3 Projet audiovisuel amateur"></div>
                     <p>Projet audiovisuel amateur</p>
                 </div>
                 <div class="particulier_choice" data-next="12" role="button" aria-label="Choix formation au pilotage" tabindex="0">
-                    <div class="icon_circle"><img src="image/icon_formation.svg" alt="Formation au pilotage"></div>
+                    <div class="icon_circle"><img src="image/icon_formation.svg" alt="Choix 4 Formation au pilotage de drones"></div>
                     <p>Formation au pilotage de drones</p>
                 </div>
             </div>
@@ -106,7 +106,7 @@
         <!-- Choix 4 : "Immobilier" -->
         <div class="step" data-step="4" data-previous-step="2" aria-labelledby="titre_simulation_4">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_4">NOS PRESTATIONS POUR L’IMMOBILIER</div>
             <p class="sous-titre">(Agences immobilières, promoteurs ...)</p>
@@ -114,8 +114,8 @@
                 <p>Vous souhaitez mettre en valeur vos biens ? Vous êtes au bon endroit !</p>
             </div>
             <div class="image-container">
-                <img src="image/tarifs_immo_ext.jpg" alt="Tarifs pour les prestations immobilières extérieur uniquement" class="image-tarifs2" onclick="openFullscreen(this)">
-                <img src="image/tarifs_immo_int_ext.jpg" alt="Tarifs pour les prestations immobilières intérieurs et exterieurs" class="image-tarifs2" onclick="openFullscreen(this)">
+                <img src="image/tarifs_immo_ext.jpg" alt="Tarifs pour les prestations immobilières en extérieur uniquement" class="image-tarifs2" onclick="openFullscreen(this)">
+                <img src="image/tarifs_immo_int_ext.jpg" alt="Tarifs pour les prestations immobilières en intérieurs et exterieurs" class="image-tarifs2" onclick="openFullscreen(this)">
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
@@ -126,7 +126,7 @@
         <!-- Choix 5 : "Publicité" -->
         <div class="step" data-step="5" data-previous-step="2" aria-labelledby="titre_simulation_5">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_5">RÉALISATION DE PUBLICITÉS OU DE PRODUCTIONS AUDIOVISUELLES</div>
             <p class="sous-titre">Publicités, clips vidéos, courts métrages, films, documentaires...</p>
@@ -179,7 +179,7 @@
         <!-- Choix 6 : "Tourisme" -->
         <div class="step" data-step="6" data-previous-step="2" aria-labelledby="titre_simulation_6">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_6">NOS PRESTATIONS DESTINÉES AUX ÉTABLISSEMENTS DE TOURISME</div>
             <p class="sous-titre">(Restaurants, hôtels, campings, lieux de réception…)</p>
@@ -187,8 +187,8 @@
                 <p>Vous souhaitez mettre en valeur votre établissement touristique ? Vous êtes au bon endroit ! Voici les prestations que nous proposons pour mettre en valeur votre établissement :</p>
             </div>
             <div class="image-container">
-                <img src="image/tarifs_tourisme_ext.jpg" alt="Tarifs pour les prestations touristiques intérieurs" class="image-tarifs2" onclick="openFullscreen(this)">
-                <img src="image/tarifs_tourisme_int_ext.jpg" alt="Tarifs pour les prestations touristiques intérieurs et extérieurs" class="image-tarifs2" onclick="openFullscreen(this)">
+                <img src="image/tarifs_tourisme_ext.jpg" alt="Tarifs pour les prestations touristiques en extérieur uniquement" class="image-tarifs2" onclick="openFullscreen(this)">
+                <img src="image/tarifs_tourisme_int_ext.jpg" alt="Tarifs pour les prestations touristiques en extérieur et intérieur" class="image-tarifs2" onclick="openFullscreen(this)">
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
@@ -199,7 +199,7 @@
         <!-- Choix 7 : "Evenements" -->
         <div class="step" data-step="7" data-previous-step="2" aria-labelledby="titre_simulation_7">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_7">PRISE DE VUES LORS D’ÉVÉNEMENTS</div>
             <p class="sous-titre">(Sports, concerts, rassemblements...)</p>
@@ -252,7 +252,7 @@
         <!-- Choix 8 : "Autres prestations" -->
         <div class="step" data-step="8" data-previous-step="2" aria-labelledby="titre_simulation_8">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_8">AUTRES PRESTATIONS</div>
             <div class="autres-prestations">
@@ -267,12 +267,12 @@
         <!-- Choix 9 : "Immo particulier" -->
         <div class="step" data-step="9" data-previous-step="3" aria-labelledby="titre_simulation_9">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_9">VALORISATION IMMOBILIERE</div>
             <p class="sous-titre">Prise de vues aériennes de votre propriété</p>
             <div class="image-container">
-                <img src="image/tarifs_particulier_immo.jpg" alt="Tarifs pour les prestations immo particulier" class="image-tarifs2" onclick="openFullscreen(this)">
+                <img src="image/tarifs_particulier_immo.jpg" alt="Tarifs pour les prestations immobiliere pour particulier" class="image-tarifs2" onclick="openFullscreen(this)">
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
@@ -283,7 +283,7 @@
         <!-- Choix 10 : "Evenements particulier" -->
         <div class="step" data-step="10" data-previous-step="3" aria-labelledby="titre_simulation_10">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_10">PRISE DE VUES LORS D'UN ÉVÉNEMENT</div>
             <p class="sous-titre">Prise de vues aériennes lors de vos événements divers (familiaux, sportifs, festifs...)</p>
@@ -336,7 +336,7 @@
          <!-- Choix 11 : "Audiovisuel Amateur" -->
          <div class="step" data-step="11" data-previous-step="3" aria-labelledby="titre_simulation_11">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_11">PROJET AUDIOVISUEL AMATEUR</div>
             <p class="sous-titre">Prise de vues aériennes pour votre projet audiovisuel (publicités, clips vidéos, courts métrages, films, documentaires...)</p>
@@ -389,7 +389,7 @@
         <!-- Choix 12 : "Formation au pilotage de drones pour particulier" -->
         <div class="step" data-step="12" data-previous-step="3" aria-labelledby="titre_simulation_12">
             <div class="retour">
-                <img src="image/retour_simulateur.jpg" alt="retour" />
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" />
             </div>
             <div class="titre_simulation" id="titre_simulation_12">FORMATION AU PILOTAGE DE DRONES</div>
             <div class="description">

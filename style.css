@@ -2851,7 +2851,7 @@ section {
         overflow-x: hidden;
     }
     .step {
-        height: 100vh;
+        height: auto;
         transform: translateX(0);
     }
     .step.exit-left {
