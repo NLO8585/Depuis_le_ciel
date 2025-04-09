@@ -2720,8 +2720,8 @@ section {
         max-width: 100%;
     }
     .titre_simulation1 {
-        font-size:22px;
-        margin-top: 20px;
+        font-size: 18px;
+        margin-top: 10px;
     }
     .simulation_choices, .secteur_choices, .particulier_icons{
         display: flex;
@@ -2744,7 +2744,7 @@ section {
         max-width: 100%;
     }
     .sector_choice:not(:first-of-type), .choice:not(:first-of-type), .particulier_choice:not(:first-of-type) {
-        margin-top: 5px; 
+        margin-top: 15px; 
         display: flex;
         flex-direction: column; 
         align-items: center; 
@@ -2761,17 +2761,17 @@ section {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
     .icon_circle {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         margin-top: 0px;
         margin-bottom: 0px;
     }
     .icon_circle img {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
     .choice p, .sector_choice p, .particulier_choice p {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
         color: #013142;
         margin-top: 10px;
