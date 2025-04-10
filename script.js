@@ -56,46 +56,70 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.openFullscreen = openFullscreen; // Rendre accessible globalement
 
-  /* === SIMULATEUR (NAVIGATION ENTRE ÉTAPES) === */
-  const choices = document.querySelectorAll(".choice, .sector_choice, .particulier_choice");
-  const backLinks = document.querySelectorAll(".retour, .retour-button");
+/* === SIMULATEUR (NAVIGATION ENTRE ÉTAPES) === */
+const choices = document.querySelectorAll(".choice, .sector_choice, .particulier_choice");
+const backLinks = document.querySelectorAll(".retour img, .retour-button");
 
-  choices.forEach(choice => {
-    choice.addEventListener("click", () => {
-      const currentStep = document.querySelector(".step.active");
-      const nextStep = document.querySelector(`.step[data-step="${choice.getAttribute("data-next")}"]`);
+choices.forEach(choice => {
+  // Événement click
+  choice.addEventListener("click", () => {
+    const currentStep = document.querySelector(".step.active");
+    const nextStep = document.querySelector(`.step[data-step="${choice.getAttribute("data-next")}"]`);
 
-      if (currentStep && nextStep) {
-        currentStep.classList.add("exit-left");
-        nextStep.classList.add("enter-right");
-        setTimeout(() => {
-          currentStep.classList.remove("active", "exit-left");
-          nextStep.classList.remove("enter-right");
-          nextStep.classList.add("active");
-        }, 300);
-      }
-    });
+    if (currentStep && nextStep) {
+      currentStep.classList.add("exit-left");
+      nextStep.classList.add("enter-right");
+      setTimeout(() => {
+        currentStep.classList.remove("active", "exit-left");
+        nextStep.classList.remove("enter-right");
+        nextStep.classList.add("active");
+      }, 300);
+    }
   });
 
-  backLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
+  // Événement pour le clavier (Entrée ou Espace)
+  choice.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();  // Empêche le comportement par défaut (évite des actions comme le focus)
+      choice.click();      // Simule un clic sur l'élément
+    }
+  });
+});
+
+backLinks.forEach(link => {
+  // Gestion du clic sur l'icône de retour
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const currentStep = document.querySelector(".step.active");
+    const previousStep = document.querySelector(`.step[data-step="${currentStep.dataset.previousStep}"]`);
+
+    if (currentStep && previousStep) {
+      currentStep.classList.add("exit-right");
+      previousStep.classList.add("enter-left");
+      setTimeout(() => {
+        currentStep.classList.remove("active", "exit-right");
+        previousStep.classList.remove("enter-left");
+        previousStep.classList.add("active");
+      }, 300);
+    }
+  });
+
+  // Gestion de la touche "Entrée" ou "Espace" pour revenir à l'étape précédente
+  link.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-
-      const currentStep = document.querySelector(".step.active");
-      const previousStep = document.querySelector(`.step[data-step="${currentStep.dataset.previousStep}"]`);
-
-      if (currentStep && previousStep) {
-        currentStep.classList.add("exit-right");
-        previousStep.classList.add("enter-left");
-        setTimeout(() => {
-          currentStep.classList.remove("active", "exit-right");
-          previousStep.classList.remove("enter-left");
-          previousStep.classList.add("active");
-        }, 300);
-      }
-    });
+      link.click();  // Simule un clic sur le lien
+    }
   });
+});
 
+
+
+  function ouvrirMenu() {
+    const menu = document.querySelector('.sommaire');
+    menu.classList.toggle('ouvert');
+  }
   /* === ANIMATION LOGOS "ILS NOUS ONT FAIT CONFIANCE" === */
   const track = document.querySelector(".logo-track");
   if (track) {

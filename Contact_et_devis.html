@@ -15,11 +15,14 @@
 
 <body>
     <header class="header">
-        <div class="hamburger" aria-label="Ouvrir le menu principal">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>    
+        <div class="hamburger" 
+            tabindex="0" 
+            role="button" 
+            aria-label="Ouvrir le menu principal">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>  
         <nav>
             <ul class="sommaire">
                 <li> <a href="index.html" title="Accueil" aria-label="Aller à la page d'accueil">Accueil</a> </li>
@@ -98,12 +101,14 @@
                     <textarea name="message" id="message" required aria-label="Entrez votre message"></textarea>
                 </div>
                 <div class="form-row checkbox">
-                    <input type="checkbox" name="consent" id="consent" required aria-label="Acceptez-vous l'utilisation de vos données pour la gestion de la relation contractuelle ?">
+                    <input type="checkbox" name="consent" id="consent" required aria-label="Acceptez-vous l'utilisation de vos données pour la gestion de la relation contractuelle ?" tabindex="0" 
+                           onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
                     <label for="consent">
                         En soumettant ce formulaire, vous acceptez que les données saisies soient utilisées par DEPUIS LE CIEL afin qu'elle puisse répondre directement et gérer la relation contractuelle.
                     </label>
                 </div>
-                <!-- Étape 5 <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div>-->
+                
+                <!-- Étape 5 <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div> -->
                 <div class="form-row">
                     <button type="submit" aria-label="Envoyer le formulaire">Envoyer</button>
                 </div>
