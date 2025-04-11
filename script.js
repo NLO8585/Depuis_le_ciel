@@ -151,7 +151,7 @@ backLinks.forEach(link => {
     }
   };
 });
-/* HAMB MIAM*/
+/* HAMB MIAM */
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script chargé");
 
@@ -159,43 +159,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.querySelector(".sommaire");
 
   if (!hamburger || !menu) {
-      console.error("Élément introuvable !");
-      return;
+    console.error("Élément introuvable !");
+    return;
   }
 
   let isMenuOpen = false;
 
   function toggleMenu(event) {
-      event.preventDefault(); // Empêche les comportements natifs
-      event.stopPropagation(); // Évite d'affecter d'autres éléments
+    event.preventDefault(); // Empêche les comportements natifs
+    event.stopPropagation(); // Évite d'affecter d'autres éléments
 
-      if (isMenuOpen) {
-          menu.classList.remove("active");
-          hamburger.classList.remove("active");
-          console.log("Menu fermé");
-      } else {
-          menu.classList.add("active");
-          hamburger.classList.add("active");
-          console.log("Menu ouvert");
-      }
+    if (isMenuOpen) {
+      menu.classList.remove("active");
+      hamburger.classList.remove("active");
+      console.log("Menu fermé");
+    } else {
+      menu.classList.add("active");
+      hamburger.classList.add("active");
+      console.log("Menu ouvert");
+    }
 
-      isMenuOpen = !isMenuOpen;
+    isMenuOpen = !isMenuOpen;
   }
 
   function closeMenu(event) {
-      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-          console.log("Fermeture du menu (clic/touch en dehors)");
-          menu.classList.remove("active");
-          hamburger.classList.remove("active");
-          isMenuOpen = false;
-      }
+    if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+      console.log("Fermeture du menu (clic/touch en dehors)");
+      menu.classList.remove("active");
+      hamburger.classList.remove("active");
+      isMenuOpen = false;
+    }
   }
 
-  // Blocage des événements parasites
+  // Événements tactiles
   hamburger.addEventListener("touchstart", toggleMenu, { passive: false });
   hamburger.addEventListener("touchend", (e) => e.preventDefault(), { passive: false });
-
   document.addEventListener("touchstart", closeMenu);
+
+  // Événements souris
+  hamburger.addEventListener("click", toggleMenu);
+  document.addEventListener("click", closeMenu);
 });
 
 /*Qui-suis je - Mes qualités*/ 
