@@ -56,29 +56,33 @@ body.body_simulation{
     left: 0;
     z-index: 1000;
     white-space: nowrap;
-}
-.banniere-defilante p {
-    display: inline-block;
-    animation: defilement 50s linear infinite;
-}
-.banniere-defilante p span {
-    display: inline-block;
-}
-.banniere-defilante p .separateur {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 12px;
+    text-decoration: none;
 }
 
-/* Modification de l'animation */
-@keyframes defilement {
-    from {
-        transform: translateX(0%);
+.defilement {
+    display: flex;
+    width: max-content;
+    animation: defilement-infini 60s linear infinite;
+}
+
+.defilement .contenu {
+    display: flex;
+}
+
+.defilement span {
+    display: inline-block;
+}
+
+.separateur {
+    display: inline-block;
+    padding: 0 60px;
+}
+@keyframes defilement-infini {
+    0% {
+        transform: translateX(0);
     }
-    to {
-        transform: translateX(-100%);  /* Ajusté pour correspondre à 3 itérations */
+    100% {
+        transform: translateX(-50%);
     }
 }
 .sommaire {
@@ -86,7 +90,7 @@ body.body_simulation{
     justify-content: flex-end;
     width: 100%;
     display: flex;
-    margin-top: 40px;
+    margin-top: 36.9px;
     font-size: 13px;
     flex-wrap: wrap;
     position: relative;
@@ -229,7 +233,7 @@ max-width: 80%;
 /* LOGO */
 .logopetit {
     position: absolute;
-    top: 35px;
+    top: 36px;
     left: 30px;
     width:fit-content;
     z-index: 1100;
@@ -242,7 +246,7 @@ max-width: 80%;
     cursor: pointer;
 }
 .logopetit img {
-    max-height: 22px;
+    max-height: 20px;
     display: block;
     height: auto;
 }
@@ -2151,9 +2155,9 @@ section {
         font-size: 8px;
     }
     .banniere-defilante p {
-        animation: defilement 35s linear infinite;
+        animation: defilement 20s linear infinite;
     }
-    .banniere-defilante p .separateur {
+    .separateur {
         font-size: 8px;
         padding-left: 10px;
         padding-right: 10px;
