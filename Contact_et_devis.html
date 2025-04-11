@@ -48,69 +48,81 @@
                 <h3>Contactez-nous !</h3>
             </div>
             <form action="send-email.php" method="post">
+                <!-- Statut -->
                 <div class="form-row">
-                    <label for="type">Vous êtes ? *</label>
-                    <select name="type" id="type"required aria-label="Sélectionnez votre statut">
-                        <option value="" disabled selected>Choisissez une option</option>
+                    <label for="type">Vous êtes ? <span aria-hidden="true">*</span></label>
+                    <select name="type" id="type" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
                         <option value="professionnel">Professionnel ou entreprise</option>
                         <option value="association">Association</option>
                         <option value="particulier">Particulier</option>
                     </select>
                 </div>
+            
+                <!-- Besoin -->
                 <div class="form-row">
-                    <label for="besoin">Votre besoin ? *</label>
-                    <select name="besoin" id="besoin" required aria-label="Sélectionnez le type de prestation désirée">
-                        <option value="" disabled selected>Choisissez une option</option>
+                    <label for="besoin">Votre besoin ? <span aria-hidden="true">*</span></label>
+                    <select name="besoin" id="besoin" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
                         <option value="prises-de-vues">Prises de vues aériennes par drone</option>
                         <option value="production-audiovisuelle">Production Audiovisuelle</option>
                         <option value="formation-pilotage">Formation au pilotage de drones</option>
                     </select>
                 </div>
+            
+                <!-- Nom entreprise + Nom complet -->
                 <div class="form-row two-columns">
                     <div>
                         <label for="company">Entreprise</label>
-                        <input type="text" name="company" id="company" aria-label="Nom de l'entreprise">
+                        <input type="text" name="company" id="company">
                     </div>
                     <div>
-                        <label for="fullname">Votre nom et prénom *</label>
-                        <input type="text" name="fullname" id="fullname" required required aria-label="Entrez votre nom et prénom">
+                        <label for="fullname">Votre nom et prénom <span aria-hidden="true">*</span></label>
+                        <input type="text" name="fullname" id="fullname" required>
                     </div>
                 </div>
+            
+                <!-- Email + Téléphone -->
                 <div class="form-row two-columns">
                     <div>
-                        <label for="email">Votre e-mail *</label>
-                        <input type="email" name="email" id="email" required aria-label="Entrez votre e-mail">
+                        <label for="email">Votre e-mail <span aria-hidden="true">*</span></label>
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div>
-                        <label for="tel">N° de téléphone *</label>
-                        <input type="tel" name="tel" id="tel" required aria-label="Entrez votre numéro de téléphone">
+                        <label for="tel">N° de téléphone <span aria-hidden="true">*</span></label>
+                        <input type="tel" name="tel" id="tel" required>
                     </div>
                 </div>
+            
+                <!-- Objet de la demande -->
                 <div class="form-row">
-                    <label for="objet">Objet de la demande *</label>
-                    <select name="objet" id="objet" required  aria-label="Sélectionnez l'objet de votre demande">
-                        <option value="" disabled selected>Choisissez une option</option>
+                    <label for="objet">Objet de la demande <span aria-hidden="true">*</span></label>
+                    <select name="objet" id="objet" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
                         <option value="renseignement">Renseignement</option>
                         <option value="devis">Devis</option>
                         <option value="technique">Question technique</option>
                         <option value="autre">Autre</option>
                     </select>
                 </div>
+            
+                <!-- Message -->
                 <div class="form-row">
-                    <label for="message">Votre message *</label>
-                    <textarea name="message" id="message" required aria-label="Entrez votre message"></textarea>
+                    <label for="message">Votre message <span aria-hidden="true">*</span></label>
+                    <textarea name="message" id="message" required></textarea>
                 </div>
+            
+                <!-- Consentement -->
                 <div class="form-row checkbox">
-                    <input type="checkbox" name="consent" id="consent" required aria-label="Acceptez-vous l'utilisation de vos données pour la gestion de la relation contractuelle ?" tabindex="0" 
-                           onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
+                    <input type="checkbox" name="consent" id="consent" required>
                     <label for="consent">
                         En soumettant ce formulaire, vous acceptez que les données saisies soient utilisées par DEPUIS LE CIEL afin qu'elle puisse répondre directement et gérer la relation contractuelle.
                     </label>
                 </div>
-                
-                <!-- Étape 5 <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY"></div> -->
+            
+                <!-- Bouton -->
                 <div class="form-row">
-                    <button type="submit" aria-label="Envoyer le formulaire">Envoyer</button>
+                    <button type="submit">Envoyer</button>
                 </div>
             </form>
         </div>
