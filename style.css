@@ -1191,6 +1191,9 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.header-offset{
+    height:100px;
+}
 .mention_article h2 {
     font-size: 24px;
     color: rgb(30, 30, 30);
