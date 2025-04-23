@@ -983,10 +983,10 @@ section {
     margin-bottom: 0px;
 }
 .choice {
-    display: flex;            /* Active le mode flex */
-    flex-direction: column;   /* Les enfants sont empilés verticalement */
-    align-items: center;      /* Centre les éléments horizontalement */
-    justify-content: center;  /* Centre les éléments verticalement si nécessaire */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .simulation_choices, .secteur_choices{
     display: flex;
@@ -1198,7 +1198,111 @@ section {
     padding-right: 0;
 }
 
+/* Ajouts tableaux immobilier professionnel */
 
+  .tarifs-tableau {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    margin: 0 auto;
+  }
+.container-tarifs-tableau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .tarifs-tableau tbody tr:hover {
+    background-color: #f0f8ff;
+  }
+  .tarifs-tableau th {
+    font-size: 13px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+  }
+    .bloc-ext{
+    color: #000000;
+    }
+    .bloc-ext-int{
+      color: #000000;
+      }
+  .bloc-ext-int .tarifs-tableau th {
+    color: #13520e;
+  }
+  .bloc-ext .tarifs-tableau th {
+    color: #06416a;
+  }
+  .tarifs-tableau td {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .tarifs-tableau td strong {
+    font-size: 12px;
+  }
+  .tarifs-tableau ul {
+    font-size: 12px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    text-align: left;
+  }
+  .tarifs-tableau ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+  .tarifs-tableau ul li:first-child {
+    margin-top: 8px;
+  }
+  .tarifs-tableau ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background: url('image/drone-icon.png') no-repeat center;
+    background-size: contain;
+  }
+.note {
+    font-size: 12px;
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    text-align: left;
+  }
+.bloc-ext h2 {
+    font-size: 16px;
+    color: #06416a;
+    margin-bottom: 20px; 
+    margin-top:20px;
+    border-left: 6px solid #06416a;
+    padding-left: 12px;
+    text-align: left;
+
+  }
+.bloc-ext-int h2 {
+    font-size: 16px;
+    color: #13520e;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-left: 6px solid #13520e;
+    padding-left: 12px;
+    text-align: left;
+    
+  }
 /* PAGE MENTIONS LEGALES */
 .mention_article {
     background: rgb(245, 245, 245);

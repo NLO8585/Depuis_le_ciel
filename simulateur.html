@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <!-- Choix 4 : "Immobilier" -->
+        <!-- Choix 4 : "Immobilier Professionnel" -->
         <div class="step" data-step="4" data-previous-step="2" aria-labelledby="titre_simulation_4">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
@@ -113,9 +113,128 @@
             <div class="description">
                 <p>Vous souhaitez mettre en valeur vos biens ? Vous êtes au bon endroit !</p>
             </div>
-            <div class="image-container">
-                <img src="image/tarifs_immo_ext.jpg" alt="Tarifs pour les prestations immobilières en extérieur uniquement" class="image-tarifs2" onclick="openFullscreen(this)">
-                <img src="image/tarifs_immo_int_ext.jpg" alt="Tarifs pour les prestations immobilières en intérieurs et exterieurs" class="image-tarifs2" onclick="openFullscreen(this)">
+            <div class="container-tarifs-tableau">
+                <section class="bloc-ext" aria-labelledby="titre1">
+                  <h2 id="titre1">Vues en extérieur uniquement</h2>
+                  <table class="tarifs-tableau">
+                    <colgroup>
+                      <col style="width: 18%;">
+                      <col style="width: 67%;">
+                      <col style="width: 15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="col">Produits</th>
+                          <th scope="col">Détails de la prestation</th>
+                          <th scope="col">Tarifs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pack photo extérieur</strong><br>Spécial immobilier</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Environ 2 heures sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 10 photos retouchées</li>
+                          </ul>
+                        </td>
+                        <td><strong>150€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pack vidéo extérieur</strong><br>Spécial immobilier</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (HD - 30 FPS)</li>
+                            <li>Environ 2h30 sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 7 plans non montés</li>
+                          </ul>
+                        </td>
+                        <td><strong>300€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Montage vidéo</strong></td>
+                        <td>
+                          <ul>
+                            <li>Montage vidéo full HD entre 1 et 2 minutes à partir des plans pris par drone</li>
+                            <li>Musique dynamique libre de droit</li>
+                            <li>Inclusion de votre logo dans les images</li>
+                            <li>Inclusion des coordonnées de l’agence immobilière en fin de film</li>
+                            <li>Fourniture du film final sur un espace cloud *</li>
+                          </ul>
+                        </td>
+                        <td><strong>120€ TTC</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="note">* Tous les montages incluent deux aller-retour de validation.</p>
+                  </section>
+              
+              <section class="bloc-ext-int" aria-labelledby="titre2">
+                  <h2 id="titre2">Vues en extérieures et en intérieures</h2>
+                  <table class="tarifs-tableau">
+                    <colgroup>
+                      <col style="width: 18%;">
+                      <col style="width: 67%;">
+                      <col style="width: 15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="col">Produits</th>
+                          <th scope="col">Détails de la prestation</th>
+                          <th scope="col">Tarifs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pack photo intérieur/extérieur</strong><br>Spécial immobilier</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Photos extérieures : Drone DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Photos intérieures : iPhone 15 Pro (48 Mpx) avec stabilisateur OSMO Mobile 7S</li>
+                            <li>Environ 2h30 sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 20 photos retouchées</li>
+                          </ul>
+                        </td>
+                        <td><strong>200€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pack vidéo intérieur/extérieur</strong><br>Spécial immobilier</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Vidéos extérieures : Drone DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Vidéos intérieures : iPhone 15 Pro (48 Mpx) avec stabilisateur OSMO Mobile 7S</li>
+                            <li>Environ 3 heures sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 12 plans non montés</li>
+                          </ul>
+                        </td>
+                        <td><strong>450€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Montage vidéo</strong></td>
+                        <td>
+                          <ul>
+                            <li>Montage vidéo full HD d'environ 2 minutes à partir des plans intérieurs et extérieurs</li>
+                            <li>Musique dynamique libre de droit</li>
+                            <li>Inclusion de votre logo dans les images</li>
+                            <li>Inclusion des coordonnées de l’agence immobilière en fin de film</li>
+                            <li>Fourniture du film final sur un espace cloud *</li>
+                          </ul>
+                        </td>
+                        <td><strong>150€ TTC</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="note">* Tous les montages incluent deux aller-retour de validation.</p>
+              </section>
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
