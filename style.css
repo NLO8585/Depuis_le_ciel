@@ -344,7 +344,7 @@ section#Contact {
     flex: 1;
     max-width: 400px;
     padding: 30px 0px;
-    margin: 0 auto;
+    margin: 0 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -378,11 +378,19 @@ section#Contact .right-section .title h6 {
     text-align: center;
     width: 100%;
 }
-section#Contact .container .title h3, section#Contact .right-section .title h3 {
+section#Contact .right-section .title h3 {
     font-size: 1.6em;
     color: #004667;
     font-weight: 600;
     margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+section#Contact .container .title h3 {
+    font-size: 1.6em;
+    color: #004667;
+    font-weight: 600;
+    margin-bottom: 15px;
     text-align: center;
     width: 100%;
 }
@@ -435,7 +443,7 @@ section#Contact .container form .checkbox {
 section#Contact .container form .checkbox input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    margin-top: 3px;
+    margin-top: 1contpx;
     margin-right: 5px;
     cursor: pointer;
     accent-color: #004667;
@@ -451,6 +459,7 @@ section#Contact .container form button {
     width: 150px;
     padding: 10px;
     background-color: #004667;
+    margin-top: 20px;
     color: white;
     font-size: 1em;
     font-weight: 600;
@@ -461,7 +470,7 @@ section#Contact .container form button {
     transition: background-color 0.3s, transform 0.2s;
 }
 section#Contact .container form button:hover {
-    background-color: #1a4c47;
+    background-color: #004667;
     transform: translateY(-2px);
 }
 section#Contact .container .contact-email {
@@ -507,9 +516,18 @@ section#Contact .container form .form-row.two-columns > div label {
     text-align: center;
     font-size: 1.2em;
     color: #000000;
-    font-weight: 800;
+    font-weight: bold;
     width: 100%;
     margin: 0.2rem 0;
+    color: inherit;      /* hérite la couleur du parent, souvent noir */
+    text-decoration: none; /
+}
+.right-section .contact_gras a {
+    color: inherit;      /* hérite la couleur du parent, souvent noir */
+    text-decoration: none; /
+}
+.right-section .contact_gras:hover {
+    color: rgb(200, 70, 50);
 }
 .right-section .contact_gras:nth-of-type(2) {
     margin-bottom: 1.5rem;
@@ -1427,13 +1445,14 @@ section {
 }
 .footer-bottom p {
     text-align: center;
-    font-size: clamp(0.65rem, 1vw, 0.85rem);
+    margin-top: 10px;
+    font-size: clamp(0.65rem, 1vw, 0.7rem);
 }
 .footer-bottom a {
     color: rgb(200, 70, 50);
     text-decoration: none;
     margin: 0 10px;
-    font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
 }
 .footer-bottom a:hover {
     text-decoration: underline;
@@ -1910,10 +1929,6 @@ section {
     transition: all 0.3s ease;
 }
 
-.propos-image:hover .profile-image {
-    filter: grayscale(100%);
-}
-
 .profile-image {
     width: 100%;
     height: 100%;
@@ -2282,11 +2297,6 @@ section {
         font-weight: 700;
     }
     .intro {
-        /*font-size: clamp(10px, 5vw, 12px);
-        letter-spacing: 0.05em;
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;*/
         display:none;
     }
     .location {
@@ -2322,10 +2332,10 @@ section {
         right: auto;
     }
     .scroll-arrow {
-        bottom: 20px; /* Ajuste la position en bas pour mobile si nécessaire */
+        bottom: 20px;
     }
     .scroll-arrow img {
-        width: 32px; /* Réduit la taille de la flèche sur mobile */
+        width: 32px;
     }
     .section1 {
         height: auto;
@@ -2603,13 +2613,22 @@ section {
         max-width: 100%;
         padding: 20px;
     }
+    .container{
+        margin: 0 auto;
+    }
+    section#Contact .container .title h6 {
+        font-size: 14px;
+    }
+    section#Contact .right-section .title h6 {
+        padding-top: 0px;
+    }
     section#Contact .container form .form-row.two-columns {
         display: block;
     }
     section#Contact .container .title h3,
     section#Contact .right-section .title h3 {
         font-size: 1.2em;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
     section#Contact .container form button {
         width: 100%;
@@ -2642,9 +2661,16 @@ section {
         margin-right: 0px;
         padding: 0px;
     }
+    
     .container, .right-section {
         max-width: 100%;
         padding: 20px;
+    }
+    .container{
+        margin: 0 80px;
+    }
+    section#Contact .right-section .title h6 {
+        padding-top: 0px;
     }
     section#Contact .container form .form-row.two-columns {
         display: block;
@@ -3243,6 +3269,9 @@ section {
     
     .wave-divider3 svg {
         height: 110px;
+    }
+    .propos-text {
+        padding-top: 130px;
     }
     /*Qualities tablette*/
     .qualities-container {
