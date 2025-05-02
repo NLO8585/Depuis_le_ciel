@@ -450,6 +450,11 @@ section#Contact .container form .checkbox input[type="checkbox"] {
 }
 section#Contact .container form .checkbox label {
     text-align: justify;
+    font-weight: 300;
+}
+section#Contact .container form .checkbox label strong {
+    text-align: justify;
+    font-weight: 600;
 }
 section#Contact .container form .recaptcha {
     text-align: center;
