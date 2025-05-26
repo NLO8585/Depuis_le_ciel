@@ -14,20 +14,16 @@
 </head>
 <body class="body_simulation">
     <header class="header_simulation">
-        <div class="logopetit2">
-            <a href="index.html" aria-label="Retour à la page d'accueil">
-                <img src="image/Logo_Depuis.png" alt="Logo Depuis le ciel" />
-            </a>
-        </div>
         <div class="title_simulation">
             <h6>Estimez votre prestation en quelques clics!</h6>
         </div>
     </header>
-
+    
 <section id="simulation">
     <div class="container-steps">
         <!-- Choix 1 : Entreprise ou particulier ?-->
         <div class="step active" data-step="1" aria-labelledby="titre_simulation_1">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" onclick="location.href='index.html'" alt="retour à la section précédente" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='index.html'" />
             </div>
@@ -47,9 +43,11 @@
                 </div>
             </div>
         </div>
+        </div>
 
         <!-- Choix 2 : "Une entreprise" -->
         <div class="step" data-step="2" data-previous-step="1" aria-labelledby="titre_simulation_2">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -77,13 +75,15 @@
                 </div>
             </div>
         </div>
+        </div>
 
         <!-- Choix 3 : "Un particulier" -->
         <div class="step" data-step="3" data-previous-step="1" aria-labelledby="titre_simulation_3">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0"/>
             </div>
-            <div class="titre_simulation1" id="titre_simulation_3">NOS PRESTATIONS POUR LES PARTICULIERS :</div>
+            <div class="titre_simulation1" id="titre_simulation_3">NOS PRESTATIONS POUR LES PARTICULIERS</div>
             <div class="particulier_icons">
                 <div class="particulier_choice" data-next="9" role="button" aria-label="Choix prestation immo" tabindex="0">
                     <div class="icon_circle"><img src="image/icon_immo.svg" alt="Choix 1 Valorisation immobilière"></div>
@@ -101,11 +101,17 @@
                     <div class="icon_circle"><img src="image/icon_formation.svg" alt="Choix 4 Formation au pilotage de drones"></div>
                     <p>Formation au pilotage de drones</p>
                 </div>
+                <div class="particulier_choice" data-next="13" role="button" aria-label="Autre" tabindex="0">
+                    <div class="icon_circle"><img src="image/icon_autre.svg" alt="Choix 5 Autre"></div>
+                    <p>Autre</p>
+                </div>
             </div>
+        </div>
         </div>
 
         <!-- Choix 4 : "Immobilier Professionnel" -->
         <div class="step" data-step="4" data-previous-step="2" aria-labelledby="titre_simulation_4">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -242,9 +248,11 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 5 : "Publicité" -->
         <div class="step" data-step="5" data-previous-step="2" aria-labelledby="titre_simulation_5">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -295,9 +303,11 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 6 : "Tourisme" -->
         <div class="step" data-step="6" data-previous-step="2" aria-labelledby="titre_simulation_6">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -306,18 +316,139 @@
             <div class="description">
                 <p>Vous souhaitez mettre en valeur votre établissement touristique ? Vous êtes au bon endroit ! Voici les prestations que nous proposons pour mettre en valeur votre établissement :</p>
             </div>
-            <div class="image-container">
-                <img src="image/tarifs_tourisme_ext.jpg" alt="Tarifs pour les prestations touristiques en extérieur uniquement" class="image-tarifs2" onclick="openFullscreen(this)">
-                <img src="image/tarifs_tourisme_int_ext.jpg" alt="Tarifs pour les prestations touristiques en extérieur et intérieur" class="image-tarifs2" onclick="openFullscreen(this)">
+            <div class="container-tarifs-tableau">
+                <section class="bloc-ext" aria-labelledby="titre1">
+                  <h2 id="titre1">Vues en extérieur uniquement</h2>
+                  <table class="tarifs-tableau">
+                    <colgroup>
+                      <col style="width: 18%;">
+                      <col style="width: 67%;">
+                      <col style="width: 15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="col">Produits</th>
+                          <th scope="col">Détails de la prestation</th>
+                          <th scope="col">Tarifs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pack photo extérieur</strong><br>Spécial tourisme</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Environ 2 heures sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 10 photos retouchées</li>
+                          </ul>
+                        </td>
+                        <td><strong>120€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pack vidéo extérieur</strong><br>Spécial tourisme</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (HD - 30 FPS)</li>
+                            <li>Environ 2h30 sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 7 plans non montés</li>
+                          </ul>
+                        </td>
+                        <td><strong>220€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Montage vidéo</strong></td>
+                        <td>
+                          <ul>
+                            <li>Montage vidéo full HD entre 1 et 2 minutes à partir des plans pris par drone</li>
+                            <li>Musique dynamique libre de droit</li>
+                            <li>Inclusion de votre logo dans les images</li>
+                            <li>Inclusion des coordonnées de l’agence immobilière en fin de film</li>
+                            <li>Fourniture du film final sur un espace cloud *</li>
+                          </ul>
+                        </td>
+                        <td><strong>120€ TTC</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="note">* Tous les montages incluent deux aller-retour de validation.</p>
+                  </section>
+              
+              <section class="bloc-ext-int" aria-labelledby="titre2">
+                  <h2 id="titre2">Vues en extérieures et en intérieures</h2>
+                  <table class="tarifs-tableau">
+                    <colgroup>
+                      <col style="width: 18%;">
+                      <col style="width: 67%;">
+                      <col style="width: 15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="col">Produits</th>
+                          <th scope="col">Détails de la prestation</th>
+                          <th scope="col">Tarifs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pack photo intérieur/extérieur</strong><br>Spécial tourisme</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Photos extérieures : Drone DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Photos intérieures : iPhone 15 Pro (48 Mpx) avec stabilisateur OSMO Mobile 7S</li>
+                            <li>Environ 2h30 sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 20 photos retouchées</li>
+                          </ul>
+                        </td>
+                        <td><strong>180€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pack vidéo intérieur/extérieur</strong><br>Spécial tourisme</td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Vidéos extérieures : Drone DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Vidéos intérieures : iPhone 15 Pro (48 Mpx) avec stabilisateur OSMO Mobile 7S</li>
+                            <li>Environ 3 heures sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 12 plans non montés</li>
+                          </ul>
+                        </td>
+                        <td><strong>300€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Montage vidéo</strong></td>
+                        <td>
+                          <ul>
+                            <li>Montage vidéo full HD d'environ 2 minutes à partir des plans intérieurs et extérieurs</li>
+                            <li>Musique dynamique libre de droit</li>
+                            <li>Inclusion de votre logo dans les images</li>
+                            <li>Inclusion des coordonnées de l’agence immobilière en fin de film</li>
+                            <li>Fourniture du film final sur un espace cloud *</li>
+                          </ul>
+                        </td>
+                        <td><strong>120€ TTC</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="note note_last">* Tous les montages incluent deux aller-retour de validation.</p>
+              </section>
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 7 : "Evenements" -->
         <div class="step" data-step="7" data-previous-step="2" aria-labelledby="titre_simulation_7">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -368,9 +499,11 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 8 : "Autres prestations" -->
         <div class="step" data-step="8" data-previous-step="2" aria-labelledby="titre_simulation_8">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -383,25 +516,87 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 9 : "Immo particulier" -->
         <div class="step" data-step="9" data-previous-step="3" aria-labelledby="titre_simulation_9">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
             <div class="titre_simulation" id="titre_simulation_9">VALORISATION IMMOBILIERE</div>
             <p class="sous-titre">Prise de vues aériennes de votre propriété</p>
-            <div class="image-container">
-                <img src="image/tarifs_particulier_immo.jpg" alt="Tarifs pour les prestations immobiliere pour particulier" class="image-tarifs2" onclick="openFullscreen(this)">
+            <div class="container-tarifs-tableau">
+                <section class="bloc-ext" aria-labelledby="titre1">
+                  <h2 id="titre1">Vues en extérieur uniquement</h2>
+                  <table class="tarifs-tableau">
+                    <colgroup>
+                      <col style="width: 18%;">
+                      <col style="width: 67%;">
+                      <col style="width: 15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="col">Produits</th>
+                          <th scope="col">Détails de la prestation</th>
+                          <th scope="col">Tarifs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Pack photo extérieur</strong></td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (12 Mpx)</li>
+                            <li>Environ 2 heures sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 10 photos retouchées</li>
+                          </ul>
+                        </td>
+                        <td><strong>100€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pack vidéo extérieur</strong></td>
+                        <td>
+                          <ul>
+                            <li>Établissement du dossier d’autorisations auprès de la DGAC et de la Préfecture</li>
+                            <li>Un télépilote</li>
+                            <li>Drone : DJI Mini 2 SE (HD - 30 FPS)</li>
+                            <li>Environ 2h30 sur 1 site</li>
+                            <li>Fourniture, sur un espace cloud, d’environ 7 plans non montés</li>
+                          </ul>
+                        </td>
+                        <td><strong>150€ TTC</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Montage vidéo</strong></td>
+                        <td>
+                          <ul>
+                            <li>Montage vidéo full HD entre 1 et 2 minutes à partir des plans pris par drone</li>
+                            <li>Musique dynamique libre de droit</li>
+                            <li>Inclusion de votre logo dans les images</li>
+                            <li>Inclusion des coordonnées de l’agence immobilière en fin de film</li>
+                            <li>Fourniture du film final sur un espace cloud *</li>
+                          </ul>
+                        </td>
+                        <td><strong>100€ TTC</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="note note_last">* Tous les montages incluent deux aller-retour de validation.</p>
+                  </section>
             </div>
             <div class="contact-section">
                 <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un <strong>devis gratuit et personnalisé</strong> :</p>
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 10 : "Evenements particulier" -->
         <div class="step" data-step="10" data-previous-step="3" aria-labelledby="titre_simulation_10">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -452,9 +647,11 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
-         <!-- Choix 11 : "Audiovisuel Amateur" -->
-         <div class="step" data-step="11" data-previous-step="3" aria-labelledby="titre_simulation_11">
+        <!-- Choix 11 : "Audiovisuel Amateur" -->
+        <div class="step" data-step="11" data-previous-step="3" aria-labelledby="titre_simulation_11">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -505,9 +702,11 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>
 
         <!-- Choix 12 : "Formation au pilotage de drones pour particulier" -->
         <div class="step" data-step="12" data-previous-step="3" aria-labelledby="titre_simulation_12">
+        <div class="step-inner">
             <div class="retour">
                 <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
             </div>
@@ -538,8 +737,31 @@
                 <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
             </div>
         </div>
+        </div>      
+        <!-- Choix 13 : "Autres prestations de particulier" -->
+        <div class="step" data-step="13" data-previous-step="3" aria-labelledby="titre_simulation_8">
+        <div class="step-inner">
+            <div class="retour">
+                <img src="image/retour_simulateur.jpg" alt="retour à la section précédente" role="button" tabindex="0" />
+            </div>
+            <div class="titre_simulation" id="titre_simulation_8">AUTRES PRESTATIONS</div>
+            <p class="sous-titre">Aïe ...</p>
+            <div class="autres-prestations">
+                <p>Il semblerait que vous n’ayez pas trouver la prestation souhaitée via notre simulateur.</p><br>
+                <p>N’hésitez pas à nous contacter pour nous partager votre projet et obtenir un devis gratuit et personnalisé :</p>
+            </div>
+            <div class="contact-section">
+                <button class="contact-devis-btn" onclick="location.href='Contact_et_devis.html'">Contact | Devis</button>
+            </div>
+        </div>
+        </div>
     </div>
 </section>
+<footer class="footer-global-simu">
+    <a href="index.html" aria-label="Retour à la page d'accueil">
+        <img src="image/Logo_Depuis.png" alt="Logo Depuis le ciel" />
+    </a>
+</footer>
 
 <script src="script.js" defer></script>
 </body>

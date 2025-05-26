@@ -67,15 +67,16 @@ choices.forEach(choice => {
     const nextStep = document.querySelector(`.step[data-step="${choice.getAttribute("data-next")}"]`);
 
     if (currentStep && nextStep) {
+      nextStep.classList.add("active", "enter-right"); // Ajout de .active AVANT le setTimeout
       currentStep.classList.add("exit-left");
-      nextStep.classList.add("enter-right");
+  
       setTimeout(() => {
         currentStep.classList.remove("active", "exit-left");
         nextStep.classList.remove("enter-right");
-        nextStep.classList.add("active");
       }, 300);
     }
   });
+  
 
   // Événement pour le clavier (Entrée ou Espace)
   choice.addEventListener("keydown", (e) => {
@@ -95,25 +96,28 @@ backLinks.forEach(link => {
     const previousStep = document.querySelector(`.step[data-step="${currentStep.dataset.previousStep}"]`);
 
     if (currentStep && previousStep) {
+      // 1. On rend visible l'étape précédente avec active + enter-left
+      previousStep.classList.add("active", "enter-left");
+
+      // 2. On anime la sortie de l'étape actuelle
       currentStep.classList.add("exit-right");
-      previousStep.classList.add("enter-left");
+
+      // 3. Nettoyage après l'animation
       setTimeout(() => {
         currentStep.classList.remove("active", "exit-right");
         previousStep.classList.remove("enter-left");
-        previousStep.classList.add("active");
       }, 300);
     }
   });
 
-  // Gestion de la touche "Entrée" ou "Espace" pour revenir à l'étape précédente
+  // Gestion clavier
   link.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      link.click();  // Simule un clic sur le lien
+      link.click();
     }
   });
 });
-
 
 
   function ouvrirMenu() {
