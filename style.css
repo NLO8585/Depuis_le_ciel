@@ -924,19 +924,60 @@ section {
 }
 @font-face {
     font-family: 'Poppins';
-    src: url('fonts/Poppins/Poppins-Black.ttf') format('ttf');
+    src: url('fonts/Poppins/Poppins-Black.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Nunito';
-    src: url('fonts/Nunito/Nunito.ttf') format('ttf');
+    src: url('fonts/Nunito/Nunito.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
-
+@font-face {
+    font-family: 'Audiowide';
+    src: url('fonts/Audiowide/Audiowide.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Zen';
+    src: url('fonts/Zen/Zen.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand/Quicksand-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand/Quicksand-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 /* SIMULATEUR */
 #simulation{
     margin: 0;
@@ -979,14 +1020,18 @@ section {
     margin: 0;
     color: #ffffff;
     white-space: nowrap;
+    font-family: "Quicksand";
+    font-weight: 700;
 }
 .titre_simulation {
     font-size: 24px;
-    font-weight: bold;
     text-align: center;
     color: #013142;
-    margin-top: 20px;
     margin-bottom: 0px;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: "Quicksand";
+    font-weight: 700;
 }
 .choice {
     display: flex;
@@ -1039,6 +1084,8 @@ section {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    font-family: "Quicksand";
+    font-weight: 600;
   }
 .particulier_icons {
     display: flex;
@@ -1166,7 +1213,7 @@ section {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     margin-top: 20px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -1185,8 +1232,8 @@ section {
 .tarifs-table {
     width: 25%;
     border-collapse: collapse;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 .montage-container {
     display: flex;
@@ -1196,14 +1243,14 @@ section {
 .montage-table {
     width: 15%;
     border-collapse: collapse;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }
 .tarifs-table th, 
 .tarifs-table td,
 .montage-table th, 
 .montage-table td  {
-    font-size: 14px;
+    font-size: 12px;
     border: 1px solid #dddddd;
     padding: 6px 6px;
 }
@@ -1221,11 +1268,13 @@ section {
     background-color: #f1f1f1;
 }
 .sous-titre {
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #013142;
+    font-family: "Quicksand";
+    font-weight: 600;
 }
 .description{
     margin-top: 0px;
@@ -1233,7 +1282,8 @@ section {
 }
 .description p, .autres-prestations p, .contact-section p{
     font-size: 14px;
-    text-align: center;
+    text-align: left;
+    padding-left: 80px;
 }
 .image-tarifs2 {
     margin-top: 15px;
@@ -1244,9 +1294,10 @@ section {
 }
 .titre_simulation1 {
     font-size:26px;
-    font-weight: bold;
     text-align: center;
     color: #013142;
+    font-family: "Quicksand";
+    font-weight: 700;
     margin-top: 15px;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -1352,6 +1403,8 @@ section {
     border-left: 6px solid #06416a;
     padding-left: 12px;
     text-align: left;
+    font-family: "Quicksand";
+    font-weight: 700;
 
   }
 .bloc-ext-int h2 {
@@ -1362,6 +1415,8 @@ section {
     border-left: 6px solid #13520e;
     padding-left: 12px;
     text-align: left;
+    font-family: "Quicksand";
+    font-weight: 700;
     
   }
 /* PAGE MENTIONS LEGALES */
@@ -2974,6 +3029,8 @@ section {
         color: #013142;
         margin-top: 10px;
         justify-content: center;
+        font-family: "Quicksand";
+        font-weight: 600;
         align-items: center;
         text-align: center;
     }
