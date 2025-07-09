@@ -61,34 +61,33 @@ const choices = document.querySelectorAll(".choice, .sector_choice, .particulier
 const backLinks = document.querySelectorAll(".retour img, .retour-button");
 
 choices.forEach(choice => {
-  // Événement click
   choice.addEventListener("click", () => {
     const currentStep = document.querySelector(".step.active");
     const nextStep = document.querySelector(`.step[data-step="${choice.getAttribute("data-next")}"]`);
 
     if (currentStep && nextStep) {
-      nextStep.classList.add("active", "enter-right"); // Ajout de .active AVANT le setTimeout
+      nextStep.classList.add("active", "enter-right");
       currentStep.classList.add("exit-left");
-  
+
       setTimeout(() => {
         currentStep.classList.remove("active", "exit-left");
         nextStep.classList.remove("enter-right");
+
+        // Vérifie la hauteur après la transition
+        checkPageHeight();
       }, 300);
     }
   });
-  
 
-  // Événement pour le clavier (Entrée ou Espace)
   choice.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();  // Empêche le comportement par défaut (évite des actions comme le focus)
-      choice.click();      // Simule un clic sur l'élément
+      e.preventDefault();
+      choice.click();
     }
   });
 });
 
 backLinks.forEach(link => {
-  // Gestion du clic sur l'icône de retour
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -96,21 +95,18 @@ backLinks.forEach(link => {
     const previousStep = document.querySelector(`.step[data-step="${currentStep.dataset.previousStep}"]`);
 
     if (currentStep && previousStep) {
-      // 1. On rend visible l'étape précédente avec active + enter-left
       previousStep.classList.add("active", "enter-left");
-
-      // 2. On anime la sortie de l'étape actuelle
       currentStep.classList.add("exit-right");
 
-      // 3. Nettoyage après l'animation
+      
       setTimeout(() => {
         currentStep.classList.remove("active", "exit-right");
-        previousStep.classList.remove("enter-left");
+        previousStep.classList.remove("enter-left");      
+        checkPageHeight();  
       }, 300);
     }
   });
 
-  // Gestion clavier
   link.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -118,6 +114,28 @@ backLinks.forEach(link => {
     }
   });
 });
+
+window.addEventListener('load', checkPageHeight);
+window.addEventListener('resize', checkPageHeight);
+
+function checkPageHeight() {
+  const footer = document.querySelector('.footer-global-simu');
+  const activeStep = document.querySelector('.step.active');
+
+  if (!footer || !activeStep) return;
+
+  const stepContent = activeStep.querySelector('.step-inner');
+  const header = document.querySelector('.header_simulation');
+
+  const contentHeight = stepContent.scrollHeight + (header?.offsetHeight || 0);
+  const viewportHeight = window.innerHeight;
+
+  if (contentHeight > viewportHeight) {
+    footer.style.display = 'none';
+  } else {
+    footer.style.display = 'flex';
+  }
+}
 
 
   function ouvrirMenu() {
