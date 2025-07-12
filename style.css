@@ -1453,7 +1453,7 @@ body.body_simulation {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .header-offset{
-    height:100px;
+    height:92px;
 }
 .mention_article h2 {
     font-size: 24px;
@@ -3602,3 +3602,16 @@ body.body_simulation {
 } 
 
 @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {} 
+
+
+/* PAGE PRESTATION GENERALE */
+.services1 {
+    text-align: center;
+    background: #0F111E;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 92px;
+}
