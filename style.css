@@ -1801,7 +1801,7 @@ body.body_simulation {
 
 /* ILS NOUS ONT FAIT CONFIANCE */
 .trusted-section {
-    background-color: rgb(248, 248, 248);
+    background-color: #F5F5F5;
     padding-bottom: 40px;
     text-align: center;
     overflow: hidden;
@@ -1847,16 +1847,33 @@ body.body_simulation {
         transform: translateX(-50%);
     }
 }
-#contact { 
-    background: #0F111E;
-    color: white; 
-    padding-bottom: 30px; 
-    text-align: center; 
-} 
-.contact-container { 
-    max-width: 600px; 
-    margin: auto; 
-} 
+#contact {
+  position: relative;
+  background-color: #0F111E;
+  color: white;
+  width: clamp(300px, 60vw, 500px);
+  height: clamp(300px, 60vw, 500px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: auto;
+}
+#contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #F5F5F5;
+  overflow: hidden;
+}
+.contact-container {
+  width: 100%;
+}
+
 .contact-text { 
     font-size: clamp(0.85rem, 1vw, 1rem);
     margin-bottom: 35px; 
