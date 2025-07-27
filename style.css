@@ -336,7 +336,7 @@ section#Contact {
     flex: 1;
     max-width: 400px;
     padding: 30px 0px;
-    margin: 0 100px;
+    margin: 0 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -346,7 +346,7 @@ section#Contact {
 section#Contact .right-section {
     flex: 1;
     font-size: 14px;
-    max-width: 500px;
+    max-width: 550px;
     padding: 40px 0px;
     margin-right: 100px;
     max-width: 500px; /**/
@@ -404,7 +404,7 @@ section#Contact .container form input,
 section#Contact .container form textarea {
     width: 100%;
     padding: 7px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     border: 2px solid #004667;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -512,7 +512,7 @@ section#Contact .container form .form-row.two-columns > div label {
 .right-section .contact_gras {
     text-align: center;
     font-size: 1.2em;
-    color: #000000;
+    
     font-weight: bold;
     width: 100%;
     margin: 0.2rem 0;
@@ -521,13 +521,16 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 .right-section .contact_gras a {
     color: inherit;      /* hérite la couleur du parent, souvent noir */
-    text-decoration: none; /
+    text-decoration: none;
+    color: rgb(200, 70, 50);
 }
 .right-section .contact_gras:hover {
     color: rgb(200, 70, 50);
+    text-decoration: underline;
 }
 .right-section .contact_gras:nth-of-type(2) {
     margin-bottom: 1.5rem;
+    padding-top: 15px;
 }
 .custom-line {
     width: 100%;
